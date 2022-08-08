@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 2</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#html_tags" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Tags, Elements & Attributes</a> 
+      <a href="#html_formatting" onclick="closeSidebar()" class= "bar-item button hover-white">Formatting HTML</a> 
+      <a href="#html_images" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Images</a> 
+      <a href="#html_lists" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Lists</a> 
+      <a href="#html_tables" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Tables</a> 
+      <a href="#table_exercises" onclick="closeSidebar()" class= "bar-item button hover-white">Tables Exercises</a> 
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- HTML Tags -->
+    <div class= "container" style="margin-top:50px" id="html_tags">
+      <h1 class= "xxxlarge text-red"><b>HTML Tags, Elements & Attributes</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Tags </h2>
+      <p> HTML tags begin with < symbol and end with > symbol. </p>
+      <p> Example: &lt;b&gt;&lt;/b&gt; | &lt;p&gt;&lt;/p&gt; </p>
+      <h2> HTML Elements </h2>
+      <p> HTML elements contain the start tag, content and an end tag. </p>
+      <p> Example: &lt;b&gt; This is the bold text. &lt;/b&gt; | &lt;p&gt; This is a paragraph tag.&lt;/p&gt; </p>  
+      <h2> HTML Attributes </h2>
+      <p> HTML attributes provide additional properties to tags. </p>
+      <p> Example: &lt;p align="center"&gt; This is a center aligned text. &lt;/p&gt; </p>  
+      <p> In the example above, align is an attribute of p tag and center written in double quotes("") is the value of the attribute. </p>
+      <p> While using nested elements, the closing of the tags need to in the order of tags' opening. </p>
+      <p>Example: &lt;p&gt;&lt;b&gt; This is a bold text in paragraph tag. &lt;/b&gt;&lt;/p&gt; <strong> Here, the nested tag &lt;b&gt; is closed first before the parent tag &lt;p&gt;. </strong></p> 
+      <h2> List of basic tags with their attributes: </h2>
+      <ul>
+        <li><strong>&lt;body&gt;...&lt;/body&gt;</strong>: bgcolor, background, text, link, alink, vlink </li>
+        <li><strong>&lt;p&gt;...&lt;/p&gt;</strong>: align </li>
+        <li><strong>&lt;font&gt;...&lt;/font&gt;</strong>: size, face, color</li>
+      </ul>
+      <h2> Common attributes: </h2>
+      <p> These attributes can be used with any tag in HTML </p>
+      <ul>
+        <li>id</li>
+        <li>class</li>
+        <li>style</li>
+        <li>title</li>
+      </ul>
+    </div>
+    <!-- HTML Tags ends -->
+
+    <!-- HTML Formatting -->
+    <div class= "container" style="margin-top:50px" id="html_formatting">
+      <h1 class= "xxxlarge text-red"><b>Formatting HTML</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> Bold Text </h2>
+      <p> <strong> &lt;b&gt;...&lt;/b&gt; </strong> and <strong> &lt;strong&gt;...&lt;/strong&gt; </strong> tags are used to make the text <b>bold</b>. </p>
+      <h2> Italic Text </h2>
+      <p> <strong> &lt;i&gt;...&lt;/i&gt; </strong> and <strong> &lt;em&gt;...&lt;/em&gt; </strong> tags are used to <em> italicize </em> the text. </p>
+      <h2> Underline Text </h2>
+      <p> <strong> &lt;u&gt;...&lt;/u&gt; </strong> tag is used to <u> underline </u>the text. </p>
+      <h2> Strike Text </h2>
+      <p> <strong> &lt;strike&gt;...&lt;/strike&gt; </strong> tag is used to <del> strike through </del> the text. </p>
+      <h2> Superscript Text </h2>
+      <p> <strong> &lt;sup&gt;...&lt;/sup&gt; </strong> tag is used to make the text <sup>superscript</sup>. Eg: a<sup>2</sup>+b<sup>2</sup></p>
+      <h2> Subscript Text </h2>
+      <p> <strong> &lt;sub&gt;...&lt;/sub&gt; </strong> tag is used to make the text <sub>subscript</sub>. Eg: H<sub>2</sub>0</p>
+      <h2> Larger Text </h2>
+      <p> <strong> &lt;big&gt;...&lt;/big&gt; </strong> tag is used to make the text <big>large</big>.
+      <h2> Smaller Text </h2>
+      <p> <strong> &lt;small&gt;...&lt;/small&gt; </strong> tag is used to make the text <small>small</small>.
+      <h2> Preformatted Text </h2>
+      <p> <strong> &lt;pre&gt;...&lt;/pre&gt; </strong> tag is used to make the text <pre>        preformatted.</pre>
+      <h2> Marked Text </h2>
+      <p> <strong> &lt;mark&gt;...&lt;/mark&gt; </strong> tag is used to <mark> highlight </mark> the text.
+      <h2> Quoting Text </h2>
+      <p> <strong> &lt;blockquote&gt;...&lt;/blockquote&gt; </strong> tag is used to quote the text. Eg: <blockquote> This is a blockquote </blockquote>
+      <h2> Commented Text </h2>
+      <p> Comments in HTML are written within <strong> &lt;!-- ..... --&gt; </strong> tags and are ignored by web browser. Eg: &lt;-- This is a comment. --&gt;
+    </div>
+    <!-- HTML Formatting ends -->
+
+    <!-- HTML Images -->
+    <div class= "container" style="margin-top:50px" id="html_images">
+      <h1 class= "xxxlarge text-red"><b>HTML Images</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Images </h2>
+      <p> <strong>&lt;img&gt;</strong> tag is an empty tag used to insert image in a webpage.</p>
+      <h2> &lt;img&gt; Attributes </h2>
+      <p> All global attributes(id, class, title, style) are supported by &lt;img&gt; tag. Other than the global attributes, &lt;img&gt; tag has its own set of attributes listed below:</p>
+      <ul>
+        <li>src</li>
+        <li>width</li>
+        <li>height</li>
+        <li>alt</li>
+        <li>align</li>
+        <li>border</li>
+      </ul>
+      <h2> Usage </h2>
+      <p> &lt;img src="tech.jpg"&gt; will display image below: </p>
+      <img src="tech.jpg">
+      <p> &lt;img src="tech.jpg" width="100"&gt; will set the image width to 100 and height auto: </p>
+      <img src="tech.jpg" width="100">
+      <p> &lt;img src="tech.jpg" height="100"&gt; will set the image height to 100 and width auto : </p>
+      <img src="tech.jpg" height="100">
+      <p> &lt;img src="tech.jpg" width="100" height="100"&gt; will set the width and height to 100: </p>
+      <img src="tech.jpg" width="100" height="100">
+      <p> &lt;img src="tech.jpg" height="100" align="left"&gt; will set the height of the image to 100 and align the image to left: </p>
+      <img src="tech.jpg" height="100" align="left">
+      <br><br><br><br>
+      <p> &lt;img src="tech.jpg" height="100" border="5"&gt; will set the image height to 100 and give the border of size 5 to the image: </p>
+      <img src="tech.jpg" height="100" border="5">
+      <p> &lt;img src="tech.jpg" alt="Tech Image"&gt; will give an alternative title to the image if the image cannot be loaded for some reasons: </p>
+      <img src="tech.png" alt="Tech Image" height="100">
+    </div>
+    <!-- HTML Images ends -->
+
+    <!-- HTML Lists -->
+    <div class= "container" style="margin-top:50px" id="html_lists">
+      <h1 class= "xxxlarge text-red"><b>HTML Lists</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> Types of lists in HTML </h2>
+      <p> Below are the mostly used lists in HTML: </p>
+      <ul>
+        <li> Unordered List </li>
+      </ul>
+      <ol>
+        <li> Ordered List </li>      
+      </ol>
+      <h2> Attributes and Values of Unordered Lists </h2>
+      <ul type="square">
+        <li><strong>type:</strong> disc, circle, square</li>
+      </ul>
+      <h2> Attributes and Values of Ordered Lists </h2>
+      <ol type="a">
+        <li><strong>type:</strong> i, I, a, A, 1</li>
+      </ol>
+      <ol start="2" type="I">
+        <li><strong>start:</strong> starting number</li>
+      </ol>
+      <strong> There is another type of list known as definition list (&lt;dl&gt;). But, it is not used often and same effect can be obtained using CSS </strong>
+    </div>
+    <!-- HTML Lists ends -->  
+
+    <!-- HTML Tables -->
+    <div class= "container" style="margin-top:50px" id="html_tables">
+      <h1 class= "xxxlarge text-red"><b>HTML Tables</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> HTML Tables are used to arrange data in tabular form (rows and columns). </p>
+      <h2> Simple HTML Table </h2>
+      <pre style="width: 500px;padding: 10px; border: 2px solid #de4e4e;">
+        <code>
+          &lt;!DOCTYPE html&gt; 
+          &lt;html&gt;
+          &lt;head&gt;
+            &lt;title>Sample Table&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;table border="1"&gt;
+              &lt;tr&gt;
+                &lt;th&gt;
+                  Name
+                &lt;/th&gt;
+                &lt;th&gt;
+                  Class
+                &lt;/th&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  ABC
+                &lt;/td&gt;
+                &lt;td&gt;
+                  Class 1
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  PQR
+                &lt;/td&gt;
+                &lt;td&gt;
+                  Class 5
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
+        </code>
+      </pre>
+    </div>
+    <h3> Output: </h3>
+    <table border="1">
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Class
+        </th>
+      </tr>
+      <tr>
+        <td>
+          ABC
+        </td>
+        <td>
+          Class 1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          PQR
+        </td>
+        <td>
+          Class 5
+        </td>
+      </tr>
+    </table>
+    <h2> List of Attributes </h2>
+    <ul type="disc">
+      <li>border</li>
+      <li>cellpadding</li>
+      <li>cellspacing</li>
+      <li>width</li>
+      <li>height</li>
+      <li>align (left, right, center)</li>
+      <li>valign (top, middle, bottom)</li>
+      <li>bgcolor (deprecated)</li>
+      <li>colspan (used with td/th)</li>
+      <li>rowspan (used with td/th)</li>
+    </ul>
+    <h2> Examples </h2>
+    <p><strong> Table with width=150, height=150 and border=1 attributes </strong></p>
+    <table border="1" width="150" height="150">
+      <tr>
+        <th> S.No. </th>
+        <th> Price </th>
+      </tr>
+      <tr>
+        <td> 1 </td>
+        <td> $100 </td>
+      </tr>
+      <tr>
+        <td> 2 </td>
+        <td> $150 </td>
+      </tr>
+    </table>
+    <p><strong> Table with border=1, cellpadding=10 and cellspacing=5 attributes </strong></p>
+    <table border="1" cellpadding="10" cellspacing="5">
+      <tr>
+        <th> S.No. </th>
+        <th> Price </th>
+      </tr>
+      <tr>
+        <td> 1 </td>
+        <td> $100 </td>
+      </tr>
+      <tr>
+        <td> 2 </td>
+        <td> $150 </td>
+      </tr>
+    </table>
+    <p><strong> Table with border, cellpadding, cellspacing and colspan attributes </strong></p>
+    <table border="1" cellpadding="10" cellspacing="5">
+      <tr>
+        <th> S.No. </th>
+        <th> Item </th>
+        <th> Price </th>
+      </tr>
+      <tr>
+        <td> 1 </td>
+        <td> Item1 </td>
+        <td> $100 </td>
+      </tr>
+      <tr>
+        <td> 2 </td>
+        <td> Item2 </td>
+        <td> $150 </td>
+      </tr>
+      <tr>
+        <th colspan="2"> Total Price </th>
+        <td> $250 </td>
+      </tr>
+    </table>
+    <p><strong> Table with border, bgcolor, cellpadding, cellspacing, rowspan and colspan attributes </strong></p>
+    <table border="1" cellpadding="10" cellspacing="5">
+      <tr>
+        <th rowspan="5"> Items Table </th>
+      </tr>
+      <tr bgcolor="#ccc">
+        <th> S.No. </th>
+        <th> Item </th>
+        <th> Price </th>
+      </tr>
+      <tr>
+        <td> 1 </td>
+        <td> Item1 </td>
+        <td> $100 </td>
+      </tr>
+      <tr>
+        <td> 2 </td>
+        <td> Item2 </td>
+        <td> $150 </td>
+      </tr>
+      <tr>
+        <th colspan="2"> Total Price </th>
+        <td bgcolor="yellow"> $250 </td>
+      </tr>
+    </table>
+    <h2> Table Caption </h2>
+    <p> The &lt;caption&gt; tag is used to provide the title or the explanation to the table </p>
+    <h2> Example of Table with Caption </h2>
+    <table width="300" border="1" cellpadding="10" cellspacing="5">
+      <caption> Table displaying list of items </caption>
+      <tr>
+        <th> S.No. </th>
+        <th> Item </th>
+        <th> Price </th>
+      </tr>
+      <tr>
+        <td> 1 </td>
+        <td> Item1 </td>
+        <td> $100 </td>
+      </tr>
+      <tr>
+        <td> 2 </td>
+        <td> Item2 </td>
+        <td> $150 </td>
+      </tr>
+      <tr>
+        <th colspan="2"> Total Price </th>
+        <td> $250 </td>
+      </tr>
+    </table>
+    <h2> Table Header, Body and Footer </h2>
+    <p> Table can be divided into three portions: a header, a body and a footer represented by &lt;thead&gt;, &lt;tbody&gt; and &lt;tfoot&gt; tags respectively.</p>
+    <h2> Example of Table with head, body and foot </h2>
+    <table border="1" cellpadding="10" cellspacing="5">
+      <thead>
+        <tr>
+          <th> S.No. </th>
+          <th> Item </th>
+          <th> Price </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> 1 </td>
+          <td> Item1 </td>
+          <td> $100 </td>
+        </tr>
+        <tr>
+          <td> 2 </td>
+          <td> Item2 </td>
+          <td> $150 </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="2"> Total Price </th>
+          <td> $250 </td>
+        </tr>
+      </tfoot>
+    </table>
+    <h2> Nested Tables </h2>
+    <p> One table can be used inside another table in HTML. Also, other HTML tags can be used inside &lt;td&gt; tag. </p>
+    <h2> Example of Nested Table </h2>
+    <table border="1" cellpadding="5" cellspacing="5">
+        <tr>
+          <th rowspan="5"> List of Items </th>
+          <td>
+            <table border="1" cellpadding="10" cellspacing="10">
+              <thead>
+                <tr>
+                  <th> S.No. </th>
+                  <th> Item </th>
+                  <th> Price </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> 1 </td>
+                  <td> Item1 </td>
+                  <td> $100 </td>
+                </tr>
+                <tr>
+                  <td> 2 </td>
+                  <td> Item2 </td>
+                  <td> $150 </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="2"> Total Price </th>
+                  <td> $250 </td>
+                </tr>
+              </tfoot>
+            </table>
+          </td>
+        </tr>
+    </table>
+    <!-- HTML Tables -->
+
+    <!-- HTML Tables -->
+    <div class= "container" style="margin-top:50px" id="table_exercises">
+      <h1 class= "xxxlarge text-red"><b>HTML Tables Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    <h3> Exercise 1 </h3>
+    <table border="1">
+      <tr>
+        <td>Quick</td>
+        <td colspan="2">brown fox</td>
+        <td>jumps</td>
+      </tr>
+      <tr>
+        <td rowspan="3">over the</td>
+        <td>lazy</td>
+        <td>dog</td>
+        <td>and</td>
+      </tr>
+      <tr>
+        <td>then</td>
+        <td>it</td>
+        <td>fall</td>
+      </tr>
+      <tr>
+        <td colspan="3">prey to a lion</td>
+      </tr>
+    </table>
+    <h3> Exercise 2 </h3>
+    <table border="1" cellpadding="5" cellspacing="5">
+      <tr>
+        <th>NAME</th>
+        <th>SUBJECT</th>
+        <th>MARKS</th>
+      </tr>
+      <tr>
+        <td rowspan="2">Hillary</td>
+        <td>Advanced Web</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>Operating System</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Lary</td>
+        <td>Advanced Web</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Operating System</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td bgcolor="green">&nbsp;</td>
+        <td colspan="2">Total Average: 72.5</td>
+      </tr>
+    </table>
+    <h3> Exercise 3 </h3>
+    <table border="1" cellpadding="5" cellspacing="5">
+      <caption> Sales/Profit Report </caption>
+      <thead>
+        <tr>
+          <th colspan="2">JANUARY</th>
+          <th colspan="2">FEBRUARY</th>
+          <th colspan="2">MARCH</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sales</td>
+          <td>Profit</td>
+          <td>Sales</td>
+          <td>Profit</td>
+          <td>Sales</td>
+          <td>Profit</td>
+        </tr>
+        <tr>
+          <td>$1.7k</td>
+          <td>$2k</td>
+          <td>$1.9k</td>
+          <td>$2.1k</td>
+          <td>$1.3k</td>
+          <td>$2.5k</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6" bgcolor="lightblue">Most productive month: March</td>
+        </tr>
+      </tfoot>
+    </table>
+    <!-- HTML Tables end -->
+    
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 3</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 2</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#html_links" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Links</a> 
+      <a href="#html_iframes" onclick="closeSidebar()" class= "bar-item button hover-white">HTML iFrames </a>
+      <a href="#html_embed" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Embed</a>  
+      <a href="#html_marquees" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Marquees</a>
+      <a href="#html_blocks" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Blocks (div and span)</a> 
+      <a href="#day3_exercises" onclick="closeSidebar()" class= "bar-item button hover-white">Exercises</a> 
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- HTML Links -->
+    <div class= "container" style="margin-top:50px" id="html_links">
+      <h1 class= "xxxlarge text-red"><b>HTML Links</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Links </h2>
+      <p> Anchor tag, &lt;a&gt;...&lt;/a&gt; is used to create links in HTML. Links or hyperlinks can used to navigate between different webpages or within same webpage by clicking on the text or images on the webpage.</p>
+      <p> Examples: &lt;a href="https://google.com"&gt; Go to Google &lt;/a&gt; displays the following link that can redirect our webpage to google.com. </p>
+      <a href="https://google.com"> Go to Google </a> 
+      <h2> Attributes </h2>
+      <ul>
+      	<li>href</li>
+      	<li>target</li>
+      </ul>
+      <h2> Links within a webpage </h2>
+      <p> Hyperlinks can also be used to link to various sections in a single webpage. Example: Go to bottom link below is linked to a section in this webpage. When clicked, the webpage scrolls to that linked section. </p>
+      <p><a href="#bottom"> Go to bottom </a></p>
+      <h2> Image Links </h2>
+      <p> Not only text, images can also be used to link to different webpages or various sections in a single webpage. Example: Image below is linked to open google homepage when clicked. </p>
+      <p><a href="https://google.com"><img src="tech.jpg" width="100"></a></p>
+      <h2> Email Links </h2>
+      <p> Anchor tag also provides an option to specify an email address and send an email to the specified email. In order to send email, use <strong>mailto: email address</strong> as value in href attribute.</p>
+      <p>Example: <a href="mailto:abc@gmail.com">Send an email to abc@gmail.com</a></p>
+      <p>The code above opens a default email client on the system like outlook.</p>
+      <h2> Download Links </h2>
+      <p> We can also use links to download files by simply clicking on it. To download a file, the value for the href attribute must be set to the full path of the file.</p>
+      <p>Example: <a href="sample.pdf" target="_blank">Download PDF</a></p>
+    </div>
+    <!-- HTML Links ends -->
+
+    <!-- HTML iFrames -->
+    <div class= "container" style="margin-top:50px" id="html_iframes">
+      <h1 class= "xxxlarge text-red"><b>HTML iFrames</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML iFrames </h2>
+      <p> iFrames or inline frames are used to embed another document/webpage within the current document/webpage. </p>
+      <h2> Attributes </h2>
+      <ul>
+      	<li>src</li>
+      	<li>name</li>
+      	<li>width</li>
+      	<li>height</li>
+      </ul>
+      <p> Example: &lt;iframe src="iframe.html"&gt;&lt;/iframe&gt; </p>
+	  <iframe src="iframe.html" name="iframe1"></iframe>
+    </div>
+    <!-- HTML iFrames ends -->
+
+    <!-- HTML Embed -->
+    <div class= "container" style="margin-top:50px" id="html_embed">
+      <h1 class= "xxxlarge text-red"><b>HTML Embed</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Embed </h2>
+      <p> &lt;embed&gt; tag can be used to include audio or video into a webpage. In case a browser doesn't support &lt;embed&gt; tag, &lt;noembed&gt; tag can be used to display a message or an image stating no support for embed tag. </p>
+      <h2> Attributes </h2>
+      <ul>
+      	<li>src</li>
+      	<li>name</li>
+      	<li>width</li>
+      	<li>height</li>
+      	<li>loop</li>
+      	<li>volume</li>
+      </ul>
+      <p> Example: &lt;embed src="sample_video.mov"&gt;&lt;/embed&gt; embeds sample_video.mov in the webpage. Since, HTML5 has introduced &lt;video&gt; and &lt;audio&gt; tags for including videos and audios in the webpage, it is better recommended to use these tags instead of embed tag.</p>
+    </div>
+    <!-- HTML Embed ends -->
+
+    <!-- HTML Marquees -->
+    <div class= "container" style="margin-top:50px" id="html_marquees">
+      <h1 class= "xxxlarge text-red"><b>HTML Marquees</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Marquees </h2>
+      <p> HTML Marquees are used to display scrolling text either horizontally across or vertically down the webpage. </p>
+      <p>Example: &lt;marquee&gt; This is a scrolling text &lt;/marquee&gt; </p>
+      <h2> Attributes </h2>
+      <ul>
+      	<li>width</li>
+      	<li>height</li>
+      	<li>direction</li>
+      	<li>behavior</li>
+      	<li>scrolldelay</li>
+      	<li>scrollamount</li>
+      	<li>loop</li>
+      	<li>bgcolor</li>
+      	<li>hspace</li>
+      	<li>vspace</li>
+      </ul>
+      <h2> Example using attributes: </h2>
+      <p>&lt;marquee width="500" height="30" direction="left" behavior="alternate" scrolldelay="10" scrollamount="10" loop="0" bgcolor="yellow" hspace="5" vspace="5"&gt; This is an example of marquee tag &lt;/marquee&gt;</p>
+      <marquee width="500" height="30" direction="left" behavior="alternate" scrolldelay="10" scrollamount="10" loop="0" bgcolor="yellow" hspace="5" vspace="5"> This is an example of marquee tag </marquee>
+    </div>
+    <!-- HTML Marquees ends -->
+
+    <!-- HTML Blocks -->
+    <div class= "container" style="margin-top:50px" id="html_blocks">
+      <h1 class= "xxxlarge text-red"><b>HTML Blocks</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Blocks </h2>
+      <p> &lt;div&gt; and &lt;span&gt; tags can be used to create block-level and inline element respectively and apply styles to the blocks individually. </p>
+      <p>Example of div tag: &lt;div&gt; This is a block &lt;/div&gt; </p>
+      <p>Example of span tag: &lt;p&gt; This is a &lt;span&gt; span. &lt;/span&gt;&lt;/p&gt; 
+      <p><strong> NB: These tags will make more relevance after we start styling these  elements using CSS </strong></p>
+    </div>
+    <!-- HTML Embed ends -->
+
+    <!-- HTML Exercises -->
+    <div class= "container" style="margin-top:50px" id="day3_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+    	<strong>Create a new HTML document</strong>
+    	<ol>
+    		<li> Add a table containing two rows and two columns. First row containing heading for columns "Hobbies" & "Interests" and second row with an unordered list of your hobbies in firt column and an ordered list of your favourite items in second column.</li>
+    		<li> Create a text link with text "View my FB Profile" below the table and link it to your Facebook profile.</li>
+    		<li> Create an image link with your own image below the "View my FB Profile" text and link it to your instagram profile. </li>
+    		<li> Add a marquee with a tagline that suits you the best. </li>
+    		<li> Create another HTML document and include the new created document using &lt;iframe&gt; </li>
+    		<strong>NB: Add suitable headings using &lt;h1&gt;...&lt;/h1&gt; to &lt;h3&gt;...&lt;/h3&gt; tags.</strong>
+    	</ol>
+    </div>
+    <!-- HTML Exercises ends -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <a id="bottom">This is the bottom</a>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>

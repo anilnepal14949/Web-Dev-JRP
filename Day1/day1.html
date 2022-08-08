@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 1</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#text_editors" onclick="closeSidebar()" class= "bar-item button hover-white">Text Editors</a> 
+      <a href="#git_github" onclick="closeSidebar()" class= "bar-item button hover-white">Git & Github</a> 
+      <a href="#html" onclick="closeSidebar()" class= "bar-item button hover-white">HTML</a> 
+      <a href="#html_syntax" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Syntax</a> 
+      <a href="#html_elements" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Elements</a> 
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- Text Editors -->
+    <div class= "container" style="margin-top:50px" id="text_editors">
+      <h1 class= "xxxlarge text-red"><b>Text Editors</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> About Text Editors </h2>
+      <p> Text editors are the programs that enable a user to create and edit text files. </p>
+      <p> In context of programming, text editors are referred as source code editors that include many special features for writing, editing and compiling code. </p>  
+      <h2> List of Text Editors </h2>
+      <p> Below are some of the text editors used in programming. </p>
+      <ul>
+        <li> VS Code </li>
+        <li> Sublime Text </li>
+        <li> Atom </li>
+        <li> PHPStorm </li>
+        <li> PyCharm </li> 
+      </ul>
+    </div>
+    <!-- Text editors ends -->
+
+    <!-- Git and Github -->
+    <div class= "container" style="margin-top:50px" id="git_github">
+      <h1 class= "xxxlarge text-red"><b>Git & Github</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> About Github </h2>
+      <p> Github is a company offering a cloud-based git repository that helps developers store, manage, track and control changes to their code. </p>
+      <p> Not let's understand two terms related to Github: </p>
+      <ul>
+        <li><strong>Version Control: </strong> Version control also refered as source control, is the process/method of tracking and managing changes/versions to the source code. </li>
+        <li><strong>Git:</strong> Git is a tool used for version control. In simple words, git is used for managing source codes in a cloud repository. </li>
+      </ul>
+      <h2> Commands used in Git: </h2>
+      <ul>
+        <li><strong> git init: </strong> Used to initialize current directory as a git repository </li>
+        <li><strong> git clone: </strong> Clone a git repository to local machine </li>
+        <li><strong> git add: </strong> Add files to staging area </li>
+        <li><strong> git commit: </strong> Commit the staged changes </li>
+        <li><strong> git push: </strong> Push the changes to the repository </li>
+        <li><strong> git pull: </strong> Fetch the files from the specified repository </li>
+        <li><strong> git status: </strong> List files staged, unstaged and untracked </li>
+      </ul>
+      <strong> NB: The commands listed above are the ones used frequently but not the only commands.  </strong>
+    </div>
+    <!-- git and github ends -->
+
+    <!-- HTML contents -->
+    <div class= "container" style="margin-top:50px" id="html">
+      <h1 class= "xxxlarge text-red"><b>HTML</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> About HTML </h2>
+      <p> HTML is a standard markup language used to create web pages. </p>
+      <h2> Course Contents: </h2>
+      <ol>
+        <li> Syntax of Markup Language </li>
+        <li> HTML Tags, Elements, Attributes and Comments </li>
+        <li> HTML Images </li>
+        <li> HTML Lists </li>
+        <li> HTML Tables </li>
+        <li> HTML Links </li>
+        <li> HTML Forms </li>
+        <li> HTML iFrames </li>
+        <li> HTML Blocks (div & span tag) </li>
+        <li> Styling HTML Tags using in-built attributes (bgcolor, width, fonts) </li>
+        <li> HTML Embed </li>
+        <li> HTML Marquees (deprecated in HTML5) </li>
+        <li> HTML Meta tags </li>      
+      </ol>
+      <strong> Project: Simple Website layout using HTML Tables </strong>
+    </div>
+    <!-- HTML Contents ends -->  
+
+    <!-- HTML Syntax -->
+    <div class= "container" style="margin-top:50px" id="html_syntax">
+      <h1 class= "xxxlarge text-red"><b>HTML Syntax</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> Simple HTML Document </h2>
+      <pre style="width: 500px;padding: 10px; border: 2px solid #de4e4e;">
+        <code>
+          &lt;!DOCTYPE html&gt; 
+          &lt;html&gt;
+          &lt;head&gt;
+            &lt;title>Sample Page Title&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            Sample Page Body
+          &lt;/body&gt;
+          &lt;/html&gt;
+        </code>
+      </pre>
+    </div>
+    <h3> Explanation </h3>
+    <p><strong> DOCTYPE </strong> is the document type, used to tell the browser to process html files.</p>
+    <p><strong> &lt;HTML&gt;..&lt;/html&gt; </strong> is the opening and ending of html document.</p>
+    <p><strong> &lt;head&gt;..&lt;/head&gt; </strong> is the head of a document. </p>
+    <p><strong> &lt;title&gt;..&lt;/title&gt; </strong> contains the title of any document. Title tag is always placed inside head tag.</p>
+    <p><strong> &lt;body&gt;..&lt;/body&gt; </strong> contains the body of a document. Body refers to content of the page. Anything that are displayed in a webpage is placed within body opening and closing tag.</p>
+    <!-- HTML Syntax -->  
+
+    <!-- HTML contents -->
+    <div class= "container" style="margin-top:50px" id="html_elements">
+      <h1 class= "xxxlarge text-red"><b>HTML Elements</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Anything from start tag to end tag and the content between those tags are known as elements. Example: &lt;html&gt;&lt;body&gt;&lt;p&gt;
+      <h2>Nested Elements</h2>
+      <p> An element within another element is known as nested element. Examples: &lt;head&gt;&lt;body&gt;</p>
+      <h2>Empty Elements</h2>
+      <p> Elements with no closing tags are known as empty elements. Examples: &lt;br&gt;&lt;hr&gt;</p>
+    </div>
+    <!-- HTML Contents ends --> 
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>
