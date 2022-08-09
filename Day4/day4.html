@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 4</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 4</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#html_media" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Media</a>
+      <a href="#html_semantics" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Semantics</a> 
+      <a href="#html_meta" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Meta Tags </a>
+      <a href="#html_forms" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Forms</a> 
+      <a href="#html_inputs" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Form Inputs</a>  
+      <a href="#html_forms_attributes" onclick="closeSidebar()" class= "bar-item button hover-white">HTML Input Attributes</a>  
+      <a href="#day4_exercises" onclick="closeSidebar()" class= "bar-item button hover-white">Exercises</a> 
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- HTML Media -->
+    <div class= "container" style="margin-top:50px" id="html_media">
+      <h1 class= "xxxlarge text-red"><b>HTML Media</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Media </h2>
+      <p> Multimedia files can also be embedded in a webpage. &lt;video&gt; and &lt;audio&gt; tags are used to embed videos and audios in a webpage respectively. </p>
+      <h2> Embedding Videos in a Webpage </h2>
+      <p> 
+        <pre>
+          &lt;video width="320" height="240" controls&gt;
+            &lt;source src="sample.mp4" type="video/mp4"&gt;
+            &lt;source src="sample.ogg" type="video/ogg"&gt;
+            Your browser does not support the video tag.
+          &lt;/video&gt; 
+        </pre>
+      </p>
+      <h2> Output </h2>
+      <video width="320" height="240" controls>
+        <source src="sample.mp4" type="video/mp4">
+        <source src="sample.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+      </video> 
+      <h2> Explanation </h2>
+      <p> In the example above, &lt;video&gt; tag is used to embed a video to the website. </p> 
+      <p>Inside the video tag, multiple source tags can be used to specify the source of the video with different types. Browsers will embed the first recognized type. The text inside the video tag is only displayed if the video tag is not supported. </p>
+      <h2> Attributes of Video Tag </h2>
+      <ul>
+        <li><strong>width:</strong> to specify the width of the video</li>
+        <li><strong>height:</strong> to specify the height of the video</li>
+        <li><strong>controls:</strong> to display the controls of the video</li>
+        <li><strong>autoplay:</strong> to autoplay the video</li>
+        <li><strong>muted:</strong> to mute of the video</li>
+        <li><strong>loop:</strong> to play the video in loop</li>
+      </ul>
+      <h2> Attributes of Source Tag </h2>
+      <ul>
+        <li><strong>src:</strong> to specify the source of the video</li>
+        <li><strong>type:</strong> to specify the type of the video; supported video formats: .mp4, .webm and .ogg.</li>
+      </ul>
+      <h2> Embedding Audios in a Webpage </h2>
+      <p> 
+        <pre>
+          &lt;audio controls&gt;
+            &lt;source src="sample.mpeg" type="audio/mpeg"&gt;
+            &lt;source src="sample.wav" type="audio/wav"&gt;
+            Your browser does not support the audio tag.
+          &lt;/audio&gt; 
+        </pre>
+      </p>
+      <h2> Output </h2>
+      <audio controls>
+        <source src="sample.mpeg" type="audio/mpeg">
+        <source src="sample.wav" type="audio/wav">
+        Your browser does not support the audio tag.
+      </audio> 
+      <h2> Explanation </h2>
+      <p> In the example above, &lt;audio&gt; tag is used to embed a audio to the website. </p> 
+      <p>Inside the audio tag, multiple source tags can be used to specify the source of the audio with different types. Browsers will embed the first recognized type. The text inside the audio tag is only displayed if the video tag is not supported. </p>
+      <h2> Attributes of Audio Tag </h2>
+      <ul>
+        <li><strong>controls:</strong> to display the controls of the audio</li>
+        <li><strong>autoplay:</strong> to autoplay the audio</li>
+        <li><strong>muted:</strong> to mute of the audio</li>
+        <li><strong>loop:</strong> to play the audio in loop</li>
+      </ul>
+      <h2> Attributes of Source Tag </h2>
+      <ul>
+        <li><strong>src:</strong> to specify the source of the audio</li>
+        <li><strong>type:</strong> to specify the type of the audio; supported audio formats: .mpeg, .wav and .ogg.</li>
+      </ul>
+    </div>
+    <!-- HTML Media ends -->
+
+    <!-- HTML Semantics -->
+    <div class= "container" style="margin-top:50px" id="html_semantics">
+      <h1 class= "xxxlarge text-red"><b>HTML Semantics</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Semantics </h2>
+      <p> With introduction of HTML5, various semantic elements have been introduced for creating the layout of a web document where non-semantic elements like table or div are still being commonly used for designing webpages. </p>
+      <h2> List of HTML Semantic Elements </h2>
+      <ol>
+        <li> article </li>
+        <li> aside </li>
+        <li> summary </li>
+        <li> details </li>
+        <li> figcaption </li>
+        <li> figure </li>
+        <li> footer </li>
+        <li> header </li>
+        <li> main </li>
+        <li> nav </li>
+        <li> section </li>
+      </ol>
+      <p> Most of the semantic elements like header, footer, section, article, nav and aside act as container to other elements and doesn't have their own specific styling unless styled using CSS. However, it is easier to identify what contents that section contain using these semantics. </p>
+      <p><strong>NB: The use of semantic elements is also helpful for SEO. </strong></p>
+      <!-- <details>
+        <summary>Epcot Center</summary>
+        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+      </details> -->
+    </div>
+    <!-- HTML Semantics ends -->
+
+    <!-- HTML Meta -->
+    <div class= "container" style="margin-top:50px" id="html_meta">
+      <h1 class= "xxxlarge text-red"><b>HTML Meta</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Meta </h2>
+      <p> &lt;meta&gt; tag is used to provide more information about a webpage or a website. meta tags are always included inside head elements to specify character set, page description, keywords, author of the document and viewport settings. </p>
+      <p> Contents from meta tag are not displayed in the webpage but is used by browsers, search engines or other web services. </p>
+      <h2> Attributes </h2>
+      <ul>
+      	<li>charset</li>
+      	<li>content</li>
+      	<li>name</li>
+      </ul>
+      <h2> Usage of meta tags </h2>
+      <p>
+        <pre>
+          &lt;head&gt;
+            &lt;meta name="charset" content="UTF-8"&gt;
+            &lt;meta name="description" content="Web Dev JRP | Day 4"&gt;
+            &lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;
+            &lt;meta name="author" content="Anil Nepal"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+          &lt;/head&gt;
+        </pre>
+      </p>
+    </div>
+    <!-- HTML Meta ends -->
+
+    <!-- HTML Forms -->
+    <div class= "container" style="margin-top:50px" id="html_forms">
+      <h1 class= "xxxlarge text-red"><b>HTML Forms</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Forms </h2>
+      <p> HTML Forms are used to collect information from the user. &lt;form&gt; tag is used for creating forms in HTML. </p>
+      <h2> Attributes of HTML Forms </h2>
+      <ul>
+        <li><strong>action:</strong> url for processing form data</li>
+        <li><strong>method:</strong> get|post</li>
+        <li><strong>target:</strong> _blank|_self </li>
+        <li><strong>autocomplete:</strong> on|off</li>
+        <li><strong>enctype:</strong> multipart/form-data|application/x-www-form-ulrencoded|text/plain</li>
+      </ul>
+      <h2> HTML Form Elements </h2>
+      <p> An HTML Form can have different elements inside it as listed below: </p>
+      <ul>
+        <li>input</li>
+        <li>label</li>
+        <li>select</li>
+        <li>option</li>
+        <li>optgroup</li>
+        <li>textarea</li>
+        <li>fieldset</li>
+        <li>legend</li>
+      </ul>
+      <h2> Label Element </h2>
+      <p> Label element is used to define a label for form elements. </p>
+      <p> Example: &lt;label for="name"&gt; Name: &lt;/label&gt;&lt;input type="text" id="name"&gt; will display <label for="name"> Name: </label><input type="text" id="name"></p>
+      <h2> Select Element </h2>
+      <p> Select element is used in HTML to display a list of options and let users select one or multiple options. </p>
+      <p><strong> Example: </strong></p>
+      <pre>
+        &lt;select&gt;
+          &lt;option value=""&gt; Choose an option &lt;/option&gt;
+          &lt;option value="HTML"&gt; HTML &lt;/option&gt;
+          &lt;option value="CSS"&gt; CSS &lt;/option&gt;
+        &lt;/select&gt;
+      </pre>
+      <p><strong> Output: </strong></p>
+      <select>
+        <option value=""> Choose an option </option>
+        <option value="HTML"> HTML </option>
+        <option value="CSS"> CSS </option>
+      </select>
+      <h2> Attributes </h2>
+      <ul>
+        <li>name</li>
+        <li>multiple</li>
+        <li>selected (for options)</li>
+      </ul>
+      <h2>Optgroup Element</h2>
+      <p> Optgroup is used inside select element when there is need to group the options.</p>
+      <p><strong>Example:</strong></p>
+      <pre>
+        &lt;select&gt;
+          &lt;optgroup label="Frontend"&gt;
+          &lt;option value="HTML"&gt; HTML &lt;/option&gt;
+          &lt;option value="CSS"&gt; CSS &lt;/option&gt;
+          &lt;optgroup label="Backend"&gt;
+          &lt;option value="PHP"&gt; PHP &lt;/option&gt;
+          &lt;option value="JSP"&gt; JSP &lt;/option&gt;
+        &lt;/select&gt;
+      </pre>
+      <strong> Output: </strong>
+      <select>
+        <optgroup label="Frontend">
+        <option value="HTML"> HTML </option>
+        <option value="CSS"> CSS </option>
+        <optgroup label="Backend">
+        <option value="PHP"> PHP </option>
+        <option value="JSP"> JSP </option>
+      </select>
+      <h2>Textarea Element</h2>
+      <p> This element can be used when a user needs to input long text. It displays a multi-line input field. </p>
+      <p>Example: &lt;textarea&gt;&lt;/textarea&gt; will display <br>
+        <textarea></textarea>
+      </p>
+      <h2> Attributes </h2>
+      <ul>
+        <li>name</li>
+        <li>rows</li>
+        <li>cols</li>
+      </ul>
+      <h2>Fieldset & Legend Elements</h2>
+      <p> Fieldset element is used to group related input fields in HTML and legend element provides the caption for the fieldset element. </p>
+      <p><strong>Example:</strong></p>
+      <pre>
+        &lt;fieldset&gt;
+          &lt;legend&gt; Personal Details &lt;/legend&gt;
+          &lt;label for="name"&gt; Name: &lt;/label&gt;&lt;input type="text"&gt;
+          &lt;label for="email"&gt; Email: &lt;/label&gt;&lt;input type="email"&gt;
+        &lt;/fieldset&gt;
+      </pre>
+      <p><strong>Output:</strong></p>
+      <fieldset>
+        <legend> Personal Details </legend>
+        <label for="name"> Name: </label><input type="text">
+        <label for="email"> Email: </label><input type="email">
+      </fieldset>
+    </div>
+      <!-- HTML Forms ends -->
+
+    <!-- HTML Form Inputs -->
+    <div class= "container" style="margin-top:50px" id="html_inputs">
+      <h1 class= "xxxlarge text-red"><b>HTML Inputs</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Input Elements </h2>
+      <p> HTML Forms can contain different types of input elements such as text field, date field, password field, checkboxes, radio buttons, submit buttons and others. </p>
+      <p> Example: &lt;input type="text"&gt; is used to create a text input. </p>
+      <h2> Different Input Types </h2>
+      <table>
+        <tr>
+          <td>
+            <ul>
+            	<li>text</li>
+              <li>email</li>
+            	<li>password</li>
+              <li>number</li>
+              <li>tel</li>
+              <li>url</li>
+              <li>search</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>radio</li>
+              <li>checkbox</li>
+            	<li>color</li>
+            	<li>date</li>
+            	<li>datetime-local</li>
+            	<li>file</li>
+            	<li>month</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>week</li>
+              <li>time</li>
+              <li>range</li>
+              <li>button</li>
+              <li>submit</li>
+              <li>reset</li>
+              <li>hidden</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <h2> Input Type Text: </h2>
+      <p> This is the default type of input in HTML. It displays a single-line text input field. </p>
+      <p> Example: <strong>&lt;input type="text"&gt;</strong> will display <input type="text"> </p>
+      <h2> Input Type Email: </h2>
+      <p> This type is used for input fields that should contain an e-mail address. </p>
+      <p> Example: <strong>&lt;input type="email"&gt;</strong> will display <input type="email"> </p>
+      <h2> Input Type Password: </h2>
+      <p> This input type is used to create a password field. </p>
+      <p> Example: <strong>&lt;input type="password"&gt;</strong> will display <input type="password"> </p>
+      <h2> Input Type Number: </h2>
+      <p> This input type is used to create and display a number field. </p>
+      <p> Example: <strong>&lt;input type="number"&gt;</strong> will display <input type="number"> </p>
+      <h2> Input Type Tel: </h2>
+      <p> This type is used for input fields that should contain a telephone number. </p>
+      <p> Example: <strong>&lt;input type="tel"&gt;</strong> will display <input type="tel"> </p>
+      <h2> Input Type Url: </h2>
+      <p> This type is used for input fields that should contain a url. </p>
+      <p> Example: <strong>&lt;input type="url"&gt;</strong> will display <input type="url"> </p>
+      <h2> Input Type Search: </h2>
+      <p> This input type is used for search fields. </p>
+      <p> Example: <strong>&lt;input type="search"&gt;</strong> will display <input type="search"> </p>
+      <h2> Input Type Radio: </h2>
+      <p> This type is used to display a radio button. Multiple radio buttons can be added to a webpage and let a user select one of multiple choices. </p>
+      <p> Example: <strong>&lt;input type="radio" name="gender"&gt; Male &lt;input type="radio" name="gender"&gt; Female</strong> will display <br> <input type="radio" name="gender"> Male <input type="radio" name="gender"> Female </p>
+      <h2> Input Type Checkbox: </h2>
+      <p> This type is used to display a checkbox. Multiple checkboxes can be added to a webpage and let a user select multiple choices. </p>
+      <p> Example: <strong>&lt;input type="checkbox"&gt; HTML &lt;input type="checkbox"&gt; CSS</strong> will display <br> <input type="checkbox"> HTML <input type="checkbox"> CSS </p>
+      <h2> Input Type Color: </h2>
+      <p> This input type is used to display a color selection input field. </p>
+      <p> Example: <strong>&lt;input type="color"&gt;</strong> will display <input type="color"> </p>
+      <h2> Input Type Date: </h2>
+      <p> It is used to display a date selection field. </p>
+      <p> Example: <strong>&lt;input type="date"&gt;</strong> will display <input type="date"></p>
+      <h2> Input Type Datetime-local: </h2>
+      <p> It is used to display a date and time selection field. </p>
+      <p> Example: <strong>&lt;input type="datetime-local"&gt;</strong> will display <input type="datetime-local"></p>
+      <h2> Input Type File: </h2>
+      <p> It is used to display a file selection field. </p>
+      <p> Example: <strong>&lt;input type="file"&gt;</strong> will display <input type="file"></p>
+      <h2> Input Type Month: </h2>
+      <p> It is used to display a month selection field. </p>
+      <p> Example: <strong>&lt;input type="month"&gt;</strong> will display <input type="month"></p>
+      <h2> Input Type Week: </h2>
+      <p> It is used to display a week selection field. </p>
+      <p> Example: <strong>&lt;input type="week"&gt;</strong> will display <input type="week"></p>
+      <h2> Input Type Time: </h2>
+      <p> It is used to display a time selection field. </p>
+      <p> Example: <strong>&lt;input type="time"&gt;</strong> will display <input type="time"></p>
+      <h2> Input Type Range: </h2>
+      <p> It is used to display a range selection field. </p>
+      <p> Example: <strong>0 &lt;input type="range"&gt; 100</strong> will display 0 <input type="range"> 100 </p>
+      <h2> Input Type Button: </h2>
+      <p> It is used to display a button. </p>
+      <p> Example: <strong>&lt;input type="button" value="New Button"&gt;</strong> will display <input type="button" value="New Button"></p>
+      <h2> Input Type Submit: </h2>
+      <p> It is used to display a submit button used to submit the form data for processing. </p>
+      <p> Example: <strong>&lt;input type="submit" value="Submit Form"&gt;</strong> will display <input type="submit" value="Submit Form"></p>
+      <h2> Input Type Reset: </h2>
+      <p> It is used to display a reset button. </p>
+      <p> Example: <strong>&lt;input type="reset" value="Reset"&gt;</strong> will display <input type="Reset" value="Reset"></p>
+      <h2> Input Type Hidden: </h2>
+      <p> It is used to create a hidden field. As the name suggests, this field is not visible in the webpage but can be used to send some data from form for processing. </p>
+      <p> Example: <strong>&lt;input type="hidden" name="hidden_value" value="15"</strong>&gt;</p>
+    </div>
+    <!-- HTML Form Inputs -->
+
+    <!-- HTML Input Attributes -->
+    <div class= "container" style="margin-top:50px" id="html_forms_attributes">
+      <h1 class= "xxxlarge text-red"><b>HTML Input Attributes</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> HTML Input Attributes </h2>
+      <ul>
+        <li>value</li>
+        <li>readonly</li>
+        <li>disabled</li>
+        <li>maxlength</li>
+        <li>min/max (Works with number, range, date, datetime-local, month, time and week)</li>
+        <li>multiple (Works with email, file)</li>
+        <li>accept (Works with file)</li>
+        <li>pattern (Works with text, date, search, url, tel, email and password)</li>
+        <li>placeholder (Works with text, search, url, tel, email and password)</li>
+        <li>required (Works with text, search, url, tel, email, password, date pickers, number, checkbox, radio and file)</li>
+        <li>step (Works with number, range, date, datetime-local, month, time and week)</li>
+        <li>autofocus</li>
+        <li>autocomplete</li>
+      </ul>
+      <h2>Examples:</h2>
+      <ol>
+        <li><strong> Input with value attribute </strong></li>
+        Name: <input type="text" value="Jadoo">
+        <li><strong> Input with value and readonly attributes </strong></li>
+        Name: <input type="text" value="Jadoo" readonly>
+        <li><strong> Input with value and disabled attributes </strong></li>
+        Name: <input type="text" value="Jadoo" disabled>
+        <li><strong> Input with maxlength attribute </strong></li>
+        Name: <input type="text" maxlength="15">
+        <li><strong> Input with min=15 and max=200 attributes </strong></li>
+        Price: <input type="number" min="15" max="200">
+        <li><strong> Input with multiple attribute </strong></li>
+        Select Files: <input type="file" multiple>
+        <li><strong> Input with multiple attribute </strong></li>
+        Select Images: <input type="file" accept=".jpg, .png">
+        <li><strong> Input with pattern attribute </strong></li>
+        Age: <input type="number" pattern="[0-9]{2}">
+        <li><strong> Input with placeholder attribute </strong></li>
+        Name: <input type="text" placeholder="Enter full name...">
+        <li><strong> Input with placeholder and required attributes </strong></li>
+        Name: <input type="text" placeholder="Enter full name..." required>
+        <li><strong> Input with step=10 attribute </strong></li>
+        Price: <input type="number" step="10">
+        <li><strong> Input with autofocus attribute </strong></li>
+        Name: <input type="text" placeholder="Enter full name..." autofocus>
+        <li><strong> Input with autocomplete attribute </strong></li>
+        Name: <input type="text" autocomplete="on">
+      </ol>
+    </div>
+    <!-- HTML Input Attributes end -->
+
+    <!-- HTML Exercises -->
+    <div class= "container" style="margin-top:50px" id="day4_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+    	<strong>Create a new HTML document</strong>
+    	<ol>
+    		<li> Create a form with fields first name, last name, password, email, phone, gender, date of birth, url of fb profile, list(checkboxes) of hobbies, description, choose a picture, a submit button and a reset button. </li>
+        <li> Make use of appropriate attributes based on input types. </li>
+    		<li> Use fieldset and legend wherever suitable. </li>
+    		<li> Add a video below the form with an appropriate heading. </li>
+    		<strong> NB: Use semantic elements wherever necessary to create the layout for the webpage. </strong>
+    	</ol>
+    </div>
+    <!-- HTML Exercises ends -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>
