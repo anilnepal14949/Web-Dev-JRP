@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Password Validation | Javascript </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="box">
+			<div class="inputBox">
+				<input type="password" id="pswrd" placeholder="Enter Password">
+				<span id="toggleBtn">Show</span>
+			</div>
+			<div class="validation">
+				<ul>
+					<li id="lower">At least one lowercase character</li>
+					<li id="upper">At least one uppercase character</li>
+					<li id="number">At least one number</li>
+					<li id="special">At least one special character</li>
+					<li id="length">At least 8 characters</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let pswrd = document.getElementById('pswrd');
+			let toggleBtn = document.getElementById('toggleBtn');
+
+			// show hide password
+			toggleBtn.onclick = function() {
+				if (pswrd.type === 'password') {
+					pswrd.setAttribute('type', 'text');
+					toggleBtn.innerHTML = 'Hide';
+				} else {
+					pswrd.setAttribute('type', 'password');
+					toggleBtn.innerHTML = 'Show';
+				}
+			}
+		</script>
+	</body>
+</html>

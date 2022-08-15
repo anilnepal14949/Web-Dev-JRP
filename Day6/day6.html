@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 6</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 6</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#about_css" onclick="closeSidebar()" class="bar-item button hover-white">About CSS</a>
+      <a href="#css_syntax" onclick="closeSidebar()" class="bar-item button hover-white">CSS Syntax</a>
+      <a href="#css_inclusion" onclick="closeSidebar()" class="bar-item button hover-white">CSS Inclusion</a>
+      <a href="#css_measurement_units" onclick="closeSidebar()" class="bar-item button hover-white">CSS Measurement Units</a>
+      <a href="#css_colors" onclick="closeSidebar()" class="bar-item button hover-white">CSS Colors</a>
+      <a href="#css_background" onclick="closeSidebar()" class="bar-item button hover-white">CSS Background</a>
+      <a href="#css_text" onclick="closeSidebar()" class="bar-item button hover-white">CSS Text</a>
+      <a href="#css_fonts" onclick="closeSidebar()" class="bar-item button hover-white">CSS Fonts</a>
+      <a href="#day6_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- About CSS -->
+    <div class= "container" style="margin-top:50px" id="about_css">
+      <h1 class= "xxxlarge text-red"><b>About CSS</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heet. CSS is used to control the style of a web document. </p> 
+      <h2> CSS Course Contents: </h2>
+      <ol>
+        <li> About CSS & Syntax of CSS</li>
+        <li> CSS Inclusion </li>
+        <li> CSS Measurement Units </li>
+        <li> CSS Colors and Backgrounds </li>
+        <li> CSS Texts and Fonts </li>
+        <li> CSS Margins and Paddings </li>
+        <li> CSS Borders </li>
+        <li> CSS Dimensions </li>
+        <li> CSS Shadow </li>
+        <li> CSS Lists </li>
+        <li> CSS Tables </li>
+        <li> CSS Links </li>
+        <li> CSS Forms </li>
+        <li> CSS Visibility & Positioning </li>
+        <li> CSS Animations </li>
+        <li> CSS Responsiveness </li>
+        <li> Introduction to Bootstrap </li>
+        <li><strong> CSS/Bootstrap Project </strong></li>
+      </ol>
+    </div>
+    <!-- About CSS ends -->
+
+    <!-- CSS Syntax -->
+    <div class= "container" style="margin-top:50px" id="css_syntax">
+      <h1 class= "xxxlarge text-red"><b>CSS Syntax</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> A CSS style is made of three parts: </p>
+      <ul>
+        <li><strong>Selector:</strong> A selector could be any HTML element that is to be styled. </li>
+        <li><strong>Property:</strong> A property refers to any type of HTML attribute.</li>
+        <li><strong>Value:</strong> Values are similar to the values of attributes. Each value is assigned to a property. </li>
+      </ul>
+      <p><strong>Example:</strong> table { background-color: yellow; }</p>
+      <p> In the example above, <strong>table</strong> is the selector, <strong>background-color</strong> is the property and <strong> yellow </strong> is the value of the background-color property. </p>
+      <p> The above example is similar to <strong>&lt;table bgcolor="yellow"&gt;</strong> </p>
+      <h2> Types of Selectors </h2>
+      <p> Selectors can be more than just html tags. Below are the various types of selectors used in selecting elements in CSS </p>
+      <h3> Type Selectors </h3>
+      <p> Type selector is used to select HTML tags as shown in the example above. </p>
+      <p><strong>Example:</strong> h1 { color: blue; } </p>
+      <p> In the example above h1 is a type selector as h1 is an HTML tag </p>
+      <h3> Universal Selectors </h3>
+      <p> If there is a need to specify some styles for all the elements in a page, a universal selector can be used </p>
+      <p><strong>Example: </strong> * { color: black; } </p>
+      <p> In the example above, an asterick (*) is used as universal selector </p>
+      <h3> Descendant Selectors </h3>
+      <p> If we need to style an element nested inside another element. </p>
+      <p><strong> Example: </strong> If we want to style li elements inside ul element, ul li { width: 100px } can be used.</p>
+      <h3>Class Selectors</h3>
+      <p> Based on the values of class attribute, the styles can be applied selecting that class attribute value. </p>
+      <p><strong>Example: </strong> Let's say we have a tag, &lt;p class="para"&gt;, we can select the para class using CSS and style the p tag: .para { color: red; } </p>
+      <h3> ID Selectors </h3>
+      <p> Like class selectors, id attribute's value can also be used as selector and style the element with id attribute. </p>
+      <p><strong>Example: </strong> In an HTML element, &lt;h1 id="heading1"&gt;, we can use CSS to select heading1 and style h1: #heading1 { color: purple; } </p>
+      <h3> Child Selectors </h3>
+      <p> Child Selectors act similar to descendant selectors except child selectors select the direct child of the selector and not the ones nested inside other elements. </p>
+      <p><strong>Example: </strong> Let's say we have following HTML elements: </p>
+      <p> 
+        <pre>
+          &lt;div class="paras"&gt;
+            &lt;p&gt; This is a para &lt;/p&gt;
+            &lt;p&gt; This is para2 &lt;/p&gt;
+            &lt;div class="next_para"&gt;
+              &lt;p&gt; This is inside next_para &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        </pre>
+      </p> 
+      <p> If we use child selector: .paras > p { color: blue; }, then it would not affect the p tag inside div with next_para class as it is not the direct child of paras div.</p> 
+      <p> However, if we use descendant selector, .paras p { color: blue; }, then it would apply the style to all the p tags inside paras class even if it is not the direct child. </p>
+      <h3> Attribute Selector </h3>
+      <p> Sometimes, there may be need to apply styles to particular attributes. </p>
+      <p><strong>Example: </strong> If we want to select all inputs with type text, we can use: input[type="text"] { width: 200px; } </p>
+      <p> In the example above, input[type="text"] is an attribute selector. </p>
+      <h2> Commenting CSS </h2>
+      <p> /*.....*/ can be used to comment CSS styles. </p>
+      <p><strong> Example: </strong> table { /* border-color: red; */ }</p>
+    </div>
+    <!-- CSS Syntax ends -->
+
+    <!-- CSS Inclusion -->
+    <div class= "container" style="margin-top:50px" id="css_inclusion">
+      <h1 class= "xxxlarge text-red"><b>CSS Inclusion</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS can be used in an HTML document in following ways: </p>
+      <h3> Inline CSS </h3>
+      <p> CSS can be applied to an HTML element in the element itself using style attribute. </p>
+      <p><strong>Example:</strong> &lt;p style="color: red;"&gt;This is a red text&lt;/p&gt;</p>
+      <h3>Internal CSS</h3>
+      <p> Also known as embedded CSS, the styles are applied to all the elements inside a particular document. </p>
+      <p><strong>Example: </strong> Let's assume we have an HTML document index.html and we are applying embedded CSS to the page using:</p>
+      <p>
+        <pre>
+          &lt;head&gt;
+            &lt;style type="text/css" media="all"&gt;
+              h1 {
+                color: white;
+                background-color: blue;
+              }
+            &lt;/style&gt;
+          &lt;/head&gt;
+        </pre>
+      </p>
+      <p> In the example above, the style will be applied to all the h1 tags in index.html. However, if we have h1 tag in another HTML document contact.html, then we need to style h1 in contact.html again.</p>
+      <h3> External CSS </h3>
+      <p> Using Embedded CSS would be okay if we don't want to have styles limited to a particular HTML document. </p>
+      <p> However, if we have to use the same styles again and again in other documents as well then, the code replication is not a good practice. </p>
+      <p> To resolve this, we can create an external CSS and link it to any HTML document that requires the styles using &lt;link&gt; tag. </p>
+      <p><strong>Example:</strong>&lt;link type="text/css" href="styles.css" media="all" /&gt;</p>
+      <p> The example above links an external CSS file styles.css. <strong>&lt;link&gt; tag should be used inside head element.</strong></p>
+      <h3> Imported CSS </h3>
+      <p> @import can be used to import an external CSS file/stylesheet similar to &lt;link&gt; element. </p>
+      <p><strong>Example:</strong> @import "styles.css"; </p>
+      <h2> Overriding CSS Rules </h2>
+      <p> As we can see different methods can be used to include styles in an HTML document. Let's see the overriding rules: </p>
+      <ul>
+        <li> Any inline style takes the highest priority i.e., if an element has inline style and also has style declared in embedded style element or in an external stylesheet, then the inline style will override other styles.</li>
+        <li> Any rule defined in embedded style element will override rules defined in an external stylesheet.</li>
+        <li> Any rule defined in an external CSS takes the least priority and will be applied only when the above two rules are not applicable. </li>
+      </ul>
+    </div>
+    <!-- CSS Inclusion -->
+
+    <!-- CSS Measurement Units -->
+    <div class= "container" style="margin-top:50px" id="css_measurement_units">
+      <h1 class= "xxxlarge text-red"><b>CSS Measurement Units</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Measurement Units play a very important role in creating an attractive and responsive design. </p>
+      <table cellspacing="5" cellpadding="10" border="1">
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Unit</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="6"> Absolute Units </th>
+          </tr>
+          <tr>
+            <td>cm</td>
+            <td>Defines a measurement in centimeters (cm) </td>
+            <td>table { margin-top: 20cm } </td>
+          </tr>
+          <tr>
+            <td>mm</td>
+            <td>Defines a measurement in millimeters (mm) </td>
+            <td>table { margin-top: 20mm } </td>
+          </tr>
+          <tr>
+            <td>in</td>
+            <td>Defines a measurement in inches (in) </td>
+            <td>table { margin-top: 2in } </td>
+          </tr>
+          <tr>
+            <td>px</td>
+            <td>Defines a measurement in pixels (px=1/96 of 1in) </td>
+            <td>table { margin-top: px } </td>
+          </tr>
+          <tr>
+            <td>pt</td>
+            <td>Defines a measurement in points (pt=1/72 of 1in) </td>
+            <td>table { margin-top: 20pt } </td>
+          </tr>
+          <tr>
+            <th rowspan="6"> Relative Units </th>
+          </tr>
+          <tr>
+            <td>%</td>
+            <td>Defines a measurement as percentage relative to another value</td>
+            <td>h1 { font-size: 20px; line-height: 50% } </td>
+          </tr>
+          <tr>
+            <td>em</td>
+            <td>Defines a measurement relative to the font-size of the element</td>
+            <td>p { font-size:10px; line-height: 2em } <br> here, 2em = 2x10=20px </td>
+          </tr>
+          <tr>
+            <td>rem</td>
+            <td>Defines a measurement relative to the font-size of the root element</td>
+            <td>html { font-size: 16px; }  table td { font-size: 3rem; } <br> here, since html is the root element, td of table will have 3rem = 3x16=48px </td>
+          </tr>
+          <tr>
+            <td>vw</td>
+            <td>Defines a measurement relative to the viewport width of the device</td>
+            <td>h1 { font-size:10vw; } </td>
+          </tr>
+          <tr>
+            <td>vh</td>
+            <td>Defines a measurement relative to the viewport height of the device</td>
+            <td>h1 { font-size:10vh; } </td>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- CSS Measurement Units -->
+
+    <!-- CSS Colors -->
+    <div class= "container" style="margin-top:50px" id="css_colors">
+      <h1 class= "xxxlarge text-red"><b>CSS Colors</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS uses color values to specify a color for text color, border color or for the background of any element. </p>
+      <p> CSS uses different formats to specify color values. </p>
+      <table cellpadding="10" cellspacing="5" border="1">
+        <thead>
+          <tr>
+            <th> Format </th>
+            <th> Syntax </th>
+            <th> Example </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> Keyword </td>
+            <td> Name of color (black, white, red, etc.) </td>
+            <td> p { color: white; } </td>
+          </tr>
+          <tr>
+            <td> Hex Code </td>
+            <td> #RRGGBB </td>
+            <td> p { color: #FFFFFF; } </td>
+          </tr>
+          <tr>
+            <td> Short Hex Code </td>
+            <td> #RGB </td>
+            <td> p { color: #FFF; } </td>
+          </tr>
+          <tr>
+            <td> RGB </td>
+            <td> rgb(rrr, ggg, bbb) </td>
+            <td> p { color: rgb(255,255,255); } </td>
+          </tr>
+          <tr>
+            <td> RGBA </td>
+            <td> rgba(rrr, ggg, bbb, a); a stands for alpha </td>
+            <td> p { rgba(255, 255, 255, 1); } </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- CSS Colors end -->
+
+    <!-- CSS Backgrounds -->
+    <div class= "container" style="margin-top:50px" id="css_background">
+      <h1 class= "xxxlarge text-red"><b>CSS Backgrounds</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS allows user to set background for any element in HTML using different background properties. </p>
+      <h2> Background Properties </h2>
+      <ul>
+        <li><strong> background-color: </strong> Used to set the background color of an element. </li>
+        <li><strong>background-image: </strong> Used to set the background image of an element. </li>
+        <li><strong> background-repeat:</strong> Used to control the repetition of the background image. Values: repeat, repeat-x, repeat-y, no-repeat </li>
+        <li><strong> background-position: </strong> Used to control the position of the background image. Values: left top, left center, left bottom, right top, right center, right bottom, center top, center center, center bottom </li>
+        <li><strong> background-attachment: </strong> Used to control the scrolling of the background image. Values are fixed, scroll </li>
+        <li><strong> background-size: </strong> Used to control the scrolling of the background image. Values are cover, contain </li>
+      </ul>
+      <h2> Examples: </h2>
+      <h3> Set the Background Color: </h3>
+      <p>
+        <pre>
+          &lt;p style="background-color: lightblue"&gt;
+            This text has a lightblue background. 
+          &lt;/p&gt;
+        </pre>
+      </p>
+      <p>
+        <strong> Output: </strong>
+        <p style="background-color: lightblue"> 
+          This text has a lightblue background. 
+        </p>
+      </p>
+      <h3> Set the Background Image: </h3>
+      <p>
+        <pre>
+          &lt;div style="color: #FFF; background-image: url('../Day3/tech.jpg')"&gt;
+            This div has a background image. 
+          &lt;/div&gt;
+        </pre>
+      </p>
+      <p>
+        <strong> Output: </strong>
+        <div style="color: #FFF; background-image: url('../Day3/tech.jpg')">
+          This div has a background image. 
+        </div>
+      </p>
+      <h3> Set the Background Repeat: </h3>
+      <p>
+        <pre>
+          &lt;div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-repeat: repeat;"&gt;
+            This div has a background image. 
+          &lt;/div&gt;
+        </pre>
+      </p>
+      <p>
+        <strong> Output: </strong>
+        <div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-repeat: repeat;">
+          This div has a background repeat. 
+        </div>
+      </p>
+      <h3> Set the Background Position: </h3>
+      <p>
+        <pre>
+          &lt;div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-position: top center;"&gt;
+            This div has a background position set to center center. 
+          &lt;/div&gt;
+        </pre>
+      </p>
+      <p>
+        <strong> Output: </strong>
+        <div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-position: center center;">
+          This div has a background position set to center center. 
+        </div>
+      </p>
+      <h3> Set the Background Attachment: </h3>
+      <p>
+        <pre>
+          &lt;div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-position: top center; background-attachment: fixed"&gt;
+            &lt;p&gt;This div has a background attachment set to fixed. &lt;/p&gt;
+          &lt;/div&gt;
+        </pre>
+      </p>
+      <p>
+        <strong> Output: </strong>
+        <div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-position: top center; background-attachment: fixed">
+          <p>This div has a background attachment set to fixed. </p>
+        </div>
+      </p>
+      <h3> Set the Background Size: </h3>
+      <p>
+        <pre>
+          &lt;div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;"&gt;
+            &lt;p&gt;This div has a background size set to cover. &lt;/p&gt;
+          &lt;/div&gt;
+        </pre>
+      </p>
+      <p>
+        <strong> Output: </strong>
+        <div style="height: 200px; color: #FFF; background-image: url('../Day3/tech.jpg'); background-position:  center; background-repeat: no-repeat; background-size: cover;">
+          <p>This div has a background size set to cover. </p>
+        </div>
+      </p>
+      <h3> Set the Background using shorthand property: </h3>
+      <p> When using shorthand property, the order of the property values must be: </p>
+      <ul>
+        <li> background-color </li>
+        <li> background-image </li>
+        <li> background-repeat </li>
+        <li> background-attachment </li>
+        <li> background-position </li>
+      </ul>
+      <p>
+        <pre>
+          &lt;div style="height: 200px; color: #FFF; background: url('../Day3/tech.jpg') no-repeat scroll center;"&gt;
+            &lt;p&gt;This div has a background image set using shorthand property. &lt;/p&gt;
+          &lt;/div&gt;
+        </pre>
+      </p>
+    </div>
+    <!-- CSS Backgrounds end -->
+
+    <!-- CSS Text -->
+    <div class= "container" style="margin-top:50px" id="css_text">
+      <h1 class= "xxxlarge text-red"><b>CSS Text</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS can be used to manipulate text using different text properties. </p>
+      <ul>
+        <li><strong>color:</strong> Used to set the color of the text.</li>
+        <li><strong>text-align:</strong> Used to set the align of the text</strong></li>
+        <li><strong>text-indent:</strong> Used to indent the text in a paragraph. </li>
+        <li><strong>text-decoration: </strong> Used to underline, overline and strikethrough text.</li>
+        <li><strong>text-transform:</strong> Used to capitalize text, convert text to lowercase or uppercase letters.</li>
+        <li><strong>letter-spacing:</strong> Used to manage spaces between letters in a word.</li>
+        <li><strong>word-spacing:</strong> Used to manage spaces between words in a paragraph.</li>
+        <li><strong>text-shadow:</strong> Used to set the text shadow around the text.</li>
+      </ul>
+      <h2>Examples:</h2>
+      <h3> Set the text color: </h3>
+      <p>
+        <pre>
+          &lt;p style="color: red;"&gt; This is a red text. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="color: red;"> This is a red text. </p>
+      <h3> Set the text alignment: </h3>
+      <p>
+        <pre>
+          &lt;p style="text-align: center;"&gt; This is a centered text. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="text-align: center;"> This is a centered text. </p>
+      <h3> Set the text indent: </h3>
+      <p>
+        <pre>
+          &lt;p style="text-indent: 15px;"&gt; This is an indented text &lt;br&gt; and this is text under that. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="text-indent: 15px;"> This is an indented text <br> and this is text under that. </p>
+      <h3> Set the text decoration: </h3>
+      <p>
+        <pre>
+          &lt;p style="text-decoration: underline;"&gt; This is an underlined text. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="text-decoration: underline;"> This is an underlined text.</p>
+      <h3> Set the text transform: </h3>
+      <p>
+        <pre>
+          &lt;p style="text-tranform: uppercase;"&gt; This text will be in uppercase. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="text-transform: uppercase;"> This text will be in uppercase.</p>
+      <h3> Set the letter spacing: </h3>
+      <p>
+        <pre>
+          &lt;p style="letter-spacing: 5px;"&gt; This text is using letter spacing. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="letter-spacing: 5px;"> This text is using letter spacing.</p>
+      <h3> Set the word spacing: </h3>
+      <p>
+        <pre>
+          &lt;p style="word-spacing: 5px;"&gt; This text is using word spacing. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="word-spacing: 5px;"> This text is using word spacing.</p>
+      <h3> Set the text shadow: </h3>
+      <p>
+        <pre>
+          &lt;p style="text-shadow: 2px 5px 3px blue;"&gt; This text is using text shadow. &lt;/p&gt;
+        </pre>
+      </p>
+      <p><strong>Output:</strong></p>
+      <p style="text-shadow: 2px 5px 3px blue;"> This text is using text shadow. </p>
+      <p>In the example above, 2px is the <strong>horizontal offset</strong>, 5px is the <strong>vertical offset</strong>, 3px is the <strong>blur</strong> and blue is the <strong>color</strong>.</p>
+    </div>
+    <!-- CSS Text end  -->
+
+    <!-- CSS Fonts -->
+    <div class= "container" style="margin-top:50px" id="css_fonts">
+      <h1 class= "xxxlarge text-red"><b>CSS Fonts</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS can also be used to set different font styles to a text or paragraph in HTML. </p>
+      <ul>
+        <li><strong>font-size:</strong> Used to manage the size of a font</li>
+        <li><strong>font-weight:</strong> Used to manage the boldness of a font</li>
+        <li><strong>font-family:</strong> Used to set the face of a font</li>
+        <li><strong>font-style:</strong> Used to make a font italic or oblique</li>
+        <li><strong>font-variant:</strong> Used to create a small-caps effect</li>
+      </ul>
+      <h2> Examples: </h2>
+      <h3> Set the font size </h3>
+      <p style="white-space: pre">
+        &lt;p style="font-size: 20px;"&gt; This text has font size 20px. &lt;/p&gt;
+      </p>
+      <p>Output:</p>
+      <p style="font-size: 20px;"> This text has font size 20px. </p>
+      <h3> Set the font weight </h3>
+      <p style="white-space: pre">
+        &lt;p style="font-weight: 800;"&gt; This text has font weight 800. &lt;/p&gt;
+      </p>
+      <p>Output:</p>
+      <p style="font-weight: 800;"> This text has font weight 800. </p>
+      <h3> Set the font family </h3>
+      <p style="white-space: pre">
+        &lt;p style="font-family: Verdana;"&gt; This text has font family Verdana. &lt;/p&gt;
+      </p>
+      <p>Output:</p>
+      <p style="font-family: Verdana;"> This text has font family Verdana. </p>
+      <h3> Set the font style </h3>
+      <p style="white-space: pre">
+        &lt;p style="font-style: italic;"&gt; This text has font style italic. &lt;/p&gt;
+      </p>
+      <p>Output:</p>
+      <p style="font-style: italic;"> This text has font style italic. </p>
+      <h3> Set the font variant </h3>
+      <p style="white-space: pre">
+        &lt;p style="font-variant: small-caps;"&gt; This text has font variant small-caps. &lt;/p&gt;
+      </p>
+      <p>Output:</p>
+      <p style="font-variant: small-caps;"> This text has font variant small-caps. </p>
+    </div>
+    <!-- CSS Fonts end -->
+
+    <!-- Day6 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day6_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p><strong> Create a new HTML document and: </strong></p>
+      <ol>
+        <li> Create a new CSS file and link in the HTML document </li>
+        <li> Create a new div and set the width and height of the div using viewport width and viewport height units. </li>
+        <li> Add some text, set the text color inside the div white and background color to green (use rgb/rgba) </li>
+        <li> Create another div and set the suitable width and height </li>
+        <li> Set a fixed background image with no repetition to the div </li>
+        <li> Add some text and style them using font and text properties. </li>
+      </ol>
+    </div>
+    <!-- Day6 Exercises -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>
