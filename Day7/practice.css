@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+.test {
+	min-width: 300px;
+	width: 300px;
+	min-height: 100px;
+	background-color: rgb(200,50,40);
+	margin: 40px 20px;
+	margin: auto;
+	color: white;
+	padding-top: 20px;
+	padding-right: 30px;
+	padding-bottom: 40px;
+	padding-left: 50px;
+	border-style: groove;
+	border-color: black;
+	border-width: 10px;
+	border-top-style: double;
+	border-top-color: #254875;
+	border-top-width: 5px;
+	border-radius: 10px;
+	line-height: 40px;
+	box-shadow: 5px 5px 10px #555;
+	font-size: 20px;
+}
+
+.test ul {
+	list-style-type: disc;
+	list-style-position: outside;
+	list-style-image: url('list_style_image.png');
+}
+
+.test ol {
+	list-style-type: upper-roman;
+	list-style-position: inside;
+	list-style-image: url('list_style_image.png');
+}

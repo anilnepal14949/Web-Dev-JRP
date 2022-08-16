@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 7</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 7</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#css_margins" onclick="closeSidebar()" class="bar-item button hover-white">CSS Margins</a>
+      <a href="#css_paddings" onclick="closeSidebar()" class="bar-item button hover-white">CSS Paddings</a>
+      <a href="#css_borders" onclick="closeSidebar()" class="bar-item button hover-white">CSS Borders</a>
+      <a href="#css_dimensions" onclick="closeSidebar()" class="bar-item button hover-white">CSS Dimensions</a>
+      <a href="#css_shadow" onclick="closeSidebar()" class="bar-item button hover-white">CSS Shadow</a>
+      <a href="#css_lists" onclick="closeSidebar()" class="bar-item button hover-white">CSS Lists</a>
+      <a href="#day7_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- CSS Margins -->
+    <div class= "container" style="margin-top:50px" id="css_margins">
+      <h1 class= "xxxlarge text-red"><b>CSS Margins</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS margin properties are used to create space around elements, outside the element. </p>
+      <h2> CSS margin Properties: </h2>
+      <ul>
+        <li> margin-top </li>
+        <li> margin-right </li>
+        <li> margin-bottom </li>
+        <li> margin-left </li>
+        <li> margin(shorthand) </li>
+      </ul>
+      <p><strong> All the margin properties can have auto, length in px, pt, cm, etc., % and inherit values. Also, negative values are allowed too. </strong></p>
+      <h2> Example: </h2>
+      <div style="white-space: pre;">
+        &lt;div style="background-color: blue; color: white; margin-top:20px; margin-right: 30px; margin-bottom: 25px; margin-left: 40px;"&gt;
+          This section has margins implemented.
+        &lt;/div&gt;
+      </div>
+      <p><strong>With margins:</strong></p>
+      <div style="background-color: blue; color: white; margin-top:20px; margin-right: 30px; margin-bottom: 25px; margin-left: 40px;">
+        This section has margins implemented.
+      </div>
+      <p><strong>Without margins:</strong></p>
+      <div style="background-color: blue; color: white;">
+        This section has margins implemented.
+      </div>
+    </div>
+    <!-- CSS margins ends -->
+
+    <!-- CSS Paddings -->
+    <div class= "container" style="margin-top:50px" id="css_paddings">
+      <h1 class= "xxxlarge text-red"><b>CSS Paddings</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS padding properties are used to create space inside elements. </p>
+      <h2> CSS padding Properties: </h2>
+      <ul>
+        <li> padding-top </li>
+        <li> padding-right </li>
+        <li> padding-bottom </li>
+        <li> padding-left </li>
+        <li> padding(shorthand) </li>
+      </ul>
+      <p><strong> All the padding properties can have auto, length in px, pt, cm, etc., % and inherit values. Negative values arenot allowed. </strong></p>
+      <h2> Example: </h2>
+      <div style="white-space: pre;">
+        &lt;div style="background-color: blue; color: white; padding-top:20px; padding-right: 30px; padding-bottom: 25px; padding-left: 40px;"&gt;
+          This section has paddings implemented.
+        &lt;/div&gt;
+      </div>
+      <p><strong>With paddings:</strong></p>
+      <div style="background-color: blue; color: white; padding-top:20px; padding-right: 30px; padding-bottom: 25px; padding-left: 40px;">
+        This section has paddings implemented.
+      </div>
+      <p><strong>Without paddings:</strong></p>
+      <div style="background-color: blue; color: white;">
+        This section has margins implemented.
+      </div>
+    </div>
+    <!-- CSS paddings ends -->
+
+    <!-- CSS borders -->
+    <div class= "container" style="margin-top:50px" id="css_borders">
+      <h1 class= "xxxlarge text-red"><b>CSS Borders</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS border properties are used to specify the style, size and color of an element's border. </p>
+      <h2> CSS border Properties: </h2>
+      <ul>
+        <li> border-style </li>
+        <li> border-width </li>
+        <li> border-color </li>
+        <li> border(shorthand) </li>
+        <li> border-radius </li>
+      </ul>
+      <h2> CSS border-style Property: </h2>
+      <p> The border-style property accepts following values: </p>
+      <ul>
+        <li> dotted </li>
+        <li> dashed </li>
+        <li> solid </li>
+        <li> double </li>
+        <li> groove </li>
+        <li> ridge</li>
+        <li> inset </li>
+        <li> outset </li>
+        <li> none </li>
+        <li> hidden </li>
+      </ul>
+      <h2> CSS border Property: </h2>
+      <p> The border property is the shorthand property to define a border around an element in CSS. The border property should be written in the following order: border-width, border-style and border-color. </p>
+      <h3> Example of border property: </h3>
+      <div style="white-space: pre;">
+        &lt;div style="border: 5px solid blue"&gt;
+          This section has blue border.
+        &lt;/div&gt;
+      </div>
+      <p><strong>Output:</strong></p>
+      <div style="border: 5px solid blue">
+        This section has blue border.
+      </div>
+      <h2> Borders on Individual sides: </h2>
+      <p> If there is a need to have different border styles, widths or colors for different sides, we can use following properties: </p>
+      <ul>
+        <li> border-top-style/width/color </li>
+        <li> border-right-style/width/color </li>
+        <li> border-bottom-style/width/color </li>
+        <li> border-left-style/width/color </li>
+      </ul>
+      <h3> Example: </h3>
+      <div style="white-space: pre;">
+        &lt;div style="border-top-style: dotted; border-right-style: double; border-bottom-style: solid; border-left-style: groove;
+        border-top-color: blue; border-right-color: red; border-bottom-color: yellow; border-left-color: purple;"&gt;
+          This section has different borders on different sides.
+        &lt;/div&gt;
+      </div>
+      <p><strong>Output:</strong></p>
+      <div style="border-top-style: dotted; border-right-style: double; border-bottom-style: solid; border-left-style: groove; border-top-color: blue; border-right-color: red; border-bottom-color: yellow; border-left-color: purple;">
+        This section has different borders on different sides.
+      </div>
+      <h2> border-radius Property: </h2>
+      <p> The border-radius property is used to add rounded borders to an element. </p>
+      <h3> Examples </h3>
+      <p style="white-space: pre;">
+        &lt;div style="border: 3px solid red; padding: 10px;"&gt;
+          This is normal border.
+        &lt;/div&gt; 
+      </p>
+      <div style="border: 3px solid red; padding: 10px;">
+        This is normal border.
+      </div>
+      <p style="white-space: pre;">
+        &lt;div style="border: 3px solid red; padding: 10px; border-radius: 10px;"&gt;
+          This is rounded border.
+        &lt;/div&gt; 
+      </p>
+      <div style="border: 3px solid red; padding: 10px; border-radius: 10px;">
+        This is rounded border.
+      </div> 
+    </div>
+    <!-- CSS borders ends -->
+
+    <!-- CSS Dimentions -->
+    <div class= "container" style="margin-top:50px" id="css_dimensions">
+      <h1 class= "xxxlarge text-red"><b>CSS Dimensions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS dimension properties are used to control the dimensions of an element. </p>
+      <h2> CSS Dimension Properties: </h2>
+      <ul>
+        <li><strong>height:</strong> Set the height of an element</li>
+        <li><strong>width:</strong> Set the width of an element</li>
+        <li><strong>line-height:</strong> Set the height of a line in a text</li>
+        <li><strong>max-height:</strong> Set the maximum height of an element.</li>
+        <li><strong>min-height:</strong> Set the minimum height of an element.</li>
+        <li><strong>max-width:</strong> Set the maximum width of an element.</li>
+        <li><strong>min-width:</strong> Set the minimum width of an element.</li>
+      </ul>
+      <h2> height and width properties: </h2>
+      <p> height and width properties sets the height and width of a box and can take values of a length, percentage and auto. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;div style="width: 20%; height: 300px; border: 1px solid red;"&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width: 20%; height: 100px; border: 1px solid red;">
+      </div>
+      
+      <h2> line-height property: </h2>
+      <p> line-height property sets the height of the line in a text and can take values of a length or a percentage. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;div style="width: 20%; height: 100px; border: 1px solid red;"&gt;
+          &lt;p style="line-height: 30px"&gt;
+            Here is the first line of text &lt;br&gt;
+            Here is the second line of text.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width: 20%; height: 100px; border: 1px solid red;">
+        <p style="line-height: 40px">
+          Here is the first line of text <br>
+          Here is the second line of text.
+        </p>
+      </div>
+
+      <h2> max-height property: </h2>
+      <p> max-height property sets the maximum height of a box and can take values of a length or a percentage. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;div style="width: 20%; max-height: 100px; border: 1px solid red;"&gt;
+          &lt;p style="line-height: 30px"&gt;
+            Here is the first line of text &lt;br&gt;
+            Here is the second line of text. &lt;br&gt;
+            Here is the third line of text.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width: 20%; max-height: 100px; border: 1px solid red;">
+        <p style="line-height: 40px">
+          Here is the first line of text <br>
+          Here is the second line of text. <br>
+          Here is the third line of text.
+        </p>
+      </div>
+
+      <h2 style="margin-top:40px;"> min-height property: </h2>
+      <p> min-height property sets the minimum height of a box and can take values of a length or a percentage. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;div style="width: 20%; min-height: 100px; border: 1px solid red;"&gt;
+          &lt;p style="line-height: 30px"&gt;
+            Here is the first line of text &lt;br&gt;
+            Here is the second line of text. &lt;br&gt;
+            Here is the third line of text.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width: 20%; min-height: 100px; border: 1px solid red;">
+        <p style="line-height: 40px">
+          Here is the first line of text <br>
+          Here is the second line of text. <br>
+          Here is the third line of text.
+        </p>
+      </div>
+
+      <h2> max-width property: </h2>
+      <p> max-width property sets the maximum width of a box and can take values of a length or a percentage. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;div style="max-width: 20%; min-height: 100px; border: 1px solid red;"&gt;
+          &lt;p style="line-height: 30px"&gt;
+            Here is the first line of text and is very long. &lt;br&gt;
+            Here is the second line of text. &lt;br&gt;
+            Here is the third line of text.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="max-width: 20%; min-height: 100px; border: 1px solid red;">
+        <p style="line-height: 40px">
+          Here is the first line of text and is very long. <br>
+          Here is the second line of text. <br>
+          Here is the third line of text.
+        </p>
+      </div>
+
+      <h2> min-width property: </h2>
+      <p> min-width property sets the minimum width of a box and can take values of a length or a percentage. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;div style="min-width: 20%; min-height: 100px; border: 1px solid red;"&gt;
+          &lt;p style="line-height: 30px"&gt;
+            Here is the first line of text and is very long. &lt;br&gt;
+            Here is the second line of text. &lt;br&gt;
+            Here is the third line of text.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="min-width: 200px; min-height: 100px; border: 1px solid red;">
+        <p style="line-height: 40px">
+          Here is the first line of text and is very long <br>
+          Here is the second line of text. <br>
+          Here is the third line of text.
+        </p>
+      </div>
+    </div>
+    <!-- CSS dimensions ends -->
+
+    <!-- CSS Shadow -->
+    <div class= "container" style="margin-top:50px" id="css_shadow">
+      <h1 class= "xxxlarge text-red"><b>CSS Shadow</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS shadow properties are used to apply shadows to an element. </p>
+      <h2> CSS shadow Properties: </h2>
+      <ul>
+        <li> text-shadow </li>
+        <li> box-shadow </li>
+      </ul>
+      <h2> box-shadow property </h2>
+      <p> The box-shadow property is used to apply shadows to an element. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;div style="width: 20%; height: 100px; color:#fff; background-color: #002547; box-shadow: 3px 5px 10px red"&gt;
+          This box is using box-shadow.
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width: 20%; height: 100px; color: #fff; background-color: #002547; box-shadow: 3px 5px 10px red">
+        This box is using box-shadow.
+      </div>
+    </div>
+    <!-- CSS shadow ends -->
+
+    <!-- CSS lists -->
+    <div class= "container" style="margin-top:50px" id="css_lists">
+      <h1 class= "xxxlarge text-red"><b>CSS Lists</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS list properties are used to control list type, position, style of a list. </p>
+      <h2> CSS Lists Properties: </h2>
+      <ul>
+        <li> list-style-type </li>
+        <li> list-style-position </li>
+        <li> list-style-image </li>
+        <li> list-style (shorthand) </li>
+      </ul>
+      <h2> list-style-type property </h2>
+      <p> The list-style-type property is used to control the style of bullet points in unordered lists or the style of numbering characters in ordered lists. </p>
+      <h3> Unordered list-style-type values </h3>
+      <ul>
+        <li>none</li>
+        <li>disc</li>
+        <li>circle</li>
+        <li>square</li>
+      </ul>
+      <h3> Ordered list-style-type values </h3>
+      <ul>
+        <li>decimal</li>
+        <li>decimal-leading-zero</li>
+        <li>lower-alpha</li>
+        <li>upper-alpha</li>
+        <li>lower-roman</li>
+        <li>upper-roman</li>
+      </ul>
+
+      <h2> list-style-position property </h2>
+      <p> The list-style-position property is used to control the position of the marker or the numbering characters. </p>
+      <h3> Unordered list-style-type values </h3>
+      <ul>
+        <li>none</li>
+        <li>inside</li>
+        <li>outside</li>
+      </ul>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;ul style="list-style-type: circle; list-style-position: outside;"&gt;
+          &lt;li&gt; First Outside Element &lt;/li&gt;
+          &lt;li&gt; Second Outside Element &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ol style="list-style-type: upper-alpha; list-style-position: inside;"&gt;
+          &lt;li&gt; First Inside Element &lt;/li&gt;
+          &lt;li&gt; Second Inside Element &lt;/li&gt;
+        &lt;/ol&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <ul style="list-style-type: circle; list-style-position: outside;">
+        <li> First Outside Element </li>
+        <li> Second Outside Element </li>
+      </ul>
+      <ol style="list-style-type: upper-alpha; list-style-position: inside;">
+        <li> First Inside Element </li>
+        <li> Second Inside Element </li>
+      </ol>
+      <h2> list-style-image property </h2>
+      <p> The list-style-image property is used to specify an image for the marker or the numbering characters. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;ul style="list-style-image: url('list_style_image.gif');"&gt;
+          &lt;li&gt; First Element &lt;/li&gt;
+          &lt;li&gt; Second Element &lt;/li&gt;
+        &lt;/ul&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <ul style="list-style-image: url('list_style_image.png');">
+        <li> First Element </li>
+        <li> Second Element </li>
+      </ul>
+
+      <h2> list-style shorthand property </h2>
+      <p> The list-style property is used to set one or more list properties in a single property. </p>
+      <h3>Example:</h3>
+      <p style="white-space: pre;">
+        &lt;ul style="list-style: inside square;"&gt;
+          &lt;li&gt; First Element &lt;/li&gt;
+          &lt;li&gt; Second Element &lt;/li&gt;
+        &lt;/ul&gt;
+      </p>
+      <p><strong> Output: </strong></p>
+      <ul style="list-style: inside square;">
+        <li> First Element </li>
+        <li> Second Element </li>
+      </ul>
+    </div>
+    <!-- CSS lists ends -->
+
+    <!-- Day7 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day7_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercise</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p><strong> Create a calculator layout like below: </strong></p>
+      <img src="calculator_demo.png">
+    </div>
+    <!-- Day7 Exercises End -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>
