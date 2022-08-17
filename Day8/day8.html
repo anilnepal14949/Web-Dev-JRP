@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 8</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 8</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#css_tables" onclick="closeSidebar()" class="bar-item button hover-white">CSS Tables</a>
+      <a href="#css_links" onclick="closeSidebar()" class="bar-item button hover-white">CSS Links</a>
+      <a href="#css_forms" onclick="closeSidebar()" class="bar-item button hover-white">CSS Forms</a>
+      <a href="#css_cursors" onclick="closeSidebar()" class="bar-item button hover-white">CSS Cursors</a>
+      <a href="#css_display" onclick="closeSidebar()" class="bar-item button hover-white">CSS Display/Visibility</a>
+      <a href="#css_float" onclick="closeSidebar()" class="bar-item button hover-white">CSS Float</a>
+      <a href="#css_position" onclick="closeSidebar()" class="bar-item button hover-white">CSS Position</a>
+      <a href="#css_zindex" onclick="closeSidebar()" class="bar-item button hover-white">CSS z-index</a>
+      <a href="#css_overflow" onclick="closeSidebar()" class="bar-item button hover-white">CSS Overflow</a>
+      <a href="#day8_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- CSS Tables -->
+    <div class= "container" style="margin-top:50px" id="css_tables">
+      <h1 class= "xxxlarge text-red"><b>CSS Table</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS table properties are used to style the table borders, size, alignment, style and make it responsive. </p>
+      <h2> CSS Table Properties: </h2>
+      <ul>
+        <li> width </li>
+        <li> height </li>
+        <li> border </li>
+        <li> border-collapse </li>
+        <li> vertical-align </li>
+        <li> caption-side </li>
+        <li> empty-cells </li>
+      </ul>
+      <h2> border-collapse property: </h2>
+      <div style="white-space: pre;">
+        &lt;table style="border-collapse: separate;"&gt;
+          &lt;tr&gt;
+            &lt;td&gt; Cell A &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt; Cell B &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      </div>
+      <p><strong>Output (separate borders):</strong></p>
+      <table style="border-collapse: separate;">
+        <tr>
+          <td style="border: 3px solid #000;"> Cell A </td>
+        </tr>
+        <tr>
+          <td style="border: 5px dotted #f00;"> Cell B </td>
+        </tr>
+      </table>
+      <div style="white-space: pre;">
+        &lt;table style="border-collapse: collapse;"&gt;
+          &lt;tr&gt;
+            &lt;td style="border: 3px solid #000;"&gt; Cell A &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="border: 5px dotted #f00;"&gt; Cell B &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      </div>
+      <p><strong>Output (collapsed borders):</strong></p>
+      <table style="border-collapse: collapse;">
+        <tr>
+          <td style="border: 3px solid #000;"> Cell A </td>
+        </tr>
+        <tr>
+          <td style="border: 5px dotted #f00;"> Cell B </td>
+        </tr>
+      </table>
+      <h2> vertical-align property </h2>
+      <p> To set the horizontal alignment, text-align property can be used. However, if the content needs vertical alignment, vertical-align property can be used.</p>
+      <div style="white-space: pre;">
+        &lt;table style="border-collapse:collapse"&gt;
+          &lt;tr&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00; vertical-align: bottom;"&gt; Cell A &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00; vertical-align: top;"&gt; Cell B &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      </div>
+      <p><strong>Output:</strong></p>
+      <table style="border-collapse: collapse;">
+        <tr>
+          <td style="height: 40px; border: 2px solid #f00; vertical-align:bottom;"> Cell A </td>
+        </tr>
+        <tr>
+          <td style="height: 40px; border: 2px solid #f00; vertical-align: top;"> Cell B </td>
+        </tr>
+      </table>
+      <h2> caption-side property </h2>
+      <p> caption-side property can be used to set the alignment for the caption. </p>
+      <div style="white-space: pre;">
+        &lt;table style="border-collapse:collapse; width: 400px;"&gt;
+          &lt;caption style="caption-side: bottom"&gt; This caption is set in the bottom of the table &lt;/caption&gt;
+          &lt;tr&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00; vertical-align: bottom;"&gt; Cell A &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00; vertical-align: top;"&gt; Cell B &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      </div>
+      <p><strong>Output:</strong></p>
+      <table style="border-collapse: collapse; width: 400px;">
+        <caption style="caption-side: bottom"> This caption is set in the bottom of the table </caption>
+        <tr>
+          <td style="height: 40px; border: 2px solid #f00; vertical-align:bottom;"> Cell A </td>
+        </tr>
+        <tr>
+          <td style="height: 40px; border: 2px solid #f00; vertical-align: top;"> Cell B </td>
+        </tr>
+      </table>
+      <h2> empty-cells property </h2>
+      <p> empty-cells property can be used to determine whether the border should be displayed in empty cells or not. </p>
+      <div style="white-space: pre;">
+        &lt;table style="border-collapse:collapse; width: 200px; empty-cells: hide;"&gt;
+          &lt;tr&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00;"&gt; Cell A &lt;/td&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00;"&gt; Cell B &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00;"&gt; Cell C &lt;/td&gt;
+            &lt;td style="height: 40px; border: 2px solid #f00;"&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      </div>
+      <p><strong>Output:</strong></p>
+      <table style="border-collapse:separate; width: 200px; empty-cells: hide;">
+        <tr>
+          <td style="height: 40px; border: 2px solid #f00;"> Cell A </td>
+          <td style="height: 40px; border: 2px solid #f00;"> Cell B </td>
+        </tr>
+        <tr>
+          <td style="height: 40px; border: 2px solid #f00;"> Cell C </td>
+          <td style="height: 40px; border: 2px solid #f00;"></td>
+        </tr>
+      </table>
+    </div>
+    <!-- CSS tables ends -->
+
+    <!-- CSS Links -->
+    <div class= "container" style="margin-top:50px" id="css_links">
+      <h1 class= "xxxlarge text-red"><b>CSS Links</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS link properties are used to set the unvisited, visited, hover and active states of a link.</p>
+      <h2> CSS Link States </h2>
+      <p> Different states of a link can be used to style links in CSS; also known as pseudo-classes. The order defined in the list below should be followed while defining the pseudo classes for effectiveness. </p>
+      <ul>
+        <li><strong>:link :</strong> Used to style the links </li>
+        <li><strong>:visited :</strong> Used to style the visited links </li>
+        <li><strong>:hover :</strong> Used to style the links on hover </li>
+        <li><strong>:active :</strong> Used to style the links when clicked </li>
+      </ul>
+      <strong> While styling these pseudo classes, the text, fonts, color, background and all other properties can be used as per requirements. </strong>
+    </div>
+    <!-- CSS Links end -->
+
+    <!-- CSS Forms -->
+    <div class= "container" style="margin-top:50px" id="css_forms">
+      <h1 class= "xxxlarge text-red"><b>CSS Forms</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      There are not such specific properties to style form input elements ,we have already learned about colors, background, dimensions, borders, margins and paddings. We can use all these properties as required for the input fields. 
+    </div>
+    <!-- CSS Forms End -->
+
+    <!-- CSS Cursors -->
+    <div class= "container" style="margin-top:50px" id="css_cursors">
+      <h1 class= "xxxlarge text-red"><b>CSS Cursors</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS cursor property can be used to specify the type of cursor in an element. </p>
+      <h3> Values of cursor property:</h3>
+      <ul>
+        <li>auto</li>
+        <li>crosshair</li>
+        <li>default</li>
+        <li>pointer</li>
+        <li>move</li>
+        <li>text</li>
+        <li>wait</li>
+        <li>help</li>
+        <li>not-allowed</li>
+      </ul>
+      <h3> Examples: </h3>
+        <div style="cursor:auto">Auto</div>
+        <div style="cursor:crosshair">Crosshair</div>
+        <div style="cursor:default">Default</div>
+        <div style="cursor:pointer">Pointer</div>
+        <div style="cursor:move">Move</div>
+        <div style="cursor:text">Text</div>
+        <div style="cursor:wait">Wait</div>
+        <div style="cursor:help">Help</div>
+        <div style="cursor:not-allowed">Not Allowed</div>
+    </div>
+    <!-- CSS Cursors End -->
+
+    <!-- CSS Display -->
+    <div class= "container" style="margin-top:50px" id="css_cursors">
+      <h1 class= "xxxlarge text-red"><b>CSS Display/Visibility</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS display property can be used to specify how an element should be displayed. </p>
+      <h3>Values: </h3>
+      <ul>
+        <li> block </li>
+        <li> inline </li>
+        <li> inline-block </li>
+        <li> none </li>
+      </ul>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        &lt;p style="display:inline;&gt; This is first line &lt;/p&gt;
+        &lt;p style="display:inline;"&gt; This is second line &lt;/p&gt;
+      </p>
+      <p><strong>Output: </strong></p>
+      <p style="display:inline;"> This is first line </p>
+      <p style="display:inline;"> This is second line </p>
+      <h2> CSS Visibility: </h2>
+      <p> CSS visibility property can be used to make any element visible or hidden.</p>
+      <h3>Example: </h3>
+      <p style="white-space: pre;">
+        &lt;div style="width: 100px; height: 100px; background-color: #f00; color: #fff; visibility: visible"&gt; This is visible &lt;/div&gt;
+        &lt;div style="width: 100px; height: 100px; background-color: #f00; color: #fff; visibility: hidden"&gt; This is hidden &lt;/div&gt;
+        &lt;div style="width: 100px; height: 100px; background-color: #f00; color: #fff; visibility: visible"&gt; This is visible again &lt;/div&gt;
+      </p>
+      <p><strong>Output: </strong></p>
+      <div style="width: 100px; height: 100px; background-color: #f00; color: #fff; visibility: visible"> This is visible </div>
+      <div style="width: 100px; height: 100px; background-color: #f00; color: #fff; visibility: hidden"> This is hidden </div>
+      <div style="width: 100px; height: 100px; background-color: #f00; color: #fff; visibility: visible"> This is visible again </div>
+      <h2> How is display:none different from visibility:hidden?</h2>
+      <p> The property display:none removes the element from the webpage while the visibility:hidden only hides the element from the webpage while the space covered by the element is still visible. </p>
+      <h3>Example: </h3>
+      <p style="white-space: pre;">
+        &lt;div style="width: 100px; height: 100px; background-color: #f00; color: #fff;"&gt; This is visible &lt;/div&gt;
+        &lt;div style="width: 100px; height: 100px; background-color: #f00; color: #fff; display: none"&gt; This is hidden &lt;/div&gt;
+        &lt;div style="width: 100px; height: 100px; background-color: #f00; color: #fff;"&gt; This is visible again &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width: 100px; height: 100px; background-color: #f00; color: #fff;"> This is visible </div>
+      <div style="width: 100px; height: 100px; background-color: #f00; color: #fff; display: none"> This is hidden </div>
+      <div style="width: 100px; height: 100px; background-color: #f00; color: #fff;"> This is visible again </div>
+    </div>
+    <!-- CSS Display Ends -->
+
+    <!-- CSS Float -->
+    <div class= "container" style="margin-top:50px" id="css_float">
+      <h1 class= "xxxlarge text-red"><b>CSS Float</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>CSS float property is used to position different elements.</p>
+      <h3> Values: </h3>
+      <ul>
+        <li> left </li>
+        <li> right </li>
+        <li> none </li>
+      </ul>
+      <h2> clear Property </h2>
+      <p> The clear property is used to clear the effect caused by float property. </p>
+      <h3> Values: </h3>
+      <li> none </li>
+      <li> left </li>
+      <li> right </li>
+      <li> both </li>
+      <h3> Example of float property: </h3>
+      <p><strong> Without Float: </strong></p>
+      <p style="white-space: pre;">
+        &lt;div style="width:200px;height:200px;border:4px solid #000;"&gt;
+          &lt;p&gt; This is first div &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div style="width:200px;height:200px;border:4px solid #888;"&gt;
+          &lt;p&gt; This is second div &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output: </strong></p>
+      <div style="width:200px;height:200px;border:4px solid #000;">
+        <p> This is first div </p>
+      </div>
+      <div style="width:200px;height:200px;border:4px solid #888;">
+        <p> This is second div </p>
+      </div>
+      <p><strong> With Float: </strong></p>
+      <p style="white-space: pre;">
+        &lt;div style="float:left;width:200px;height:200px;border:4px solid #000;"&gt;
+          &lt;p&gt; This is first div &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div style="float:right;width:200px;height:200px;border:4px solid #888;"&gt;
+          &lt;p&gt; This is second div &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output: </strong></p>
+      <div style="float: left; width:200px;height:200px;border:4px solid #000;">
+        <p> This is first div </p>
+      </div>
+      <div style="float: right;width:200px;height:200px;border:4px solid #888;">
+        <p> This is second div </p>
+      </div>
+      <div style="clear:both; padding-top:20px;">
+        <p><strong> Float next to each other: </strong></p>
+        <p style="white-space: pre;">
+          &lt;div style="float:left;width:200px;height:200px;border:4px solid #000;"&gt;
+            &lt;p&gt; This is first div &lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div style="float:left;width:200px;height:200px;border:4px solid #888;"&gt;
+            &lt;p&gt; This is second div &lt;/p&gt;
+          &lt;/div&gt;
+        </p>
+        <p><strong>Output: </strong></p>
+        <div style="float: left; width:200px;height:200px;border:4px solid #000;">
+          <p> This is first div </p>
+        </div>
+        <div style="float: left;width:200px;height:200px;border:4px solid #888;">
+          <p> This is second div </p>
+        </div>
+      </div>
+    </div>
+    <!-- CSS Float ends -->
+
+    <!-- CSS Position -->
+    <div class= "container" style="margin-top:50px" id="css_position">
+      <h1 class= "xxxlarge text-red"><b>CSS Positioning</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS position property can be used to place element in any location within the page. </p>
+      <p> There are two types of positioning in CSS: </p>
+      <ul>
+        <li> Relative </li>
+        <li> Absolute </li>
+      </ul>
+      <h4> Relative Positioning </h4>
+      <p> The position:relative property is used to change the position of the HTML element from the position it is displayed. </p>
+      <h4> Absolute Positioning </h4>
+      <p> The position:absolute property is used to change the position of the HTML element from the position relative to its parent. If no parent specified, the positioning starts from top-left corner on the screen. </p>
+      <h3> Values: </h3>
+      <ul>
+        <li> left </li>
+        <li> right </li>
+        <li> top </li>
+        <li> bottom </li>
+      </ul>
+    </div>
+    <!-- CSS Position end -->
+
+    <!-- CSS z-index -->
+    <div class= "container" style="margin-top:50px" id="css_zindex">
+      <h1 class= "xxxlarge text-red"><b>CSS z-index</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS z-index property can be used to stack elements on top of each other.</p>
+      <p><strong>z-index property only works on elements with position property set or with flex elements.</strong></p>
+      <h3> Example: </h3>
+      <p style="white-space: pre;">
+        &lt;div style="position: relative; width:100px; height:100px; background:#132467;"&gt;&lt;/div&gt;
+        &lt;div style="position: relative; top: -40px; width:100px; height:100px; background:#525478;"&gt;&lt;/div&gt;
+      </p>
+      <p><strong>Without z-index:</strong> The second div has top -40px. So, that should be stacked on top of the first div.</p>
+      <div style="position: relative; width:100px; height:100px; background:#132467;"></div>
+      <div style="position: relative; top: -40px; width:100px; height:100px; background:#525478;"></div>
+      <p style="white-space: pre;">
+        &lt;div style="position: relative; z-index:1; width:100px; height:100px; background:#132467;"&gt;&lt;/div&gt;
+        &lt;div style="position: relative; top: -40px; width:100px; height:100px; background:#525478;"&gt;&lt;/div&gt;
+      </p>
+      <p><strong>With z-index:</strong> However, if we want the first div to be on top of the second div.</p>
+      <div style="position: relative;z-index:1;width:100px; height:100px; background:#132467;"></div>
+      <div style="position: relative; top: -40px; width:100px; height:100px; background:#525478;"></div>
+    </div>
+    <!-- CSS z-index end -->
+
+    <!-- CSS overflow -->
+    <div class= "container" style="margin-top:50px" id="css_overflow">
+      <h1 class= "xxxlarge text-red"><b>CSS Overflow</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS overflow property display scroll bar if the content of the element is larger than the element dimensions. Overflow can be used separately for horizontal and vertical contents using overflow-x and overflow-y respectively. </p>
+      <h3> Values: </h3>
+      <ul>
+        <li> visible </li>
+        <li> hidden </li>
+        <li> scroll </li>
+        <li> auto </li>
+      </ul>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        &lt;div style="width:200px;height:100px;border:2px solid #000;overflow:visible;"&gt;
+          &lt;p&gt; This is a visible text, more visible text, more visible text, more visible text and more visible text.  &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width:200px;height:100px;border:2px solid #000;overflow:visible;">
+        <p> This is a visible text, more visible text, more visible text, more visible text and more visible text.  </p>
+      </div>
+      <p style="white-space: pre;">
+        &lt;div style="width:200px;height:100px;border:2px solid #000;overflow:hidden;"&gt;
+          &lt;p&gt; This is a visible text, more visible text, more visible text, more visible text and more visible text.  &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width:200px;height:100px;border:2px solid #000;overflow:hidden;">
+        <p> This is a visible text, more visible text, more visible text, more visible text and more visible text.  </p>
+      </div>
+      <p style="white-space: pre;">
+        &lt;div style="width:200px;height:100px;border:2px solid #000;overflow:scroll;"&gt;
+          &lt;p&gt; This is a visible text, more visible text, more visible text, more visible text and more visible text.  &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width:200px;height:100px;border:2px solid #000;overflow:scroll;">
+        <p> This is a visible text, more visible text, more visible text, more visible text and more visible text.  </p>
+      </div>
+      <p style="white-space: pre;">
+        &lt;div style="width:200px;height:100px;border:2px solid #000;overflow:auto;"&gt;
+          &lt;p&gt; This is a visible text, more visible text, more visible text, more visible text and more visible text.  &lt;/p&gt;
+        &lt;/div&gt;
+      </p>
+      <p><strong>Output:</strong></p>
+      <div style="width:200px;height:100px;border:2px solid #000;overflow:auto;">
+        <p> This is a visible text, more visible text, more visible text, more visible text and more visible text.  </p>
+      </div>
+    </div>
+    <!-- CSS Overflow ends -->
+
+    <!-- Day8 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day8_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercise</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p><strong> Create a survey form layout like below: </strong></p>
+      <img src="survey_form_sample.png">
+    </div>
+    <!-- Day8 Exercises End -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>

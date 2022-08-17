@@ -1,0 +1,72 @@
+table {
+	width: 300px;
+	height: 100px;
+	border-collapse: separate;
+	empty-cells: hide;
+}
+
+table caption {
+	caption-side: top;
+}
+
+table td {
+	border: 3px solid #458745;
+	height: 50px;
+	text-align: center;
+	vertical-align: bottom;
+}
+a.someLink:link {
+	height: auto;
+	width: fit-content;
+	color: #fff;
+	background-color: rgba(255,0,0,0.7);
+	padding: 10px;
+	margin-top: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	box-shadow: 0 3px 5px #000;
+	border: 2px solid #000;
+	border-radius: 10px;
+	display: inline-block;
+}
+a.someLink:hover {
+	background-color: rgba(255,0,0,0.2);
+}
+a.someLink:active {
+	box-shadow: 3px 0 5px #000;
+}
+.hidden {
+	visibility: hidden !important;
+}
+.floating {
+	width: 400px;
+	height: 200px;
+	background-color: red;
+	border: 2px dotted black;
+	position: relative;
+	left: 30%;
+	color: #fff;
+	font-size: 20px;
+	overflow: auto;
+}
+.secondDiv {
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	background-color: blue;
+	border: 2px dotted black;
+	right: 0;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: none;
+}
+body p {
+	margin-top: 100px;
+	margin-left: 100px;
+	position: absolute;
+	left: 10px;
+	width: fit-content;
+	border: 2px solid #000;
+}

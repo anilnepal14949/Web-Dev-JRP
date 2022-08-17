@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>
+        Survey Form using HTML and CSS
+    </title>    
+    <link rel="stylesheet" type="text/css" href="survey_form.css">
+</head>
+  
+<body>
+    <form id="form">
+        <h1>Survey Form</h1>
+        <div class="form-control">
+            <label for="name" id="name" class="title_label">
+                Name
+            </label>
+            <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+  
+        <div class="form-control">
+            <label for="email" id="email" class="title_label">
+                Email
+            </label>
+            <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+  
+        <div class="form-control">
+            <label for="age" id="age" class="title_label">
+                Age
+            </label>
+            <input type="text" id="age" placeholder="Enter your age" />
+        </div>
+
+        <div class="form-control">
+            <label class="title_label">
+                Gender
+            </label>
+            <label for="male">
+                <input type="radio" id="male" name="gender">Male</input>
+            </label>
+            <label for="female">
+                <input type="radio" id="female" name="gender">Female</input>
+            </label>
+            <label for="other">
+                <input type="radio" id="other" name="gender">Other</input>
+            </label>
+        </div>
+  
+        <div class="form-control">
+            <label for="role" id="role" class="title_label">
+                Which option best describes you?
+            </label>
+            <select name="role" id="role">
+                <option value="student">Student</option>
+                <option value="intern">Intern</option>
+                <option value="professional">
+                    Professional
+                </option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+  
+        <div class="form-control">
+            <label class="title_label">Languages Learnt So Far
+                <small>(Check all that apply)</small>
+            </label>
+            <label for="html">
+                <input type="checkbox" id="html" name="languages">HTML</input>
+            </label>
+            <label for="css">
+                <input type="checkbox" id="css" name="languages">CSS</input>
+            </label>
+            <label for="javascript">
+                <input type="checkbox" id="javascript" name="languages">JavaScript</input>
+            </label>
+            <label for="php">
+                <input type="checkbox" id="php" name="languages">PHP</input>
+            </label>
+            <label for="mysql">
+                <input type="checkbox" id="mysql" name="languages">MySQL</input>
+            </label>
+        </div>
+  
+        <div class="form-control">
+            <label for="comment" class="title_label">
+                Any comments
+            </label>
+            <textarea name="comment" id="comment" placeholder="Enter your comment here"></textarea>
+        </div>
+
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+</body>
+  
+</html>
