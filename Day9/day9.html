@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 9</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 9</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#css_pseudo_classes" onclick="closeSidebar()" class="bar-item button hover-white">CSS Pseudo Classes</a>
+      <a href="#css_pseudo_elements" onclick="closeSidebar()" class="bar-item button hover-white">CSS Pseudo Elements</a>
+      <a href="#css_rules" onclick="closeSidebar()" class="bar-item button hover-white">CSS Rules</a>
+      <a href="#css_transitions" onclick="closeSidebar()" class="bar-item button hover-white">CSS Transitions</a>
+      <a href="#css_transforms" onclick="closeSidebar()" class="bar-item button hover-white">CSS Transforms</a>
+      <a href="#css_animations" onclick="closeSidebar()" class="bar-item button hover-white">CSS Animations</a>
+      <a href="#css_responsiveness" onclick="closeSidebar()" class="bar-item button hover-white">CSS Responsiveness</a>
+      <a href="#day9_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- CSS Pseudo Classes -->
+    <div class= "container" style="margin-top:50px" id="css_pseudo_classes">
+      <h1 class= "xxxlarge text-red"><b>CSS Pseudo Classes</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS Pseudo-classes are used to add special effects to some selectors.</p>
+      <h2> List of pseudo-classes </h2>
+      <ul>
+        <li> :link </li>
+        <li> :visited </li>
+        <li> :hover </li>
+        <li> :active </li>
+        <li> :focus </li>
+        <li> :first-child </li>
+      </ul>
+      <h2> Examples: </h2>
+      <h3> :link, :visited, :hover, :active </h3>
+      <p style="white-space:pre">
+        a:link, a:visited {
+          color: #f12457;
+        }
+        a:hover, a:active {
+          color: #1245f7;
+        }
+      </p>
+      <h3> :focus </h3>
+      <p style="white-space:pre">
+        input:focus {
+          background: #000;
+          color: #fff;
+          border: 2px solid #fff;
+        }
+      </p>
+      <h3> :first-child </h3>
+      <p style="white-space:pre">
+        div.paras p:first-child {
+          color: #f87589;
+        }
+      </p>
+    </div>
+    <!-- CSS Pseudo Classes ends -->
+
+    <!-- CSS Pseudo Elements -->
+    <div class= "container" style="margin-top:50px" id="css_pseudo_elements">
+      <h1 class= "xxxlarge text-red"><b>CSS Pseudo Elements</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS Pseudo elements are used to add special effects to some selectors.</p>
+      <h2> List of pseudo elements </h2>
+      <ul>
+        <li> ::first-line </li>
+        <li> ::first-letter </li>
+        <li> ::before </li>
+        <li> ::after </li>
+        <li> ::selection </li>
+      </ul>
+      <h2> Examples: </h2>
+      <h3> ::first-line </h3>
+      <p style="white-space:pre">
+        p::first-line {
+          color: #ff0000;
+        }
+      </p>
+      <h3> ::first-letter </h3>
+      <p style="white-space:pre">
+        h1::first-letter {
+          font-weight: bold;
+          font-size: 25px;
+        }
+      </p>
+      <h3> ::before </h3>
+      <p style="white-space:pre">
+        ul li::before {
+          content: url('tick.png');
+        }
+      </p>
+      <h3> ::after </h3>
+      <p style="white-space:pre">
+        input::after {
+          content: url('tick-circle.png');
+        }
+      </p>
+      <h3> ::selection </h3>
+      <p style="white-space:pre">
+        ::selection {
+          background: #FF9989;
+          color: #fff;
+        }
+      </p>
+    </div>
+    <!-- CSS Pseudo Elements ends -->
+
+    <!-- CSS @ Rules -->
+    <div class= "container" style="margin-top:50px" id="css_rules">
+      <h1 class= "xxxlarge text-red"><b>CSS @ Rules</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> List of @ rules </h2>
+      <ul>
+        <li> @import </li>
+        <li> @font-face </li>
+        <li> !important </li>
+        <li> @media </li>
+      </ul>
+      <h2> Examples: </h2>
+      <h3> @import </h3>
+      <p style="white-space:pre">
+        @import "new_stylesheet.css";
+                                    <strong>OR</strong>
+        @import url("new_stylesheet.css");
+      </p>
+      <h3> @font-face </h3>
+      <p style="white-space:pre">
+        @font-face {
+          font-family: "Roboto";
+          src: url("https://fonts.google.com/Roboto.ttf");
+        }
+        p {
+          font-family: "Roboto";
+        }
+      </p>
+      <h3> !important </h3>
+      <p style="white-space:pre">
+        h1 {
+          color: #f09890 !important;
+        }
+        h1 {
+          color: #ff4254;
+        }
+      </p>
+      <h3> @media </h3>
+      <p style="white-space:pre">
+        @media screen {
+          body {
+            background-color: #ff4254;
+          }
+        }
+      </p>
+      <p><strong> Other Media Types: </strong> all, screen, print, tv, etc..</p>
+    </div>
+    <!-- CSS @ Rules ends -->
+
+    <!-- CSS Transitions -->
+    <div class= "container" style="margin-top:50px" id="css_transitions">
+      <h1 class= "xxxlarge text-red"><b>CSS Transitions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS transitions allow to change property values smoothly, over a given duration. </p>
+      <h2> List of transition properties: </h2>
+      <ul>
+        <li> transition-property </li>
+        <li> transition-delay </li>
+        <li> transition-duration </li>
+        <li> transition-timing-function </li>
+        <li> transition (shorthand) </li>
+      </ul>
+      <h3> Examples </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transition-property: width;
+          transition-delay: 2s;
+          transition-timing-function: ease-in;
+        }
+                              <strong> OR </strong>
+        div {
+          width: 100px;
+          background: #f42574;
+          transition: width 2s ease-in;
+        }
+      </p>
+    </div>
+    <!-- CSS Transitions ends -->
+
+    <!-- CSS Transforms -->
+    <div class= "container" style="margin-top:50px" id="css_transforms">
+      <h1 class= "xxxlarge text-red"><b>CSS Transforms</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS transforms allow to move, rotate, skew and scale elements. CSS can be used to transform elements as 2D and 3D. </p>
+      <h2> List of 2D transform properties: </h2>
+      <ul>
+        <li> translate(x, y) </li>
+        <li> rotate(deg) </li>
+        <li> skew(deg, deg) </li>
+        <li> scale(n, n) </li>
+      </ul>
+      <h2> Examples </h2>
+      <h3> translate(x, y) </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transform: translate(50px, 100px);
+        }
+      </p>
+      <h3> rotate(deg) </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transform: rotate(90deg);
+        }
+      </p>
+      <h3> skew(deg, deg) </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transform: skew(50deg, 60deg);
+        }
+      </p>
+      <h3> scale(n, n) </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transform: scale(2, 4);
+        }
+      </p>
+      <h2> List of 3D transform properties: </h2>
+      <ul>
+        <li> translate3d(x, y, z) </li>
+        <li> rotate3d(x, y, z, deg) </li>
+        <li> scale3d(n, n, n) </li>
+      </ul>
+      <h2> Examples </h2>
+      <h3> translate3d(x, y, z) </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transform: translate3d(50px, 100px, 150px);
+        }
+      </p>
+      <h3> rotate3d(x, y, z, deg) </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transform: rotate(1, 2, 5, 50deg);
+        }
+      </p>
+      <h3> scale3d() </h3>
+      <p style="white-space: pre;">
+        div {
+          width: 100px;
+          background: #f42574;
+          transform: scale3d(1, 2, 4);
+        }
+      </p>
+    </div>
+    <!-- CSS Transforms ends -->
+
+    <!-- CSS Animations -->
+    <div class= "container" style="margin-top:50px" id="css_animations">
+      <h1 class= "xxxlarge text-red"><b>CSS Animations</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS Animations are used to create animations of HTML elements.</p>
+      <h2> List of animation properties </h2>
+      <ul>
+        <li> @keyframes </li>
+        <li> animation-name </li>
+        <li> animation-duration </li>
+        <li> animation-timing-function </li>
+        <li> animation-delay </li>
+        <li> animation-iteration-count </li>
+        <li> animation-direction </li>
+        <li> animation (shorthand) </li>
+      </ul>
+      <h2> @keyframes </h2>
+      <p> @keyframes is used to define the animation styles to different properties. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        @keyframes changeColor {
+          0% { color: red; }
+          25% { color: yellow; }
+          50% { color: purple; }
+          100% { color: blue; }
+        }
+      </p>
+      <h2> animation-name </h2>
+      <p> animation-name is used to define the name of the animation. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        p {
+          color: purple;
+          animation-name: changeColor;
+        }
+      </p>
+      <h2> animation-duration </h2>
+      <p> animation-duration is used to define the duration of the animation. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        p {
+          color: purple;
+          animation-name: changeColor;
+          animation-duration: 4s;
+        }
+      </p>
+      <h2> animation-timing-function </h2>
+      <p> animation-timing-function is used to define the smoothness of the animation. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        p {
+          color: purple;
+          animation-name: changeColor;
+          animation-timing-function: ease; // linear, ease, ease-in, ease-out, ease-in-out and cubic-bezier(n, n, n, n) can also be used
+        }
+      </p>
+      <h2> animation-delay </h2>
+      <p> animation-delay is used to define the delay of the animation. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        p {
+          color: purple;
+          animation-name: changeColor;
+          animation-delay: 2s;
+        }
+      </p>
+      <h2> animation-iteration-count </h2>
+      <p> animation-iteration-count is used to define the number of times should run. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        p {
+          color: purple;
+          animation-name: changeColor;
+          animation-iteration-count: 5; // infinite can also be used
+        }
+      </p>
+      <h2> animation-direction </h2>
+      <p> animation-direction is used to define the define the direction of the animation. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        p {
+          color: purple;
+          animation-name: changeColor;
+          animation-direction: reverse; // normal, alternate, alternate-reverse can also be used
+        }
+      </p>
+      <h2> animation </h2>
+      <p> animation is used to define the properties of the animation in a single property. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        @keyframes changeColor {
+          from { color: red; }
+          to { color: yellow; }
+        }
+        p {
+          color: purple;
+          animation: changeColor 5s linear 2s infinite alternate; 
+        }
+      </p>
+      <p><strong> Order for animation: </strong> animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction </p>
+    </div>
+    <!-- CSS Animations ends -->
+
+    <!-- CSS Responsiveness -->
+    <div class= "container" style="margin-top:50px" id="css_responsiveness">
+      <h1 class= "xxxlarge text-red"><b>CSS Responsiveness</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> @media rule: </h2>
+      <p> @media can be used to include one or more CSS properties for different breakpoints and conditions. </p>
+      <h3> Examples: </h3>
+      <p style="white-space: pre;">
+        h2 {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 768px) {
+          h2 {
+            font-size: 25px;
+          }
+        }
+      </p>
+    </div>
+    <!-- CSS Responsiveness ends -->
+
+    <!-- Day9 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day9_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercise</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p><strong> Create a responsive navbar like below: </strong></p>
+      <img src="navbar_sample.png" width="100%">
+      <img src="navbar_responsive.png" width="30%">
+    </div>
+    <!-- Day8 Exercises End -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>
