@@ -1,0 +1,121 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+.full-container {
+  width: 100%;
+  margin: auto;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+.navbar {
+  background-color: #333;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .nav {
+  display: flex;
+}
+
+.navbar .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+}
+.navbar .search input[type="search"] {
+  padding: 10px;
+}
+.navbar .search button {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.navbar .search button:hover {
+  color: #CC0088;
+  transition: all 0.4s ease;
+}
+.navbar .search input[type="search"]:focus {
+  box-shadow: 0px 0px 10px #fff;
+}
+.navbar .search input[type="search"],
+.navbar .search button {
+  height: 30px;
+  border: none;
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 768px wide */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .row, .navbar {   
+    flex-direction: column;
+  }
+  .navbar .search {
+    display: none !important;
+  }
+}

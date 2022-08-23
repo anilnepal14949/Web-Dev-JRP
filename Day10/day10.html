@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 10</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 10</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#css_icons" onclick="closeSidebar()" class="bar-item button hover-white">CSS Icons</a>
+      <a href="#css_flexbox" onclick="closeSidebar()" class="bar-item button hover-white">CSS Flexbox</a>
+      <a href="#day10_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- CSS Icons -->
+    <div class= "container" style="margin-top:50px" id="css_icons">
+      <h1 class= "xxxlarge text-red"><b>CSS Icons</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS Icons are used to add icons for making the design more clear and improved to the users.</p>
+      <h2> Some of the icons library </h2>
+      <ul>
+        <li> font-awesome </li>
+        <li> materialize-icons </li>
+        <li> bootstrap-icons </li>
+        <li> flaticons </li>
+      </ul>
+      <h3> Usage </h3>
+      <p> First, the icon library should be imported in the webpage. </p>
+      <p><strong>&lt;i class="fa fa-plus">&lt;/i&gt;</strong> is used to include a plus icon from fontawesome whereever required.</p>
+      <p><strong>&lt;i class="bi bi-at">&lt;/i&gt;</strong> is used to add an @ icon using bootstrap icons.</p>
+    </div>
+    <!-- CSS Icons ends -->
+
+    <!-- CSS Flexbox -->
+    <div class= "container" style="margin-top:50px" id="css_flexbox">
+      <h1 class= "xxxlarge text-red"><b>CSS Flexbox</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> CSS Flexbox is used to create flexible responsive design/layout without using float or positioning.</p>
+      <p> An element is defined as a flexbox using display property and setting its value to flex and will be declared as the parent flex container.</p>
+      <h3> Example: </h3>
+      <p style="white-space: pre;">
+        .flex-container {
+          display: flex;
+        }
+      </p>
+      <h2> Flex Container Properties: </h2>
+      <ul>
+        <li> flex-direction </li>
+        <li> flex-wrap </li>
+        <li> flex-flow (shorthand for flex-direction & flex-wrap) </li>
+        <li> justify-content </li>
+        <li> align-items </li>
+        <li> align-content </li>
+      </ul>
+      <h3> flex-direction property </h3>
+      <p> This property defines in which direction the flex items are stacked in the container. </p>
+      <p><strong>Values:</strong> row, row-reverse, column, column-reverse </p> 
+      <h3> flex-wrap property </h3>
+      <p> This property is used to define whether to wrap flex items or not if the flex items size is larger than the container. </p>
+      <p><strong>Values:</strong> wrap, wrap-reverse, nowrap </p> 
+      <h3> flex-flow property </h3>
+      <p> This property is used as shorthand to define flex-direction and flex-wrap in a single property. </p>
+      <p><strong>Example:</strong> .flex-container { flex-flow: row nowrap; } </p>
+      <h3> justify-content property </h3>
+      <p> This property is used to align the items in the main axis (horizontally). </p>
+      <p><strong>Values:</strong> center, flex-start, flex-end, space-around, space-between </p>
+      <h3> align-items property </h3>
+      <p> This property is used to align the single line items in the cross axis (vertically). </p>
+      <p><strong>Values:</strong> center, flex-start, flex-end, stretch </p>
+      <h3> align-content property </h3>
+      <p> This property is used to align the multi line items in the cross axis (vertically). </p>
+      <p><strong>Values:</strong> center, flex-start, flex-end, stretch, space-between, space-around </p> 
+      <h2> Flexbox Items </h2>
+      <p> The direct child elements of a parent displayed as flex are automatically set as flexible and can support flex item properties in them.</p>
+      <h3> Flex Items Properties </h3>
+      <ul>
+        <li> order </li>
+        <li> flex-grow </li>
+        <li> flex-shrink </li>
+        <li> flex-basis </li>
+        <li> flex </li>
+        <li> align-self </li>
+      </ul>
+      <h3> order Property </h3>
+      <p> order property is used to specify the order of flex items. The order value must be a number. </p>
+      <h3> flex-grow Property </h3>
+      <p> flex-grow property is used to specify how much a flex item will grow/expand relative to other flex items. The value of flex-grow must be a number. </p>
+      <h3> flex-shrink Property </h3>
+      <p> flex-shrink property is used to specify how much a flex item will shrink relative to other flex items. The value of flex-shrink must be a number. </p>
+      <h3> flex-basis Property </h3>
+      <p> flex-basis property is used to specify the initial length of a flex item. Can be used as width of flex item. </p>
+      <h3> flex Property </h3>
+      <p> flex property is used as shorthand property to define flex-grow, flex-shrink and flex-basis properties in a single property. </p>
+    </div>
+    <!-- CSS Flexbox ends -->
+
+    <!-- Day10 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day10_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercise</b></h1>
+      <hr style="width:50px;border:5px solid red" class="round">
+    </div>
+    
+    <div class= "row-padding">
+      <p><strong> Create a responsive website layout like below: </strong></p>
+      <img src="responsive_website_sample.png" width="100%">
+      <img src="responsive_website_sample_mobile.png" width="30%">
+    </div>
+    <!-- Day10 Exercises End -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>

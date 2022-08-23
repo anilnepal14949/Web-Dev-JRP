@@ -1,0 +1,40 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+
+.flex-container {
+	width: 60%;
+	margin: auto;
+	background: #ff9900;
+	padding: 20px;
+	height: 300px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	align-content: stretch;
+}
+
+.item {
+	background: white;
+	padding: 15px;
+	margin: 5px;
+	flex-basis: 25%;
+}
+.item1 {
+	order: 4;
+}
+.item2 {
+	order: 3;
+}
+.item3 {
+	order: 6;
+}
+.item4 {
+	order: 1;
+	flex-grow: 1;
+}
+.item5 {
+	order: 2;
+}
+.another_flex {
+	display: flex;
+	justify-content: row;
+}
