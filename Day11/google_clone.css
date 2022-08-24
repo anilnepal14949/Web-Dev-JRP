@@ -1,0 +1,158 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #202124;
+	font-family: sans-serif;
+}
+a {
+	font-size: 14px;
+}
+/* header styles */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 3vh;
+	padding: 2vh;
+}
+header a {
+	color: #fff;
+	text-decoration: none;
+	padding: 0 10px;
+}
+header a:hover {
+	text-decoration: underline;
+}
+header .left {
+	display: flex;
+}
+header .left a {
+	color: #ccc;
+}
+header .right .settings,
+header .right .profile {
+	text-decoration: none;
+} 
+header .right .settings,
+header .right .profile {
+	padding: 3px;
+	border-radius: 50%;
+}
+header .right .settings:hover,
+header .right .profile:hover {
+	background: #333;
+}
+header .right .profile {
+	height: 30px;
+	margin-left: 10px;
+}
+header .right {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+header .right img {
+	border-radius: 50%;
+}
+/* header styles end */
+
+/* main styles */
+main {
+	height: 82.75vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+main .search {
+	height: auto;
+    display: flex;
+    align-items: center;
+    margin: 2vh 0 4vh 0;
+    border-radius: 20px;
+}
+main .search i {
+	color: #888;
+    font-size: 16px;
+    padding: 0 10px 0 20px;
+    border-radius: 50px 0 0 50px;
+    border: 1px solid #888;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-right: 0;
+}
+main .search input {
+	border-top: 1px solid #888 !important;
+    height: 50px;
+    width: 30vw;
+    background: transparent;
+    border-bottom: 1px solid #888 !important;
+    border-left: 0;
+    border-right: 0;
+    font-size: 15px;
+    outline: none;
+    padding: 0 10px;
+    color: #fff;
+}
+main .buttons a {
+	padding: 10px;
+	background: #303134;
+	color: #fff;
+	text-decoration: none;
+	margin: 5px;
+	border-radius: 5px;
+	border: 1px solid #303134;
+}
+main .buttons a:hover {
+	border: 1px solid #555;
+}
+main svg {
+	width: 25px;
+    padding: 0 15px 0 5px;
+    border-radius: 0 50px 50px 0;
+    border: 1px solid #888;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-left: 0;
+}
+/* main styles end */
+
+/* footer styles */
+footer {
+	height: 10vh;
+	background: #171717;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+footer a {
+	color: #888;
+	text-decoration: none;
+}
+footer a:hover {
+	text-decoration: underline;
+}
+footer .location {
+	color: #888;
+	border-bottom: 1px solid #555;
+	padding: 15px;
+	font-size: 14px;
+}
+footer .footer_nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+}
+footer .footer_nav_left a {
+	padding-right: 15px;
+}
+footer .footer_nav_right a {
+	padding-left: 15px;
+}
+/* footer styles end */
