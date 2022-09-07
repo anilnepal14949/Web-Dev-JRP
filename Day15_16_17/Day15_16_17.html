@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 15_16_17</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 15, 16 & 17</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#projects_demo" onclick="closeSidebar()" class="bar-item button hover-white">Projects Demonstration</a>
+      <a href="#bem_standards" onclick="closeSidebar()" class="bar-item button hover-white">BEM Standards</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    
+    <!-- Projects Demo -->
+    <div class= "container" style="margin-top:50px" id="projects_demo">
+      <h1 class= "xxxlarge text-red"><b>Projects Demonstration</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+        <p> This session will focus more on the trainees' project demonstration and explanation on how project was developed. </p>
+    </div>
+    <!-- Projects Demo ends -->
+
+    <!-- BEM Standards -->
+    <div class= "container" style="margin-top:50px" id="bem_standards">
+      <h1 class= "xxxlarge text-red"><b>BEM Naming Standards</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+        <p> BEM (Block-Element-Modifier) is a naming convention standard for naming CSS classes. </p>
+        <h2> Why use BEM? </h3>
+        <ul>
+          <li> Purpose or function of class is clear </li>
+          <li> Well communicated component structure </li>
+          <li> Consistency in styling selectors </li>
+        </ul>
+        <h2> How BEM works? </h3>
+        <ul>
+          <li> Block: A block is the outermost element of the component (parent) </li>
+          <li> Element: Nested inside the component (one or more children) </li>
+          <li> Modifier: Any block that needs to be modified. </li>
+        </ul>
+        <strong> Syntax: [block]__[element]--[modifier] </strong>
+        <h3> Component without elements </h3>
+        <p style="white-space: pre;">
+          &lt;button class="btn"&gt;&lt;/button&gt;
+          <strong> We can select the button using below: </strong>
+          .btn {}
+        </p>
+        <h3> Component with elements </h3>
+        <p style="white-space: pre;">
+          &lt;figure class="project"&gt;
+            &lt;img class="project__img" src="img.jpg"&gt;
+            &lt;figcaption class="project__caption"&gt;
+              This is a caption
+            &lt;/figcaption&gt;
+          &lt;/figure&gt;
+          <strong> Styles declaration: </strong>
+          .project {}
+          .project__img {}
+          .project__caption {}
+        </p>
+        <h3> Component with modifier </h3>
+        <p style="white-space: pre;">
+          &lt;figure class="project"&gt;
+            &lt;img class="project__img project__img--rounded" src="img.jpg"&gt;
+            &lt;figcaption class="project__caption project__caption--fonts-changed"&gt;
+              This is a caption
+            &lt;/figcaption&gt;
+          &lt;/figure&gt;
+          <strong> Styles declaration: </strong>
+          .project {}
+          .project__img {}
+          .project__img--rounded {}
+          .project__caption {}
+          .project__caption--fonts-changed {}
+        </p>
+    </div>
+    <!-- BEM Standards ends -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+</body>
+</html>

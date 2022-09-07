@@ -1,0 +1,19 @@
+.lists {
+	background-color: green;
+	color: white;
+	width: 50%;
+	margin: 30px auto;
+	padding: 20px;
+}
+
+.lists__h2 {
+	font-size: 30px;
+}
+
+.lists--bg {
+	background-color: blue;
+}
+
+.lists__h2--font-color {
+	color: #aaa;
+}
