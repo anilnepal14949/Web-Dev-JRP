@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 18</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 18</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#javascript_intro" onclick="closeSidebar()" class="bar-item button hover-white">About JavaScript</a>
+      <a href="#javascript_embedding" onclick="closeSidebar()" class="bar-item button hover-white">Embedding JavaScript</a>
+      <a href="#javascript_syntax" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Syntax</a>
+      <a href="#javascript_variables" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Variables</a>
+      <a href="#javascript_datatypes" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Data Types</a>
+      <a href="#javascript_operators" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Operators</a>
+      <a href="#javascript_strings" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Strings</a>
+      <a href="#javascript_numbers" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Numbers</a>
+      <a href="#javascript_conditionals" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Conditionals</a>
+      <a href="#day18_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    
+    <!-- About JavaScript -->
+    <div class= "container" style="margin-top:50px" id="javascript_intro">
+      <h1 class= "xxxlarge text-red"><b>About JavaScript</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+        <p> JavaScript is the most popular and widely used client-side scripting language i.e., scripts that run within a web browser. </p>
+        <h2> Why use JavaScript? </h2>
+        <p> Below are some of the purposes of using JavaScript in a webpage. </p>
+        <ul>
+          <li> Modify content of webpage by adding or removing elements </li>
+          <li> Change the style and position of elements in a webpage </li>
+          <li> Create and attach events like mouse click, hover, keypress </li>
+          <li> Create alerts and confirm boxes for user interactivity </li>
+          <li> Perform operations based on user inputs and display the results </li>
+          <li> User validation before submitting to the server </li>
+        </ul>
+    </div>
+    <!-- About JavaScript ends -->
+
+    <!-- Embedding JavaScript -->
+    <div class= "container" style="margin-top:50px" id="javascript_embedding">
+      <h1 class= "xxxlarge text-red"><b>Embedding JavaScript</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+        <p> Similar to CSS, JavaScript needs to be added to a webpage in order to make the scripts work. </p>
+        <h2> Ways to embed JavaScript </h2>
+        <ul>
+          <li> Inline </li>
+          <li> Internal (Using script tag) </li>
+          <li> External </li>
+        </ul>
+        <h3> Adding Inline JavaScript </h3>
+        <p style="white-space: pre;">
+          &lt;button onclick="alert('Hello')"&gt; Show Alert &lt;/button&gt;
+          <button onclick="alert('Hello')"> Show Alert </button>
+        </p>
+        <h3> Adding Internal JavaScript </h3>
+        <p style="white-space: pre;">
+          &lt;script&gt; document.write("I am displayed with JavaScript") &lt;/script&gt;
+          <script> document.write("I am displayed with JavaScript") </script>
+        </p>
+        <h3> Adding External JavaScript </h3>
+        <p style="white-space: pre;">
+          &lt;script src="script.js"&gt;&lt;/script&gt;
+        </p>
+    </div>
+    <!-- Embedding JavaScript ends -->
+
+    <!-- JavaScript Rules -->
+    <div class= "container" style="margin-top:50px" id="javascript_syntax">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Rules</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> All external javascript files must have extension .js. </p>
+      <h2> Comments in JavaScript </h2>
+      <p> JavaScript supports single line as well as multi-line comments. </p>
+      <p> Single line comments begin with a double forward slash <strong>(//)</strong> while multi-line comments begin with a slash and an asterisk <strong>(/*)</strong> and ends with an asterisk followed by a slash <strong>(*/)</strong>. </p>
+      <h2> Case Sensitivity in JavaScript </h2>
+      <p> Unlike HTML and CSS, JavaScript is a case-sensitive language i.e., variables hello, Hello and HELLO must be used in the same way it is declared. </p> 
+      <p> Similarly, predefined methods like getElementById() cannot be written as getElementByID(). </p>
+    </div>
+    <!-- JavaScript Rules end -->
+
+    <!-- JavaScript Variables -->
+    <div class= "container" style="margin-top:50px" id="javascript_variables">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Variables</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Variables are used to store data like string, numbers, boolean, etc. Variables can be set, updated and retrieved whenever needed. </p>
+      <p> We can create variables using var keyword in javascript. </p>
+      <p> Example: var firstName = 'ABC' </p>
+      <h2> Naming rules: </h2>
+      <ul>
+        <li> A variable name must start with a letter, an underscore (_) or a dollar sign ($) </li>
+        <li> A variable name cannot start with a number </li>
+        <li> A variable name can only contain alpha-numeric characters (A-z, 0-9) and underscores </li>
+        <li> A variable name cannot contain spaces </li>
+        <li> A variable name cannot be a JavaScript keyword </li>
+      </ul>
+      <strong> NB: JavaScript variables are case sensitive </strong>
+    </div>
+    <!-- JavaScript Variables end -->
+
+    <!-- JavaScript Datatypes -->
+    <div class= "container" style="margin-top:50px" id="javascript_datatypes">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Datatypes</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Datatypes are used to specify what type of data can be stored and manipulated within a script. </p>
+      <h2> The String Data Type </h2>
+      <p> The <strong>string</strong> data type is used to represent textual data. </p>
+      <p> Example: var name = 'PQR'; or var name = "PQR"; </p>
+      <h2> The Number Data Type </h2>
+      <p> The <strong>number</strong> data type is used to represent positive or negative numbers with or without decimal points. </p>
+      <p> Example: var a = 100; or var b = 10.25; or var c = -30; </p>
+      <h2> The Boolean Data Type </h2>
+      <p> The <strong>boolean</strong> data type is used to hold true or false values. </p>
+      <p> Example: var isTrue = true; or var isFalse = false; </p>
+      <h2> The Undefined Data Type </h2>
+      <p> The <strong>undefined</strong> data type is used to specify whether a variable is defined or undefined. Undefined means the variable has been declared, but has not been assigned a value. </p>
+      <p> Example: var name; alert(name); </p>
+      <p> In the example above, the output will be undefined as we are alerting name but that variable has no value set. </p>
+      <h2> The Null Data Type </h2>
+      <p> The <strong>null</strong> data type is used to declare a variable as null. Null refers to an empty string ("") for strings and a 0 for numbers. </p>
+      <p> Example: var name = null; or var count = null; </p>
+      <strong> Apart from these datatypes, there are others too like objects, arrays and functions. We will cover all of these separately in coming sessions. </strong>
+    </div>
+    <!-- JavaScript Datatypes end -->
+
+    <!-- JavaScript Operators -->
+    <div class= "container" style="margin-top:50px" id="javascript_operators">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Operators</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Operators are used to perform some sort of actions. </p>
+      <h2> Types of Operators: </h2>
+      <ul>
+        <li> <strong> Arithmetic Operators: </strong> +, -, *, /, % </li>
+        <li> <strong> Assignment Operators: </strong> =, +=, -=, /=, *=, %= </li>
+        <li> <strong> Concatenation Operators: </strong> +, += </li>
+        <li> <strong> Increment/Decrement Operators: </strong> ++x, --x, x++, x-- </li>
+        <li> <strong> Logical Operators: </strong> &&, ||, ! </li>
+        <li> <strong> Comparison Operators: </strong> ==, ===, !=, !==, <, >, <=, >= </li>
+      </ul>
+    </div>
+    <!-- JavaScript Operators end -->
+
+    <!-- JavaScript Strings -->
+    <div class= "container" style="margin-top:50px" id="javascript_strings">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Strings</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> A string is a sequence of letters, numbers, special characters and arithmetic values or combination of all. </p>
+      <h2> Escape Character (\): </h2>
+      <p> An escape character is used to escape a single quote or a double quote. </p>
+      <p> Example: var str1 = "I am tring to \"escape\" character"; </p>
+      <h2> Escape Sequences : </h2>
+      <p> Escape sequence are useful when we want to use characters that can't be typed using a keyboard. </p>
+      <h3> List of some of the mostly used escape sequences: </h3>
+      <ul>
+        <li> \n: Used to insert a newline </li>
+        <li> \t: Used to insert a tab </li>
+      </ul>
+      <h2> String Operations </h2>
+      <p> JavaScript provides several properties and methods to perform operations on string values. </p>
+      <h3> Getting the length of a String </h3>
+      <p> The <strong>length</strong> property is used to return the length of a string; also includes spaces, new lines(\n) and tab(\t). </p>
+      <p>Example: var para = "This is a paragraph!"; alert(para.length); </p>
+      <h3> Finding a String inside another String </h3>
+      <p> The <strong>indexOf()</strong> and <strong>lastIndexOf()</strong> methods are used to find a substring within another string. </p>
+      <p>Example: var para = "Do you think I can find this in this para?"; alert(para.indexOf("this")); alert(para.lastIndexOf("this")); </p>
+      <h3> Extracting a Substring from a String </h3>
+      <p> The <strong>slice()</strong> method is used to extract a part or substring from a string. </p>
+      <p> The <strong>slice()</strong> method accepts two parameters; startIndex, endIndex. </p>
+      <p> Example: var para = "Let's take some portion of this paragraph"; alert(para.slice(10, 15)); </p>
+      <p> The <strong>substring()</strong> method is also used to extract substring from a string. </p>
+      <p> Similarly, JavaScript also provides <strong>substr()</strong> method that accepts two parameters startIndex and length. </p>
+      <p> Example: var para = "Let's take some portion of this paragraph"; alert(para.substr(10, 15)); </p>
+      <h3> Replacing the contents of a String </h3>
+      <p> The <strong>replace()</strong> method can be used to replace part of a string with another string. </p>
+      <p> Example: var para = "Let's replace this."; alert(para.replace("this", "that")); </p>
+      <h3> Converting a String to uppercase or lowercase </h3>
+      <p> The <strong>toUpperCase()</strong> and <strong>toLowerCase()</strong> methods are used to convert a string to uppercase and lowercase respectively. </p>
+      <p> Example: var name="my name"; alert(name.toUpperCase()); alert(name.toLowerCase()); </p>
+      <h3> Concatenating Strings </h3>
+      <p> We can use concatenation operators <strong>(+, +=)</strong> for concatenating strings in JavaScript. </p>
+      <p> Example: var firstName = "AB"; var lastName = "C"; var name = firstName + lastName; </p>
+      <h3> Splitting Strings </h3>
+      <p> The <strong>split()</strong> method can be used to split a string into an array of strings. </p>
+      <p> Example: var fruits = "Apple, Banana, Mango, Grapes"; var fruitsArr = fruitsList.split(", "); </p>
+    </div>
+    <!-- JavaScript Strings end -->
+
+    <!-- JavaScript Numbers -->
+    <div class= "container" style="margin-top:50px" id="javascript_numbers">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Numbers</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JavaScript supports both integer and floating-point numbers. </p>
+      <p> Example: var x = 10; var x = 3.15; var x = 0xff; </p>
+      <h2> Number Operations </h2>
+      <p> JavaScript provides several properties and methods to perform operations on number values. </p>
+      <h3> Parsing Integers from Strings: </h3>
+      <p> The parseInt() method can be used to parse an integer from a string. </p>
+      <p> Example: console.log(parseInt("3.15")); console.log(parseInt("50px")); </p>
+      <p> The parseFloat() method can be used to parse floating-point number from a string. </p>
+      <p> Example: console.log(parseFloat("3.15")); console.log(parseFloat("124.5 lbs")); </p>
+      <h3> Converting Numbers to Strings </h3>
+      <p> The toString() method can be used to convert a number to its string equivalent. </p>
+      <p> Example: var x = 12; console.log(x.toString()); </p>
+      <strong> NB: We will learn more math operations in coming sessions. </strong>
+    </div>
+    <!-- JavaScript Numbers end -->
+
+    <!-- JavaScript Conditionals -->
+    <div class= "container" style="margin-top:50px" id="javascript_conditionals">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Conditional Statements</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JavaScript allows to perform actions based on the results of a logical or comparative test conditions at run time. </p>
+      <h2> List of conditional statements: </h2>
+      <ul>
+        <li> The <strong>if</strong> statement </li>
+        <li> The <strong>if...else</strong> statement </li>
+        <li> The <strong>if...elseif...else</strong> statement </li>
+        <li> The <strong>switch...case</strong> statement </li>
+      </ul>
+      <h3> The if statement </h3>
+      <p> The if statement is used to execute a block of code only if the specified condition is true. </p>
+      <strong>Syntax: </strong>
+      <p style="white-space: pre;"> 
+        if(condition) {
+          // blocks of code to be executed
+        } 
+      </p>
+      <h3> The if...else statement </h3>
+      <p> The if...else statement is used to execute a block of code only if the specified condition is true and another block of code if it is false. </p>
+      <strong>Syntax: </strong>
+      <p style="white-space: pre;"> 
+        if(condition) {
+          // blocks of code to be executed if condition is true
+        } else {
+          // blocks of code to be executed if condition is false
+        }
+      </p>
+      <h3> Ternary Operator </h3>
+      <p> The ternary operator provides the shorthand way of writing the if...else statement. </p>
+      <p> Syntax: var result = (condition) ? value1 : value2; </p>
+      <h3> The if...elseif...else statement </h3>
+      <p> The if...elseif...else statement is used to multiple if...else statements. </p>
+      <strong>Syntax: </strong>
+      <p style="white-space: pre;"> 
+        if(condition1) {
+          // blocks of code to be executed if condition1 is true
+        } else if(condition2) {
+          // blocks of code to be executed if condition1 is false and condition2 is true
+        } else {
+          // blocks of code to be executed if both condition1 and condition2 are false
+        }
+      </p>
+      <h3> The switch...case statement </h3>
+      <p> This statement is an alternative to the if...elseif...else statement. </p>
+      <strong>Syntax: </strong>
+      <p style="white-space: pre;"> 
+        switch(expression) {
+          case value1: {
+            // blocks of code to be executed if x === value1
+            break;
+          } 
+          case value2: {
+            // blocks of code to be executed if x === value2
+            break;
+          }
+          ...
+          default:
+            // blocks of code to be executed if x is different from all values
+      </p>
+    </div>
+    <!-- JavaScript Conditionals end -->
+
+    <!-- Day18 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day18_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create an HTML document and : </p>
+      <ul>
+        <li> Create an external JavaScript file and insert in the webpage </li>
+        <li> In the script file: 
+          <ul>
+            <li> Get the initials of a person's name </li>
+            <li> Get 20 characters starting from 5th position </li>
+            <li> Check whether a person is eligible to vote </li>
+            <li> Store the marks (out of 100) in a variable and check if a student have passed or failed </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Day18 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
