@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 20</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 20</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#javascript_dialogs" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Dialogs</a>
+      <a href="#javascript_dom" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript DOM </a>
+      <a href="#javascript_dom_selectors" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript DOM Selectors </a>
+      <a href="#javascript_dom_styling" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript DOM Styling </a>
+      <a href="#javascript_dom_get_set_attributes" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript DOM Get/Set Attributes </a>
+      <a href="#javascript_dom_manipulation" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript DOM Manipulation </a>
+      <a href="#javascript_dom_navigation" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript DOM Navigation </a>
+      <a href="#day20_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    
+    <!-- JavaScript Dialogs -->
+    <div class= "container" style="margin-top:50px" id="javascript_dialogs">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Dialogs</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> In JavaScript, you can create dialog boxes or popups to interact with the users. </p>
+      <p> There are three types of dialog boxes: alert, confirm and prompt boxes. </p>
+      <p> The dialog boxes stop the code execution when it is displayed and the code execution only resumes after the boxes are dismissed. </p>
+      <h3> Creating Alert Dialog Boxes </h3>
+      <p> Alert Boxes enable to display a short message to the user. It includes OK button. </p>
+      <p><strong>Syntax:</strong> alert(message) </p>
+      <h3> Creating Confirm Dialog Boxes </h3>
+      <p> Confirm Boxes allows user to confirm or cancel an action. It includes OK and Cancel buttons which returns Boolean values True and False respectively. </p>
+      <p><strong>Syntax:</strong> confirm(confirmation_message) </p>
+      <h3> Creating Prompt Dialog Boxes </h3>
+      <p> Prompt Boxes prompts the user to enter some information. It includes a text box and an OK and a Cancel button. </p>
+      <p><strong>Syntax:</strong> prompt(prompt_message) </p>
+    </div>
+    <!-- JavaScript Dialogs end -->
+
+    <!-- JavaScript DOM -->
+    <div class= "container" style="margin-top:50px" id="javascript_dom">
+      <h1 class= "xxxlarge text-red"><b>JavaScript DOM</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> DOM or Document Object Model is a platform or language independent model to represent the HTML documents. It defines the logical structure of the documents and the way in which they can be assessed and manipulated by an application program. </p>
+      <p> In the DOM, all parts of the document i.e., elements, attributes, text,etc. are organized in a hierarchical tree-like structure. These individual parts of the document are known as nodes. </p>
+      <p><strong> In the example below: </strong></p>
+      <img src="dom_html.png">
+      <img src="https://www.tutorialrepublic.com/lib/images/html-dom-illustration.png">
+    </div>
+    <!-- JavaScript DOM ends -->
+
+    <!-- JavaScript DOM Selectors -->
+    <div class= "container" style="margin-top:50px" id="javascript_dom_selectors">
+      <h1 class= "xxxlarge text-red"><b>JavaScript DOM Selectors</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JavaScript provides different selectors to select the elements on a webpage and manipulate them. </p>
+      <h3> Selecting Elements by ID </h3>
+      <p> We can select an element based on its unique ID with the <strong>getElementById()</strong> method. </p>
+      <p><strong> HTML: </strong> &lt;p id="para"&gt; This is a paragraph. &lt;/p&gt;</p>
+      <p><strong> Selection: </strong> document.getElementById("para") </p>
+
+      <h3> Selecting Elements by Class Name </h3>
+      <p> We can select all elements having specific class names with the <strong>getElementsByClassName()</strong> method. </p>
+      <p><strong> HTML: </strong> &lt;p class="para"&gt; This is a paragraph. &lt;/p&gt;</p>
+      <p><strong> Selection: </strong> document.getElementsByClassName("para") </p>
+
+      <h3> Selecting Elements by Tag Name </h3>
+      <p> We can select the elements by tag name with the <strong>getElementsByTagName()</strong> method. </p>
+      <p><strong> HTML: </strong> &lt;p&gt; This is a paragraph. &lt;/p&gt;</p>
+      <p><strong> Selection: </strong> document.getElementsByTagName("p") </p>
+
+      <h3> Selecting Elements with CSS Selectors </h3>
+      <p> We can also select elements that matches the specified selector with the <strong>querySelector() and querySelectorAll() </strong> methods. </p>
+      <p><strong> HTML: </strong> &lt;p class="para"&gt; This is a paragraph. &lt;/p&gt;</p>
+      <p><strong> Selection: </strong> document.querySelector(".para") </p>
+      <p> If you have more than one elements with same classname and select it, use <strong> document.querySelectorAll('.para') </strong></p>
+    </div>
+    <!-- JavaScript DOM Selectors end -->
+
+    <!-- JavaScript DOM Styling -->
+    <div class= "container" style="margin-top:50px" id="javascript_dom_styling">
+      <h1 class= "xxxlarge text-red"><b>JavaScript DOM Styling</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> We can also apply style on HTML elements by selecting them dynamically using JavaScript. </p>
+      <p><strong> HTML: </strong> &lt;p class="para"&gt; This is a paragraph. &lt;/p&gt;</p>
+      <p><strong> Script: </strong> document.querySelector(".para").style.color="red" </p>
+      <p> Since CSS has properties like font-size, border-left-style, etc. uses hyphen in their names and that hyphen (-) is reserved as minus in JavaScript, the properties with the hyphen symbols are written in camel case format like fontSize, borderLeftStyle, etc. </p>
+      
+      <h3> Getting Style Information </h3>
+      <p> To get all the values of all CSS properties, we can use the window.getComputedStyle() method and to get the value of specific property, we can use getPropertyValue() method. </p>
+      <p><strong>Example:</strong> &lt;p id="para"&gt; This is a para &lt;/p&gt; </p>
+      <p><strong>Script:</strong> var styles = window.getComputedStyle(elem); styles.getPropertyValue("color") </p>
+
+      <h3> Adding CSS classes to Elements </h3>
+      <p> We can also get or set CSS classes to the HTML elements using the className property. </p>
+      <p><strong> Example: </strong> &lt;div id="newDiv" class="newClass"&gt;&lt;/div&gt; </p>
+      <p><strong> Script: </strong> var div = document.getElementById("newDiv"); div.className = "changedClass"; div.className += " anotherChangedClass"; </p>
+
+      <h3> Manipulating CSS classes using classList </h3>
+      <p> We can use the classList property to get, set or remove classes from an element. </p>
+      <p><strong> Example: </strong> &lt;div id="newDiv" class="newClass"&gt;&lt;/div&gt; </p>
+      <p><strong> Script: </strong> var div = document.getElementById("newDiv"); div.classList.add("changedDiv"); div.classList.remove("newClass"); div.classList.toggle("changedDiv"); </p>
+      <p> We can also use the contains method to check if the class is present in the element or not. </p>
+      <p><strong> Example: </strong> div.classList.contains("newClass"); </p>
+    </div>
+    <!-- JavaScript DOM Styling end -->
+
+    <!-- JavaScript DOM Get/Set Attributes -->
+    <div class= "container" style="margin-top:50px" id="javascript_dom_get_set_attributes">
+      <h1 class= "xxxlarge text-red"><b>JavaScript DOM Get/Set Attributes</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JavaScript provides several methods for adding, removing or changing an HTML element's attribute. </p>
+      <p> We can use <strong>getAttribute()</strong> to get the current value of an attribute on the element. If the specified attribute doesnot exist, it will return null. </p>
+      <p><strong> Example: </strong> &lt;div id="newDiv" class="newClass"&gt;&lt;/div&gt; </p>
+      <p><strong> Script: </strong> var div = document.getElementById("newDiv"); var divID = div.getAttribute("id"); </p>
+      <p> Similarly, we can use <strong>setAttribute()</strong> to set or update the current value of an attribute on the element. </p>
+      <p><strong> Example: </strong> &lt;div id="newDiv" class="newClass"&gt;&lt;/div&gt; </p>
+      <p><strong> Script: </strong> var div = document.getElementById("newDiv"); var divID = div.getAttribute("id"); div.setAttribute("title", "This is a new Div"); </p>
+      <p> We can also use <strong>removeAttribute()</strong> to remove the attribute on the element. </p>
+      <p><strong> Example: </strong> &lt;div id="newDiv" class="newClass"&gt;&lt;/div&gt; </p>
+      <p><strong> Script: </strong> var div = document.getElementById("newDiv"); div.removeAttribute("class") </p>
+    </div>
+
+    <!-- JavaScript DOM Manipulation -->
+    <div class= "container" style="margin-top:50px" id="javascript_dom_manipulation">
+      <h1 class= "xxxlarge text-red"><b>JavaScript DOM Manipulation</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> We can also add or remove elements dynamically using JavaScript. </p>
+      <h3> Adding New Elements to DOM </h3>
+      <p> We can use <strong> document.createElement() </strong> method to create a new element. </p>
+      <p><strong> Example: </strong> var newDiv = document.createElement("div"); </p>
+      <p> To add the element to the DOM, we use <strong> appendChild() method </strong></p>
+      <p><strong> Example: </strong> document.body.appendChild(newDiv); </p>
+
+      <h3> Getting or Setting HTML Contents to DOM </h3>
+      <p> We can get or set the contents of the HTML elements using the <strong>innerHTML</strong> property. </p>
+      <p><strong> HTML: </strong> &lt;div id="para"&gt; This is a para &lt;/div&gt; </p>
+      <p><strong> Script: </strong> var contents = document.getElementById("para").innerHTML; contents.innerHTML = "This is a new para text"; </p>
+
+      <h3> Removing the existing elements from DOM </h3>
+      <p> To remove the elements/node from the DOM, we use the removeChild() method. </p>
+      <p><strong> HTML: </strong>&lt;div id="main"&gt;&lt;div id="node1"&gt;&lt;/div&gt;&lt;div id="node2"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+      <p><strong> Script: </strong> var main = document.getElementById('main'); var node2 = document.getElementById('node2'); main.removeChild(node2); </p>
+    </div>
+    <!-- JavaScript DOM Manipulation -->
+
+    <!-- JavaScript DOM Navigation -->
+    <div class= "container" style="margin-top:50px" id="javascript_dom_navigation">
+      <h1 class= "xxxlarge text-red"><b>JavaScript DOM Navigation</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Sometimes, we need to access a child or parent elements apart from selecting individual elements on a web page. </p>
+      <h3> Accessing the Child Nodes </h3>
+      <p> We can use <strong>firstChild</strong> and <strong>lastChild</strong> properties of the DOM node to access the first and last direct child node of a node, respectively. If no child elements are found, it returns null. </p>
+      <p> Similarly we can use <strong>firstElementChild</strong> and <strong>lastElementChild</strong> to return only the first and last element node by skipping any whitespace text nodes, respectively.</p>
+      <h3> Accessing the Parent Nodes </h3>
+      <p> We can use <strong>parentNode</strong> property of the DOM node to access the parent node. The parentNode will always return null for document node as it doesn't have a parent. </p>
+      <h3> Accessing the Sibling Nodes </h3>
+      <p> We can use the <strong>previousSibling</strong> and <strong>nextSibling</strong> properties to access the previous and next node in the DOM tree, respectively. </p>
+      <p> Similarly, we can also use <strong>previousElementSibling</strong> and <strong>nextElementSibling</strong> to get the previous and next sibling element skipping any whitespace text nodes. </p>
+    </div>
+    <!-- JavaScript DOM Navigation ends -->
+
+    <!-- Day20 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day20_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create an HTML document and : </p>
+      <ul>
+        <li> Create an external JavaScript file and insert in the webpage </li>
+        <li> In the script file: 
+          <ul>
+            <li> Create a prompt box to take a number and display if the number is even or odd. </li>
+            <li> Create a confirm box with message "Do you want to delete it?". If the user clicks on OK, display an alert with an appropriate message. </li>
+            <li> Add an element with main class and some more elements inside the main div and: 
+              <ul>
+                <li> Select one of the elements by ID and change its color. </li>
+                <li> Select the elements with the same class name and add a border around it. </li>
+                <li> Add a new class to the main div and apply some styling using CSS. </li>
+                <li> Add one more class to the main div and apply some more styling.</li>
+                <li> Remove the first added class</li>
+                <li> Add a new element, anchor tag (a) and set the href attribute of the anchor tag to "https://google.com". Also style the element to look like a button. </li>
+                <li> Find the previous sibling of the newly added anchor element and set the background color to blue and font color to white.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Day20 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
