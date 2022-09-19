@@ -144,6 +144,18 @@ domTitle.style.color = "red";
 domTitle.style.padding = "10px";
 domTitle.style.border = "2px solid red";
 
+// console.log(paras);
+
+for (i in paras) {
+	paras[i].style.border = "2px solid #000";
+	paras[i].style.color = "brown";
+	// console.log(paras[index]);
+}
+
+// for (para of paras) {
+// 	para.style.border = "2px solid #000";
+// }
+
 // console.log(dom.firstElementChild);
 console.log(domTitle.previousElementSibling);
 
