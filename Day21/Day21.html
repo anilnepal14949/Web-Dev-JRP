@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 21</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 21</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#javascript_window" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Window</a>
+      <a href="#javascript_location" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Location </a>
+      <a href="#javascript_history" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript History </a>
+      <a href="#javascript_navigator" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Navigator </a>
+      <a href="#javascript_timers" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript DOM Timers </a>
+      <a href="#javascript_date_time" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Date/Time </a>
+      <a href="#day21_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    
+    <!-- JavaScript Window -->
+    <div class= "container" style="margin-top:50px" id="javascript_window">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Window</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> In JavaScript, the window object represents a window containing a DOM document. </p>
+      <h3> Calculating the Width and Height of the Window </h3>
+      <p> The window object provides the innerWidth and innerHeight property to find out the width and the height of the browser window viewport (in pixels) including the horizontal and vertical scrollbar, if rendered. </p>
+      <p><strong> Syntax: </strong> window.innerWidth, window.innerHeight </p>
+      <script>
+        document.write("This window is " + window.innerWidth + " px wide & " + window.innerHeight + " px high, including the scrollbars.");
+      </script>
+      <p> Similarly, we can use clientWidth and clientHeight to find out the width and height of the window excluding the scrollbars. </p>
+      <p><strong> Syntax: </strong> document.documentElement.clientWidth, document.documentElement.clientHeight </p>
+      <script>
+        document.write("This window is " + document.documentElement.clientWidth + " px wide & " + document.documentElement.clientHeight + " px high, excluding the scrollbars.");
+      </script>
+    </div>
+    <!-- JavaScript Window end -->
+
+    <!-- JavaScript Location -->
+    <div class= "container" style="margin-top:50px" id="javascript_location">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Location</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The window.location is a reference to a Location object. It represents the current URL of the document being displayed in the window. </p>
+      <h3> Getting the current page URL </h3>
+      <p> We can use the window.location.href property ot get the entire URL of the current page. </p>
+      <p><strong> Syntax: </strong> window.location.href </p>
+      <script>
+        document.write("The URL of current page is " + window.location.href);
+      </script>
+      <h3> Getting different parts of URL </h3>
+      <p> We can also get other properties of the location object as protocol, hostname, port, pathname, search, etc. </p>
+      <p><strong> Examples: </strong></p>
+      <p class="white-space: pre">
+        &lt;script&gt;<br>
+          console.log("Different parts of URL:");<br>
+          console.log("Protocol: "+window.location.protocol);<br>
+          console.log("Host: "+window.location.host);<br>
+          console.log("Hostname: "+window.location.hostname);<br>
+          console.log("Port: "+window.location.port);<br>
+          console.log("pathname: "+window.location.pathname);<br>
+          console.log("Search: "+window.location.search);<br>
+          console.log("Hash: "+window.location.hash);<br>
+        &lt;/script&gt;
+      </p>
+      <script>
+        // console.log("Different parts of URL:");
+        // console.log("Protocol: "+window.location.protocol);
+        // console.log("Host: "+window.location.host);
+        // console.log("Hostname: "+window.location.hostname);
+        // console.log("Port: "+window.location.port);
+        // console.log("pathname: "+window.location.pathname);
+        // console.log("Search: "+window.location.search);
+        // console.log("Hash: "+window.location.hash);
+      </script>
+      <h3> Loading New Documents </h3>
+      <p> We can use the assign() method or set the href of the location object to load another resource from a URL provided as parameter. </p>
+      <p><strong>Syntax:</strong> window.location.assign(newURL); or window.location.href = newURL; </p>
+      <p> Alternatively, we can also use the replace() to replace the contents of another resource. However, using replace() doesn't create an entry in the browser's history. </p>
+      <h3> Dynamically reloading the page </h3>
+      <p> We can use the reload() method of the page to reload the current page dynamically. </p>
+      <p> The method takes two optional parameters true or false. If true is specified, the browser will be forced to reload the page from the server and if false, the browser may reload the page from its cache. </p>
+      <p><strong>Syntax:</strong> window.location.reload(true|false) </p>
+    </div>
+    <!-- JavaScript Location end -->
+
+    <!-- JavaScript History -->
+    <div class= "container" style="margin-top:50px" id="javascript_history">
+      <h1 class= "xxxlarge text-red"><b>JavaScript History</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The history property of the Window object contains the session history, a list of all the pages visited in the current window. </p>
+      <h3>Getting the number of Pages Visited</h3>
+      <p> The window.history.length property can be used to get the number of pages in the session history of the browser for the current window. </p>
+      <p><strong> Syntax: </strong> window.history.length or history.length </p>
+      <h3>Going Back to the Previous Page</h3>
+      <p> The window.history.back() method can be used to go back in the session history of the browser for the current window. </p>
+      <p><strong> Syntax: </strong> window.history.back() or history.back() </p>
+      <h3>Going Forward to the Previous Page</h3>
+      <p> The window.history.forward() method can be used to go forward in the session history of the browser for the current window. </p>
+      <p><strong> Syntax: </strong> window.history.forward() or history.forward() </p>
+      <h3>Going to the specific Page</h3>
+      <p> The window.history.go() method can be used to go to the specific page in the session history of the browser for the current window. </p>
+      <p> This method takes an integer as a parameter. A positive integer moves forward while a negative integer moves backward in the history. </p>
+      <p><strong> Syntax: </strong> window.history.go() or history.go() </p>
+    </div>
+    <!-- JavaScript History ends -->
+
+    <!-- JavaScript Navigator -->
+    <div class= "container" style="margin-top:50px" id="javascript_navigator">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Navigator</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The navigator property of a window is a reference to a read-only Navigator Object that provides information about the user's browser. </p>
+      <h3> Detect Whether the Browser is Online or Offline </h3>
+      <p> We can use the navigator.onLine property to detect wheter the browser is online or offline. </p>
+      <p> This property returns true if online and false if offline. </p>
+      <p><strong> Syntax: </strong> navigator.onLine </p>
+      <h3> Getting Browser Information </h3>
+      <p> The Navigator object has five main properties: appName, appVersion, appCodeName, userAgent, platform </p>
+      <p><strong> Syntax: </strong> navigator.appName, navigator.appVersion, etc. </p>
+      <h3> Check if Cookies are Enabled or Not </h3>
+      <p> We can use navigator.cookieEnabled to check whether cookies are enabled in the user's browser or not. </p>
+      <p> This property returns true if cookies enabled else returns false. </p>
+      <p><strong>Syntax:</strong> navigator.cookieEnabled </p>
+      <h3> Check if Java are Enabled or Not </h3>
+      <p> We can use navigator.javaEnabled() method to check whether cookies are enabled in the user's browser or not. </p>
+      <p> This method returns true if java is enabled else returns false. </p>
+      <p><strong>Syntax:</strong> navigator.javaEnabled() </p>
+    </div>
+    <!-- JavaScript Navigator ends -->
+
+    <!-- JavaScript Timers -->
+    <div class= "container" style="margin-top:50px" id="javascript_timers">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Timers</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> A timer is a function that enables us to execute a function at a particular time. There are two types of timer functions in JavaScript: <strong>setTimeout()</strong> & <strong>setInterval()</strong></p>
+      <h3> setTimeout() </h3>
+      <p> The setTimeout() function is used to execute a function or specified piece of code just once after a certain period of time. </p>
+      <p><strong> Syntax: </strong> setTimeout(function, milliseconds) </p>
+      <h3> setInterval() </h3>
+      <p> The setInteval() function is used to execute a function or specified piece of code repeatedly at fixed time intervals. </p>
+      <p><strong> Syntax: </strong> setInterval(function, milliseconds) </p>
+      <h3> clearTimeout() </h3>
+      <p> The clearTimeout() method can be used to clear the timeout and takes one parameter, an ID associated with setTimeout() function. </p>
+      <p><strong>Syntax:</strong> clearTimeout(timeoutID); </p>
+      <h3> clearInterval() </h3>
+      <p> The clearInterval() method can be used to clear the timeout and takes one parameter, an ID associated with setInterval() function. </p>
+      <p><strong>Syntax:</strong> clearInterval(intervalID); </p>
+    </div>
+    <!-- JavaScript Timers end -->
+
+    <!-- JavaScript Date/Time -->
+    <div class= "container" style="margin-top:50px" id="javascript_date_time">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Date/Time</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JavaScript provides a built-in Date object that allows accessing user's local date and time through the browser. It also provides several methods for managing, manipulating, and formatting dates and times. </p>
+      <h3> Create a Date object </h3>
+      <p> Date() constructor is used to create a Date object. </p>
+      <p><strong> Syntax: </strong> var d = new Date(); </p>
+      <p> The Date() constructor accepts parameters separated by commas: year, month, day, hours, minutes, seconds, milliseconds </p>
+      <p><strong> Syntax: </strong> var d = new Date(year, month, day, hours, minutes, seconds, milliseconds); </p>
+      <script>
+        var d = new Date(2022, 08, 20, 01, 35, 30, 100);
+        document.write(d);
+      </script>
+      <p> Date can also be created by passing dateString as parameter in the Date() constructor. </p>
+      <p><strong> Syntax: </strong> var d = new Date(dateString); </p>
+      <script>
+        var d = new Date("20 September 2022");
+        document.write(d);
+      </script>
+      <p> Date can also be created by passing milliseconds as parameter in the Date() constructor. </p>
+      <p><strong> Syntax: </strong> var d = new Date(milliseconds); </p>
+      <script>
+        var d = new Date(1517256359000);
+        document.write(d);
+      </script>
+      <h3> Get the current date and time </h3>
+      <p> To get the current date and time, we can simply create a new Date object without passing any parameters. </p>
+      <p><strong> Syntax: </strong> var now = new Date(); </p>
+      <script>
+        var now = new Date();
+        document.write(now);
+      </script>
+      <h3> Creating the Date and Time Strings </h3>
+      <p> Several methods such as toDateString(), toTimeString() and others can be used to generate date strings in different formats. </p>
+      <h3> List of Date/Time Strings: </h3>
+      <ul>
+        <li> d.toDateString() </li>
+        <li> d.toLocaleDateString() </li>
+        <li> d.toISOString() </li>
+        <li> d.toUTCString() </li>
+        <li> d.toString() </li>
+        <li> d.toTimeString() </li>
+        <li> d.toLocaleTimeString() </li>
+      </ul>
+      <script>
+        var d = new Date();
+        // console.log(d.toDateString());
+        // console.log(d.toLocaleDateString());
+        // console.log(d.toISOString());
+        // console.log(d.toUTCString());
+        // console.log(d.toString());
+        // console.log(d.toTimeString());
+        // console.log(d.toLocaleTimeString());
+      </script>
+      <h3> Getting Specific Date and Time Components </h3>
+      <p> We can also extract specific components from the Date object like month, day, hours, minutes, etc. </p>
+      <h4> Getting the Year, Month and Date </h4>
+      <p><strong> Syntax: </strong> var d = new Date(); d.getDate(); d.getDay(); d.getMonth(); d.getFullYear(); </p>
+      <script>
+        var d = new Date();
+        // console.log(d.getDate());
+        // console.log(d.getDay());
+        // console.log(d.getMonth());
+        // console.log(d.getFullYear());
+      </script>
+      <h4> Getting the Time, Hours, Minutes, Seconds and Milliseconds </h4>
+      <p><strong> Syntax: </strong> var d = new Date(); d.getTime(); d.getHours(); d.getMinutes(); d.getSeconds(); d.getMilliseconds(); </p>
+      <script>
+        var d = new Date();
+        // console.log(d.getTime());
+        // console.log(d.getHours());
+        // console.log(d.getMinutes());
+        // console.log(d.getSeconds());
+        // console.log(d.getMilliseconds());
+      </script>
+      <h3> Setting Year, Month, Date </h3>
+      <p> The Date object provides setFullYear(), setMonth() and setDate() methods to set the year, month and date components of the Date Object respectively. </p>
+      <p><strong> Syntax: </strong> var d = new Date(); d.setFullYear(); d.setMonth(); d.setDate(); </p>
+      <script>
+        // var d = new Date();
+        // d.setFullYear(d.getFullYear() + 1);
+        // d.setMonth(10);
+        // d.setDate(25);
+
+        // console.log(d);
+      </script>
+      <h3> Setting Hours, Minutes, Seconds and Milliseconds </h3>
+      <p> The Date object provides setHours(), setMinutes(), setSeconds() and setMilliseconds() methods to set the hours, minutes, seconds and milliseconds components of the Date Object respectively. </p>
+      <p><strong> Syntax: </strong> var d = new Date(); d.setHours(); d.setMinutes(); d.setSeconds(); d.setMilliseconds(); </p>
+      <script>
+        // var d = new Date();
+        // d.setHours(18);
+        // d.setMinutes(25);
+
+        // console.log(d.toLocaleTimeString());
+      </script>
+    </div>
+    <!-- JavaScript Date/Time ends -->
+
+    <!-- Day21 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day21_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create an HTML document and : </p>
+      <ul>
+        <li> Create an external JavaScript file and insert in the webpage </li>
+        <li> In the script file: 
+          <ul>
+            <li> Display the width and height of your window. </li>
+            <li> Create a button and set the location of the document to another resource on click. </li>
+            <li> Create a button and reload the document on click. </li>
+            <li> Display the length of session history for the current window and go back to 3rd document in the list. </li>
+            <li> Check if the browser is online or offline. </li>
+            <li> Get all possible information about your browser. </li>
+            <li> Check if cookies are enabled or not in your browser. </li>
+            <li> Create a new Date object with your full birth date and determine your age. </li>
+            <li> Create a stopwatch like below: <p><a href="stopwatch/stopwatch.html" target="_blank"><img src="stopwatch/stopwatch.png" width="500"></a></p></li>
+            <li> Create a countdown timer like below: <p><a href="countdown/countdown.html" target="_blank"><img src="countdown/countdown.png" width="500"></a></p></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Day21 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
