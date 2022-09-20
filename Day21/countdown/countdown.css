@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: purple;
+    font-family: sans-serif;
+}
+#countdown {
+    width: 40%;
+    padding: 0 0 20px;
+    background: yellow;
+    color: #000;
+    text-align: center;
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    display: none;
+}
+#countdown.finished {
+    animation-name: celebrate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#countdown h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: cursive;
+    margin: 2rem 0;
+}
+#countdown .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#countdown .countdown div {
+    margin: 0 20px;
+}
+#countdown .countdown div p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #197e00;
+}
+#countdown .countdown div p.title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #b90000;
+}
+#countdown h3.finished {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0px 2px 3px #000;
+} 
+@keyframes celebrate {
+    0% {
+        background-color: yellow;
+    } 
+    20% {
+        background-color: #1F0000;
+    }
+    40% {
+        background-color: #11b900;
+    }
+    60% {
+        background-color: #00cf00;
+    }
+    80% {
+        background-color: #0000cf;
+    }
+    100% {
+        background-color: #yellow;
+    }
+}
