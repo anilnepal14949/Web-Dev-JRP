@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 22</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 22</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#javascript_math" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Math Operations</a>
+      <a href="#javascript_conversions" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Type Conversions </a>
+      <a href="#javascript_event_listeners" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Event Listeners </a>
+      <a href="#javascript_propagation" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Events Propagation </a>
+      <a href="#javascript_json_parsing" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript JSON Parsing </a>
+      <a href="#javascript_error_handling" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Error Handling </a>
+      <a href="#html_web_storage" onclick="closeSidebar()" class="bar-item button hover-white">HTML Web Storage </a>
+      <a href="#day22_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    
+    <!-- JavaScript Math -->
+    <div class= "container" style="margin-top:50px" id="javascript_math">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Math Operations</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JavaScript provides a Math object that provides a number of userful properties and methods for performing mathematical operations. </p>
+      <h3> Math.PI Property </h3>
+      <p> The Math.PI property represents the value of PI constant, which is approx 3.14159. </p>
+      <p><strong> Syntax: </strong> Math.PI </p>
+      <h3> Getting the Absolute Value </h3>
+      <p> The Math.abs() method is used to calculate the absolute (positive) value of a number. </p>
+      <p><strong> Syntax: </strong> Math.abs(number) </p>
+      <h3> Generating a Random Number </h3>
+      <p> The Math.random() method is used to generate a floating-point random number. </p>
+      <p><strong>Syntax:</strong> Math.random() or Math.random(max) </p>
+      <h3> Calculating the Square Root of a Number </h3>
+      <p> The Math.sqrt() method is used to calculate the square root of a number. </p>
+      <p><strong> Syntax: </strong> Math.sqrt(x) </p>
+      <h3> Rounding up the Number </h3>
+      <p> The Math.ceil() method rounds a number up to the next highest integer. Ex: 3.5 is rounded up to 4. </p>
+      <p><strong> Syntax: </strong> Math.ceil(x) </p>
+      <h3> Rounding down the Number </h3>
+      <p> The Math.floor() method rounds a number down to the next lowest integer. Ex: 3.5 is rounded down to 3. </p>
+      <p><strong> Syntax: </strong> Math.floor(x) </p>
+      <h3> Rounding the Number </h3>
+      <p> The Math.round() method rounds a number to the nearest integer in such a way that if the decimal part is .5 or greater, number is rounded up, else rounded down. Ex: 3.5 is rounded to 4, 2.3 is rounded to 2. </p>
+      <p><strong> Syntax: </strong> Math.round(x) </p>
+      <h3> Find the largest and smallest numbers </h3>
+      <p> The Math.max() and Math.min() methods is used to find which number is the largest or smallest in a group of numbers, respectively. </p>
+      <p><strong> Syntax: </strong> Math.max(numbers); Math.min(numbers); </p>
+      <p> To find the maximum or minimum value in an array, we use the apply() method. </p>
+      <p><strong> Syntax: </strong> Math.max.apply(null, array); Math.min.apply(null, array); </p>
+      <h3> Raising Numbers to a Power </h3>
+      <p> The Math.pow() method is used to raise a number to a specified power. </p>
+      <p><strong> Syntax: </strong> Math.pow(number, power) </p>
+    </div>
+    <!-- JavaScript Math end -->
+
+    <!-- JavaScript Type Conversions -->
+    <div class= "container" style="margin-top:50px" id="javascript_conversions">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Type Conversions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Most of the time, JavaScript automatically converts values from one data type to another when used in expression. </p>
+      <p> But, there can be situations when we need to manually convert a value from one data type to another. </p>
+      <h3> Converting Values to Numbers </h3>
+      <p> We can use Number() method to convert strings to numbers. </p>
+      <p><strong> Syntax: </strong> Number(x); x can be strings, boolean, null, undefined or other expressions </p>
+      <h3> Converting Values to Strings </h3>
+      <p> We can use String() method to convert a value to a string. </p>
+      <p><strong> Syntax: </strong> String(x); x can be numbers, boolean, null, undefined or other expressions </p>
+      <h3> Type Conversions using Operators </h3>
+      <p> Certain JavaScript operators like + and - can also be used to perform type conversions. </p>
+      <p> + operator in front of a string converts it into a number. Example: var x = "20"; var y = +x; Here, x is converted to a Number.</p>
+      <p> Similarly, if we use the + operator to add a number to an empty string, the number is converted to a string. </p>
+    </div>
+    <!-- JavaScript Type Conversions end -->
+
+    <!-- JavaScript Event Handlers -->
+    <div class= "container" style="margin-top:50px" id="javascript_event_listeners">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Event Listeners</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The event listeners are like event handlers, however in event listeners, we can assign as many event listeners to a particular event on particular element. </p>
+      <p><strong> Syntax: </strong> target.addEventListener(event, function, useCapture) </p>
+      <p> We can also use removeEventListener(event, function) to remove an event listener that was previously attached with the addEventListener(). </p>
+    </div>
+    <!-- JavaScript Event Handlers -->
+
+    <!-- JavaScript Event Propagation -->
+    <div class= "container" style="margin-top:50px" id="javascript_propagation">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Event Propagation</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Event propagation is the mechanism that defines how the events propagate or travel through the DOM tree to arrive at its target and what happens to it afterwards. </p>
+      <h3> Phases of Propagation </h3>
+      <ul>
+        <li> Capturing </li>
+        <li> Bubbling </li>
+        <li> Targeting </li>
+      </ul>
+      <h3> Accessing the Target Element </h3>
+      <p> The target element is the DOM node that has generated the event. The event.target property can be used to get the target using JavaScript. </p>
+      <h3> Stop Propagation </h3>
+      <p> We can use stopPropagation() and stopImmediatePropagation() methods to stop event propagation in the middle. </p>
+      <h3> Prevent Default </h3>
+      <p> Some events have a default action associated with them like submit button submits the form and reloads the page or an anchor tag redirects to the link's target on click. </p>
+      <p> Sometimes, there may be need to prevent such default actions using preventDefault() method of the event object. </p>
+    </div>
+    <!-- JavaScript Event Propagation end -->
+
+    <!-- JavaScript JSON Parsing -->
+    <div class= "container" style="margin-top:50px" id="javascript_json_parsing">
+      <h1 class= "xxxlarge text-red"><b>JavaScript JSON Parsing</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JSON stands for JavaScript Object Notation. It is an extremely lightweight data-interchange format for data exchange between server and client, easy and quick to parse and generate. </p>
+      <p> JSON is based on two basic structures: </p>
+      <ul>
+        <li> Objects: key/value pairs </li>
+        <li> Arrays: list of values </li>
+      </ul>
+      <h3> Parsing JSON Data in JavaScript </h3>
+      <p> In JavaScript, you can easily parse JSON data received from the web server using the JSON.parse() method. </p>
+      <h3> Encoding Data as JSON in JavaScript </h3>
+      <p> Sometimes, JavaScript object or value from the code needs to be transferred to the server while using AJAX based operations. The data has to be converted to JSON string before sending using JSON.stringify() method. </p>
+    </div>
+    <!-- JavaScript JSON Parsing ends -->
+
+    <!-- JavaScript Error Handling -->
+    <div class= "container" style="margin-top:50px" id="javascript_error_handling">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Error Handling</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Sometimes the JavaScript code may not run as smooth as expected due to several reasons like: </p>
+      <ul>
+        <li> A problem with network connection </li>
+        <li> Invalid value in a form field </li>
+        <li> Referencing objects or functions that do not exist </li>
+        <li> Incorrect data being sent to or received from the server </li>
+      </ul>
+      <p> These types of errors are known as runtime errors as they occur at the time the script runs. </p>
+      <h3> The try...catch Statement </h3>
+      <p> We can use the try...catch statement to trap the runtime errors, and handle them gracefully. </p>
+      <p> Any code that might raise an error should be placed in the try block of the statement and the code to handle the error is placed in the catch block. </p>
+      <p><strong> Syntax: </strong></p>
+      <p style="white-space: pre;">
+        try {
+          // code that may cause an error
+        } catch(error) {
+          // action to be performed when an error occurs
+        }
+      </p>
+      <h3> The try...catch...finally Statement </h3>
+      <p> We can use the finally clause to execute, even if there is an error. </p>
+      <p><strong> Syntax: </strong></p>
+      <p style="white-space: pre;">
+        try {
+          // code that may cause an error
+        } catch(error) {
+          // action to be performed when an error occurs
+        } finally {
+          // code executed regardless of error
+        }
+      </p>
+      <h3> Throwing Errors </h3>
+      <p> We can use the throw statement to throw an error manually. </p>
+      <p><strong> Syntax: </strong> throw expression; </p>
+    </div>
+    <!-- JavaScript Error Handling ends -->
+
+    <!-- HTML Web Storage -->
+    <div class= "container" style="margin-top:50px" id="html_web_storage">
+      <h1 class= "xxxlarge text-red"><b>HTML5 Web Storage</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> HTML web storage provides two objects for storing data on the browser/client. </p>
+      <ul>
+        <li> window.localStorage or localStorage </li>
+        <li> window.sessionStorage or sessionStorage </li>
+      </ul>
+      <h3> The localStorage Object </h3>
+      <p> The localStorage object stores the data with no expiration date. The data will not be deleted until the data are deleted manually. </p>
+      <p> The data in localStorage object in the form of key:value pair. </p>
+      <p><strong> Methods: </strong> The setItem method is used to set the items in localStorage while the removeItem method is used to remove the localStorage item. </p>
+      <h3> The sessionStorage Object </h3>
+      <p> The sessionStorage object acts the same as localStorage, except that the data are stored for only one session. When the browser/tab is closed the session will expire and data are lost. </p>
+    </div>
+    <!-- HTML Web Storage ends -->
+
+    <!-- Day22 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day22_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create an HTML document and : </p>
+      <ul>
+        <li> Create an external JavaScript file and insert in the webpage </li>
+        <li> In the script file: 
+          <ul>
+            <li> Accept the value of radius of a circle in a prompt box, calculate the circumference and display the result in an alert box. </li>
+            <li> Generate a random number upto 100 and round up to the nearest highest number. </li>
+            <li> Accept number in a prompt box, calculate the square root and display the result in an alert box. </li>
+            <li> Create an array of numbers and determine the minimum and maximum number. </li>
+            <li> Create a while loop to loop through numbers from 1 to 5 and display the cube of the numbers using Math.pow() method. </li>
+            <li> Create two strings with numeric values, use Number() method to convert first string and + operator to convert second string to Number and calculate the product of those two numbers. </li>
+            <li> Create a button and add an event listener to the button to display an alert. </li>
+            <li> Create an object for a Mobile with properties brand, color, model and price. Convert it to a JSON. </li>
+            <li> Create a JSON for a Mobile with properties brand, color, model and price. Convert it to an Object. </li>
+            <li> Create a function named divide that accepts two numbers as parameters. If the second number is zero, throw a new Error with appropriate message. Call the function in a try...catch block. </li>
+            <li> Create a todo list like below: <p><a href="todo/index.html" target="_blank"><img src="todo/todo.png" width="500"></a></p></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Day22 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
