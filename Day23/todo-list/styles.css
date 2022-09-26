@@ -1,0 +1,74 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css';
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	font-family: cursive;
+	background-color: greenyellow;
+}
+
+.form {
+	width: 400px;
+	background-color: yellow;
+	border-radius: 10px;
+	position: absolute;
+	top: 30%;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.input {
+	width: 100%;
+	padding: 20px;
+	border: 0;
+	font-size: 20px;
+	box-sizing: border-box;
+	border-radius: 10px 10px 0 0;
+	font-family: cursive;
+}
+
+.input::placeholder {
+	color: lightgray;
+}
+
+.tasks {
+	list-style-type: none;
+	font-family: cursive;
+}
+
+.tasks li {
+	padding: 15px;
+	positive: relative;
+}
+
+.tasks li + li {
+	border-top: 3px dotted darkgray;
+}
+
+.tasks li .fas {
+	position: absolute;
+	cursor: pointer;
+}
+
+.tasks li .fa-check-square {
+	right: 40px;
+	color: green;
+}
+
+.tasks li .fa-trash {
+	right: 20px;
+	color: red;
+}
+
+.tasks li.checked {
+	color: darkslategray;
+	text-decoration: line-through;
+}
+
+.tasks li.checked .fa-check-square {
+	color: darkslategray;
+}

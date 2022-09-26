@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 23</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 23</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#javascript_regex" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Regular Expressions</a>
+      <a href="#javascript_validation" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript Form Validation </a>
+      <a href="#javascript_ajax" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript AJAX </a>
+      <a href="#javascript_es6" onclick="closeSidebar()" class="bar-item button hover-white">JavaScript ES6 </a>
+      <a href="#day23_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    
+    <!-- JavaScript Regex -->
+    <div class= "container" style="margin-top:50px" id="javascript_regex">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Regular Expressions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Regular Expressions, known as "regex" or "regexp", are a specially formatted text strings used to find patterns in text. </p>
+      <p> JavaScript provides a list of built-in methods for performing pattern-matching. </p>
+      <ul>
+        <li> exec(): Search for a match in string; returns array of information or null on mismatch. </li>
+        <li> test(): Test whether a string matches a pattern; returns true or false. </li>
+        <li> search(): Search for a match within a string; returns the index of the first match or -1 if not found. </li>
+        <li> replace(): Searchh for a match in a string and replaces the matched substring with a replacement string. </li>
+        <li> match(): Search for a match in a string; returns an array of information or null on mismatch. </li>
+        <li> split(): Splits up a string into an array of substrings using a regular expression. </li>
+      </ul>
+      <strong> exec() and test() accepts string as a parameter, search(), replace(), match() and split() accept regular expression as a parameter. </strong>
+      <h3> Defining Regular Expression </h3>
+      <p> Regular expresssions, in JavaScript, are represented by RegExp Object. </p>
+      <p> Two ways of creating a new RegExp Object: using the literal syntax, RegExp() constructor </p>
+      <p><strong>Example:</strong> var regex = /^Mr\./ or var regex = new RegExp("^Mr\\."); </p>
+      <h3> Pattern Matching </h3>
+      <p> Regular Expression patterns include the use of letters, digits, punctuation marks, etc., plus a set of special regular expression characters: . * ? + [ ] ( ) { } ^ $ | \ </p>
+      <p> To use these characters literally, we have to backslash them. </p>
+      <h4> Character Classes </h4>
+      <p> Square brackets surrounding a pattern of characters are called a character class. </p>
+      <p><strong>Examples:</strong></p>
+      <ul>
+        <li><strong>[abc]:</strong> Matches any one of the characters a, b, or c </li>
+        <li><strong>[^abc]:</strong> Matches any one character other than a, b, or c </li>
+        <li><strong>[a-z]:</strong> Matches any one from lowercase a to lowercase z </li>
+        <li><strong>[A-Z]:</strong> Matches any one from uppercase A to uppercase Z </li>
+        <li><strong>[a-Z]:</strong> Matches any one from lowercase a to uppercase Z </li>
+        <li><strong>[0-9]:</strong> Matches a single digit between 0 and 9 </li>
+        <li><strong>[a-z0-9]:</strong> Matches a single character between a-z or 0-9 </li>
+      </ul>
+      <p> Using test() method: </p>
+      <p style="white-space:pre">
+        var regex = /RegEx[p]/;
+        var str = "We are learning RegEx today. RegExp is also fun";
+
+        if(regex.test(str)) {
+            alert("Match found!");
+        } else {
+            alert("Match not found.");
+        }
+      </p>
+      <h4> Predefined Character Classes </h4>
+      <p> Some character classes such a digits, letters and whitespaces are used so frequently that there are shortcuts for them. </p>
+      <ul>
+        <li><strong> . </strong> : Matches any single character except newline \n.</li>
+        <li><strong> \d </strong> : Matches any digit character. Same as [0-9] </li>
+        <li><strong> \D </strong> : Matches any non-digit character. Same as [^0-9] </li>
+        <li><strong> \s </strong> : Matches any whitespace character. </li>
+        <li><strong> \S </strong> : Matches any non-whitespace character. </li>
+        <li><strong> \w </strong> : Matches any word character. Same as [a-zA-Z_0-9] </li>
+        <li><strong> \W </strong> : Matches any non-word character. Same as [^a-zA-Z_0-9] </li>
+      </ul>
+      <h4> Repetition Quantifiers </h4>
+      <p> Quantifiers are used to specify how many times a character in a regular expression should match. </p>
+      <ul>
+        <li><strong> p+ </strong>: Matches one or more occurences of the letter p </li>
+        <li><strong> p* </strong>: Matches zero or more occurences of the letter p </li>
+        <li><strong> p? </strong>: Matches zero or one occurence of the letter p </li>
+        <li><strong> p{3} </strong>: Matches exactly three occurences of the letter p </li>
+        <li><strong> p{2,3} </strong>: Matches at least two occurences of letter p, but not more than three occurences </li>
+        <li><strong> p{2,} </strong>: Matches two or more occurences of the letter p </li>
+        <li><strong> p{,3} </strong>: Matches at most three occurences of the letter p </li>
+      </ul>
+      <h4> Position Anchors </h4>
+      <p> Sometimes, we need to match at the beginning or end of a string. </p>
+      <p> Two common anchors: caret(^) representing the start of a string and the dollar ($) sign representing the end of the string. </p>
+      <h4> Pattern Modifiers </h4>
+      <p> A pattern modifier allows you to control the way a pattern match is handled. </p>
+      <p> Patter modifiers are placed directly after the regular expression. </p>
+      <ul>
+        <li><strong> g </strong>: Perform a global match; finds all occurences </li>
+        <li><strong> i </strong>: Makes the match case-insensitive manner </li>
+        <li><strong> o </strong>: Evaluates the expression only once </li>
+        <li><strong> m </strong>: Changes the behavior of ^ and $ to match against a newline boundary </li>
+        <li><strong> s </strong>: Changes the behavior of .(dot) to match all the chracters, including newlines </li>
+      </ul>
+      <h4> Alternation </h4>
+      <p> Alternation allows to specify alternative version of a pattern. A vertical bar (|) is used to specify alternation </p>
+    </div>
+    <!-- JavaScript Regex end -->
+
+    <!-- JavaScript Validation -->
+    <div class= "container" style="margin-top:50px" id="javascript_validation">
+      <h1 class= "xxxlarge text-red"><b>JavaScript Form Validation</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> JavaScript allows client-side form validation which is faster as the validation occurs within the user's web browser as compared to server-side validation. </p>
+      <p> Form validation process typically consists of two parts: the required fields validation and the data format validation. </p>
+    </div>
+    <!-- JavaScript validation ends -->
+
+    <!-- JavaScript AJAX -->
+    <div class= "container" style="margin-top:50px" id="javascript_ajax">
+      <h1 class= "xxxlarge text-red"><b>JavaScript AJAX</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> AJAX stands for Asynchronous Javascript and XML. </p>
+      <p> AJAX is used to load data from the server and manipulating DOM without reloading the page. </p>
+      <p> Form validation process typically consists of two parts: the required fields validation and the data format validation. </p>
+      <h3> How AJAX works </h3>
+      <p><img src="ajax-illustration.png"></p>
+      <h3> Creating Request </h3>
+      <p> var request = new XMLHttpRequest(); </p>
+      <h3> Opening Request </h3>
+      <p> request.open(method, action, async); </p>
+      <h3> Sending Request </h3>
+      <p> request.send(body) </p>
+    </div>
+    <!-- JavaScript AJAX ends -->
+
+    <!-- JavaScript ES6 -->
+    <div class= "container" style="margin-top:50px" id="javascript_es6">
+      <h1 class= "xxxlarge text-red"><b>JavaScript ES6</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> ES6 stands for ECMAScript 6, is the sixth and major edition of the ECMAScript language specification standard. </p>
+      <p> ES6 has introduced several new features such as template literals, new loop for iterating over arrays and objects, etc. </p>
+      <h3> The let keyword </h3>
+      <p> ES6 introduced the new let keyword for declaring variables. Prior to ES6, var keyword was used to declare variables. </p>
+      <h3> The const keyword </h3>
+      <p> ES6 have introduced the new const keyword and made it possible to define constants. Constants are read-only; cannot assign new values. </p>
+      <h3> The for...of loop </h3>
+      <p> The new for...of loop allows us to iterate over arrays or other iterable objects very easily. </p>
+      <h3> Template Literals </h3>
+      <p> Template literals provide an easy and clean way to create multi-line strings and perform string interpolation. </p>
+      <p> Template literals are creating using back-tick (``) character instead of single or double quotes. </p>
+      <p> Variables or expressions can be placed inside the ${...} syntax. </p>
+      <p><strong>Example:</strong> let a = 10; let b = 20; let result = `The sum of ${a} and ${b} is ${a+b}` </p>
+      <h3> Default values for function parameters </h3>
+      <p> In ES6, we can specify default values to the function parameters. </p>
+      <h3> Arrow Functions </h3>  
+      <p> Arrow Functions provides a concise syntax for writing function expressions by option out the function and return keywords. </p>
+      <p> Arrow Functions are defined using a new syntax, the fat array (=>) notation. </p>
+      <p><strong> Example: </strong> var sum = (a, b) => a + b; console.log(sum(10,25)); </p>
+      <h3> Classes </h3>
+      <p> With ES6, JavaScript have moved towards object oriented approach. Classes are introduced in ES6 that make it easier to create objects, implement inheritance using extends keyword and reuse the code. </p>
+      <h3> Modules </h3>
+      <p> Prior to ES6, there was no native support for modules in JavaScript. </p>
+      <p> ES6 introduced file based module, in which each module is represented by a separate .js file. Now, we can use the export or import statement ina module to export or import variables, functions, classes or any other entities. </p>
+    </div>
+    <!-- JavaScript AJAX ends -->
+
+    <!-- Day23 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day23_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create an HTML document and : </p>
+      <ul>
+        <li> Create an external JavaScript file and insert in the webpage </li>
+        <li> In the script file: 
+          <ul>
+            <li> Create a form and validate like below: <p><a href="form-validation/index.html" target="_blank"><img src="form-validation/form-validation.png" width="500"></a></p></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Day23 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
