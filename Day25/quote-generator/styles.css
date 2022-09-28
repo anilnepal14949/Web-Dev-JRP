@@ -1,0 +1,133 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: #5372F0;
+	font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+	width: 600px;
+	background: #fff;
+	border-radius: 15px;
+	padding: 30px;
+}
+
+.wrapper header {
+	font-size: 25px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.wrapper .content {
+	margin: 35px 0;
+}
+
+.content .quote-area {
+	display: flex;
+	justify-content: center;
+}
+
+.quote-area i {
+	font-size: 15px;
+}
+
+.quote-area i:first-child {
+	margin: 3px 10px 0 0;
+}
+
+.quote-area i:last-child {
+	margin: 0 0 3px 10px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.quote-area .quote {
+	font-size: 22px;
+	text-align: center;
+}
+
+.content .author {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 18px;
+	font-style: italic;
+	margin-top: 20px;
+}
+
+.wrapper .buttons {
+	border-top: 1px solid #ccc;
+}
+
+.buttons .features {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.features ul {
+	display: flex;
+}
+
+.features li {
+	list-style: none;
+	height: 45px;
+	width: 45px;
+	color: #5372F0;
+	border: 2px solid #5372F0;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.features li:hover {
+	color: #fff;
+	background: #5372F0;
+}
+
+.features li.copy {
+	position: relative;
+}
+
+.features li.copy span {
+	position: absolute;
+	bottom: -25px;
+	color: #5372F0 !important;
+	display: none;
+}
+
+.features button {
+	border: none;
+	outline: none;
+	background: #5372F0;
+	padding: 13px 25px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 30px;
+	transition: all 0.3s ease;
+}
+
+.features button:hover {
+	opacity: 0.9;
+}
+
+.features button.loading {
+	opacity: 0.7;
+	pointer-events: none;
+}
