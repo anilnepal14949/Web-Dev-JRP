@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 29</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 29</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Intro</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-syntax.php" onclick="closeSidebar()" target="_blank" class="bar-item button hover-white">jQuery Syntax</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-selectors.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Selectors</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-events.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Events</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-show-and-hide-effects.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Show/Hide Elements</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-fading-effects.php" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Fade Elements</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-sliding-effects.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Slide Elements</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-animation-effects.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Animate Elements</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-chaining.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Chaining</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-callback.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Callback</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-getter-and-setter.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Getter/Setter</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-insert-content.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Insert</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-remove-elements-and-attribute.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Remove</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-add-and-remove-css-classes.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery CSS Classes</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-get-and-set-css-properties.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Selectors</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-dimensions.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Dimensions</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- Starting jQuery -->
+    <div class= "container" style="margin-top:50px" id="jquery_intro">
+      <h1 class= "xxxlarge text-red"><b>Starting jQuery</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Sessions from now onwards will be focused on jQuery; a lightweight, fast and powerful JavaScript library used and accepted worldwide. </p>
+    </div>
+    <!-- Starting jQuery ends -->
+
+    <div style="height:65vh"></div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

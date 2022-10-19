@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 30</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 30</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="https://www.tutorialrepublic.com/jquery-traversing.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Traversing</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-traversing-ancestors.php" onclick="closeSidebar()" target="_blank" class="bar-item button hover-white">jQuery Ancestors</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-traversing-descendants.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Descendants</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-traversing-siblings.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Siblings</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-filtering.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Filtering</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-ajax.php" onclick="closeSidebar()" class="bar-item button hover-white">jQuery AJAX</a>
+      <a href="https://www.w3schools.com/jquery/ajax_ajax.asp" onclick="closeSidebar()" class="bar-item button hover-white">jQuery AJAX ($.ajax)</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-ajax-load.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Load</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-ajax-get-and-post-requests.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery Get/Post</a>
+      <a href="https://www.tutorialrepublic.com/jquery-tutorial/jquery-no-conflict-mode.php" target="_blank" onclick="closeSidebar()" class="bar-item button hover-white">jQuery No-Conflict</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- Starting jQuery -->
+    <div class= "container" style="margin-top:50px" id="jquery_intro">
+      <h1 class= "xxxlarge text-red"><b>Starting jQuery</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>This session will focus on Advanced jQuery Concepts. </p>
+    </div>
+    <!-- Starting jQuery ends -->
+
+    <div style="height:65vh"></div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

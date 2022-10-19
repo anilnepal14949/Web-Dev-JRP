@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: green;
+	font-family: sans-serif;
+}
+
+.gallery-container {
+	width: 900px;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.gallery-container .gallery {
+	flex-basis: 20%;
+	opacity: 0.8;
+}
+
+.gallery:hover {
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+.gallery img {
+	width: 200px;
+	height: 200px;
+	cursor: pointer;
+	object-fit: cover;
+}
+
+.lightbox {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	display: none;
+}
+
+.lightbox .image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.lightbox img {
+	width: 900px;
+	height: 700px;
+}
+
+.lightbox .close {
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	background: #fff;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s;
+}
+
+.lightbox .close:hover {
+	background: #ccc;
+}
