@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 32</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 32</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#php_intro" onclick="closeSidebar()" class="bar-item button hover-white">PHP Introduction</a>
+      <a href="#php_syntax" onclick="closeSidebar()" class="bar-item button hover-white">PHP Syntax</a>
+      <a href="#php_variables" onclick="closeSidebar()" class="bar-item button hover-white">PHP Variables</a>
+      <a href="#php_constants" onclick="closeSidebar()" class="bar-item button hover-white">PHP Constants</a>
+      <a href="#php_echo" onclick="closeSidebar()" class="bar-item button hover-white">PHP Echo & Print</a>
+      <a href="#php_data_types" onclick="closeSidebar()" class="bar-item button hover-white">PHP Data Types</a>
+      <a href="#php_operators" onclick="closeSidebar()" class="bar-item button hover-white">PHP Operators</a>
+      <a href="#php_conditionals" onclick="closeSidebar()" class="bar-item button hover-white">PHP Conditionals</a>
+      <a href="#php_array" onclick="closeSidebar()" class="bar-item button hover-white">PHP Arrays</a>
+      <a href="#php_loops" onclick="closeSidebar()" class="bar-item button hover-white">PHP Loops</a>
+      <a href="#php_functions" onclick="closeSidebar()" class="bar-item button hover-white">PHP Functions</a>
+      <a href="#day32_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- PHP Introduction -->
+    <div class= "container" style="margin-top:50px" id="php_intro">
+      <h1 class= "xxxlarge text-red"><b>PHP Introduction</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> PHP stands for HyperText Preprocessor. It is a very popular and widely-used open source server-side scripting language used to write dynamically generated web pages.</p>
+      <h2> What We Can Do with PHP?</h2>
+      <ul>
+        <li> Generate pages and files dynamically </li>
+        <li> Create, open, ready, write and close files </li>
+        <li> Send emails to the users </li>
+        <li> Store, delete and modify information in the database </li>
+        <li> Restrict unauthorized access to your website </li>
+      </ul>
+    </div>
+    <!-- PHP Introduction ends -->
+
+    <!-- PHP Syntax -->
+    <div class= "container" style="margin-top:50px" id="php_syntax">
+      <h1 class= "xxxlarge text-red"><b>PHP Syntax</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> A PHP script starts with the <?php and ends with the ?> tag; known as delimiter (<?php ?>) tells the PHP engine to treat the enclosed code block as PHP code, rather than simple HTML. </p>
+      <p> Every PHP statement must end with a semicolon (;). </p>
+      <h2> PHP Comments </h2>
+      <p> A comment is simple the text that is ignored by the PHP engine. </p>
+      <p> PHP supports both single line comment (//, #) or a multi-line comments (/*..*/). </p>
+      <h2> Case Sensitivity </h2>
+      <p> Like JavaScript, PHP is also a case-sensitive language; meaning that variables $color, $Color, $COLOR are all different. The same applies for methods too. </p>
+    </div>
+    <!-- PHP Syntax ends -->
+
+    <!-- PHP Variables -->
+    <div class= "container" style="margin-top:50px" id="php_variables">
+      <h1 class= "xxxlarge text-red"><b>PHP Variables</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Variables are used to store data like string of text, numbers, etc. The values of variables can change during the script execution. </p>
+      <h2> Things to know about PHP Variables </h2>
+      <ul>
+        <li> No need to declare before adding a value to it; automatically converts the variable to the correct data type, depending on its value. </li>
+        <li> Once declared, it can be used throughout the script </li>
+        <li> The assignment operator (=) is used to assign value to a variable. </li>
+      </ul>
+      <h2> Naming Conventions </h2>
+      <ul>
+        <li> All variables in PHP start with a $ sign </li>
+        <li> A variable name must start with a letter or an underscore (_) character. </li>
+        <li> A variable name cannot start with a number </li>
+        <li> A variable name in PHP can only contain alpha-numeric characters and underscores (A-z, 0-9 and _) </li>
+        <li> A variable name cannot contain spaces. </li>
+      </ul>
+      <strong> NB: Variable names are case-sensitive. </strong>
+    </div>
+    <!-- PHP Variables ends -->
+
+    <!-- PHP Constants -->
+    <div class= "container" style="margin-top:50px" id="php_constants">
+      <h1 class= "xxxlarge text-red"><b>PHP Constants</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> A constant is a name or an identifier for a fixed value. Constants are like variables, except that the values cannot be changed after declaration. </p>
+      <p> PHP Constants are defined using PHP's define() function, which accepts two arguments: the name of the constant and its value. </p>
+      <p><strong>Example:</strong> define("DB_USER", "admin"); echo DB_USER; </p>
+      <strong> NB: There is no need of $ symbol when using the constant. </strong>
+    </div>
+    <!-- PHP Constants ends -->
+
+    <!-- PHP Echo -->
+    <div class= "container" style="margin-top:50px" id="php_echo">
+      <h1 class= "xxxlarge text-red"><b>PHP Echo and Print Statements</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The echo statement can output one or more strings. </p>
+      <p> Echo is a language construct not a function so can be used without parentheses. </p>
+      <h2> PHP print Statement </h2>
+      <p> The print statement is an alternative to echo statement to display output to the browser. </p>
+      <p> Difference between echo and print: print returns 1 after displaying the output while echo doesn't return anything. Hence, echo is faster than print and used commonly compared to print statement. </p>
+    </div>
+    <!-- PHP Echo ends -->
+
+    <!-- PHP Data Types -->
+    <div class= "container" style="margin-top:50px" id="php_data_types">
+      <h1 class= "xxxlarge text-red"><b>PHP Data Types</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Different types of data can be stored in PHP variables like string, numbers, array, objects, etc. </p>
+      <p> Data types supported by PHP: integer, floating point, string, booleans, array, object, resource and null. </p>
+      <h2> PHP Integers </h2>
+      <p> Integers are whole numbers, without a decimal point. </p>
+      <p><strong> Example: </strong> $a = 123; $b = -50; </p>
+      <h2> PHP Strings </h2>
+      <p> Strings are sequences of characters (letters, numbers and special characters). The strings are enclosed in double quotes ("") or single quotes(''). </p>
+      <p><strong> Example: </strong> $a = "Hello"; $b = 'World'; </p>
+      <h2> PHP Floating Point Numbers </h2>
+      <p> FLoating point numbers (floats, doubles or real numbers) are decimal or fractional numbers. </p>
+      <p><strong> Example: </strong> $a = 1.23; $b = 5.658685; </p>
+      <h2> PHP Booleans </h2>
+      <p> Booleans are like a switch with two possible values either 1 (true) or 0 (false). </p>
+      <p><strong> Example: </strong> $a = true; $b = false; </p>
+      <h2> PHP Arrays </h2>
+      <p> An array is a variable that can hold more than one value at a time. </p>
+      <p><strong> Example: </strong> $a = array("hello", "world"); </p>
+      <h2> PHP Objects </h2>
+      <p> An object is a specific instance of a class. Every object has properties and methods corresponding to those of its parent class. </p>
+      <p><strong> Example: </strong> $car = new Car; </p>
+      <h2> PHP NULL </h2>
+      <p> NULL is a special data type used to represent empty variables in PHP. </p>
+      <p><strong> Example: </strong> $a = NULL; </p>
+      <h2> PHP Resources </h2>
+      <p> Resources are special variables, holding a reference to an external resource. Eg., when opening a file or connecting to a database. </p>
+      <p><strong> Example: </strong> $conn = mysqli_connect("localhost", "root", ""); </p>
+    </div>
+    <!-- PHP Data Types ends --> 
+
+    <!-- PHP Operators -->
+    <div class= "container" style="margin-top:50px" id="php_operators">
+      <h1 class= "xxxlarge text-red"><b>PHP Operators</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Operators are symbols that tell the PHP processor to perform certain actions. </p>
+      <h2> PHP Arithmetic Operators </h2>
+      <table>
+        <tr>
+          <th>Operator</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>Addition</td>
+          <td>$x + $y</td>
+          <td>Sum of $x and $y</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>Subtraction</td>
+          <td>$x - $y</td>
+          <td>Difference of $x and $y</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>Multiplication</td>
+          <td>$x * $y</td>
+          <td>Product of $x and $y</td>
+        </tr>
+        <tr>
+          <td>/</td>
+          <td>Division</td>
+          <td>$x / $y</td>
+          <td>Quotient of $x and $y</td>
+        </tr>
+        <tr>
+          <td>%</td>
+          <td>Modulus</td>
+          <td>$x % $y</td>
+          <td>Remainder of $x divided by $y</td>
+        </tr>
+      </table>
+      <h2> PHP Assignment Operators </h2>
+      <table>
+        <tr>
+          <th>Operator</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Is The Same As</th>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>Assign</td>
+          <td>$x = $y</td>
+          <td>$x = $y</td>
+        </tr>
+        <tr>
+          <td>+=</td>
+          <td>Add and assign</td>
+          <td>$x += $y</td>
+          <td>$x = $x + $y</td>
+        </tr>
+        <tr>
+          <td>-=</td>
+          <td>Subtract and assign</td>
+          <td>$x -= $y</td>
+          <td>$x = $x - $y</td>
+        </tr>
+        <tr>
+          <td>*=</td>
+          <td>Multiply and assign</td>
+          <td>$x *= $y</td>
+          <td>$x = $x * $y</td>
+        </tr>
+        <tr>
+          <td>/=</td>
+          <td>Divide and assign quotient</td>
+          <td>$x /= $y</td>
+          <td>$x = $x / $y</td>
+        </tr>
+        <tr>
+          <td>%=</td>
+          <td>Divide and assign modulus</td>
+          <td>$x %= $y</td>
+          <td>$x = $x % $y</td>
+        </tr>
+      </table>
+      <h2> PHP Comparison Operators </h2>
+      <table>
+        <tr>
+          <th>Operator</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>==</td>
+          <td>Equal</td>
+          <td>$x == $y</td>
+          <td>True if $x is equal to $y</td>
+        </tr>
+        <tr>
+          <td>===</td>
+          <td>Identical</td>
+          <td>$x === $y</td>
+          <td>True if $x is equal to $y, and they are of the same type</td>
+        </tr>
+        <tr>
+          <td>!=</td>
+          <td>Not equal</td>
+          <td>$x != $y</td>
+          <td>True if $x is not equal to $y</td>
+        </tr>
+        <tr>
+          <td>!==</td>
+          <td>Not identical</td>
+          <td>$x !== $y</td>
+          <td>True if $x is not equal to $y, or they are not of the same type</td>
+        </tr>
+        <tr>
+          <td><</td>
+          <td>Less than</td>
+          <td>$x < $y</td>
+          <td>True if $x is less than $y</td>
+        </tr>
+        <tr>
+          <td>></td>
+          <td>Greater than</td>
+          <td>$x > $y</td>
+          <td>True if $x is greater that $y</td>
+        </tr>
+        <tr>
+          <td><=</td>
+          <td>Less than or equal to</td>
+          <td>$x <= $y</td>
+          <td>True if $x is less than or equal to $y</td>
+        </tr>
+        <tr>
+          <td>>=</td>
+          <td>Greater than or equal to</td>
+          <td>$x >= $y</td>
+          <td>True if $x is greater that or equal to $y</td>
+        </tr>
+      </table>
+      <h2> PHP Incrementing and Decrementing Operators </h2>
+      <table>
+        <tr>
+          <th>Operator</th>
+          <th>Description</th>
+          <th>Effect</th>
+        </tr>
+        <tr>
+          <td>++$x</td>
+          <td>Pre-increment</td>
+          <td>Increments $x by one, then returns $x</td>
+        </tr>
+        <tr>
+          <td>$x++</td>
+          <td>Post-increment</td>
+          <td>Returns $x, then increments $x by one</td>
+        </tr>
+        <tr>
+          <td>--$x</td>
+          <td>Pre-decrement</td>
+          <td>Decrements $x by one, then returns $x</td>
+        </tr>
+        <tr>
+          <td>$x--</td>
+          <td>Post-decrement</td>
+          <td>Returns $x, then decrements $x by one</td>
+        </tr>
+      </table>
+      <h2> PHP Logical Operators </h2>
+      <table>
+        <tr>
+          <th>Operator</th>
+          <th>Name</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>and</td>
+          <td>And</td>
+          <td>$x and $y</td>
+          <td>True if both $x and $y are true</td>
+        </tr>
+        <tr>
+          <td>or</td>
+          <td>Or</td>
+          <td>$x or $y</td>
+          <td>True if either $x or $y is true</td>
+        </tr>
+        <tr>
+          <td>xor</td>
+          <td>Xor</td>
+          <td>$x xor $y</td>
+          <td>True if either $x or $y is true, but not both</td>
+        </tr>
+        <tr>
+          <td>&&</td>
+          <td>And</td>
+          <td>$x && $y</td>
+          <td>True if both $x and $y are true</td>
+        </tr>
+        <tr>
+          <td>||</td>
+          <td>Or</td>
+          <td>$x || $y</td>
+          <td>True if either $x or $y is true</td>
+        </tr>
+        <tr>
+          <td>!</td>
+          <td>Not</td>
+          <td>!$x</td>
+          <td>True if $x is not true</td>
+        </tr>
+      </table>
+      <h2> PHP String Operators </h2>
+      <table>
+        <tr>
+          <th>Operator</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>.</td>
+          <td>Concatenation</td>
+          <td>$str1 . $str2</td>
+          <td>Concatenation of $str1 and $str2</td>
+        </tr>
+        <tr>
+          <td>.=</td>
+          <td>Concatenation Assignment</td>
+          <td>$str1 .= $str2</td>
+          <td>Appends the $str2 to the $str1</td>
+        </tr>
+      </table>
+      <h2> PHP Array Operators </h2>
+      <table>
+        <tr>
+          <th>Operator</th>
+          <th>Name</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>Union</td>
+          <td>$x + $y</td>
+          <td>Union of $x and $y</td>
+        </tr>
+        <tr>
+          <td>==</td>
+          <td>Equality</td>
+          <td>$x == $y</td>
+          <td>True if $x and $y have the same key/value pairs</td>
+        </tr>
+        <tr>
+          <td>===</td>
+          <td>Identity</td>
+          <td>$x === $y</td>
+          <td>True if $x and $y have the same key/value pairs in the same order and of the same types</td>
+        </tr>
+        <tr>
+          <td>!=</td>
+          <td>Inequality</td>
+          <td>$x != $y</td>
+          <td>True if $x is not equal to $y</td>
+        </tr>
+        <tr>
+          <td>!==</td>
+          <td>Non-identity</td>
+          <td>$x !== $y</td>
+          <td>True if $x is not identical to $y</td>
+        </tr>
+      </table>
+    </div>
+    <!-- PHP Operators ends -->
+
+    <!-- PHP Conditionals -->
+    <div class= "container" style="margin-top:50px" id="php_conditionals">
+      <h1 class= "xxxlarge text-red"><b>PHP Conditionals</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Conditional statements are used to perform different ations based on the results of a logical or comparative test conditions at run time. </p>
+      <h2> The if Statement </h2>
+      <p> This is the simplest conditional statement used to run a block of code only if the specified condition evaluates to true.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre> 
+        if(condition) { 
+          //code to be executed 
+        }
+      </pre>
+      <h2> The if...else Statement </h2>
+      <p> The if...else statement allows to run a block of code if the specified condition evaluates to true and another block of code if it evaluates to false.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre> 
+        if(condition) { 
+          //code to be executed if condition is true 
+        } else {
+          //code to be executed if condition is false
+        }
+      </pre>
+      <h2> The if...elseif...else Statement </h2>
+      <p> This statement used to combine multiple if...else statements.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre> 
+        if(condition1) { 
+          //code to be executed condition1 is true
+        } else if(condition2) {
+          //code to be executed condition2 is true
+        } else {
+          //code to be executed if both condition1 and condition2 are false
+        }
+      </pre>
+      <h2> The Ternary Operator </h2>
+      <p> The ternary operator is a shorthand way of writing if...else statements. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>(condition)?true:false</pre>
+      <h2> The Switch...Case Statement </h2>
+      <p> This statement is similar to if...elseif...else statement. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        switch(n) {
+          case label1:
+            // code to be executed if n=label1
+            break;
+          case label2:
+            // code to be executed if n=label2
+            break;
+          ...
+          default:
+            // code to be executed if n doesn't match any label
+        }
+      </pre>
+    </div>
+    <!-- PHP Conditionals ends -->
+
+    <!-- PHP Arrays -->
+    <div class= "container" style="margin-top:50px" id="php_array">
+      <h1 class= "xxxlarge text-red"><b>PHP Arrays</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Arrays are complex variables that allow us to store more than one value or a group of values under a single variable name. </p>
+      <h2> Types of Arrays in PHP </h2>
+      <ul>
+        <li>Indexed Array: An array with a numeric key.</li>
+        <li>Associative Array: An array where each key has its own specific value</li>
+        <li>Multidimensional array: An array containing one or more arrays within itself.</li>
+      </ul>
+      <h2>Viewing Array Structure and Values:</h2>
+      <p> We can use statements var_dump(array_name) or print_r(array_name) to display the structure and values of any array. </p>
+      <h2> Sorting Arrays </h2>
+      <p>PHP comes with a number of built-in functions to sort any array elements in different ways like alphabetically or numerically in ascending or descending order. </p>
+      <ul>
+        <li> sort() and rsort() </li>
+        <li> asort() and arsort() </li>
+        <li> ksort() and krsort() </li>
+      </ul>
+    </div>
+    <!-- PHP Arrays end -->
+
+    <!-- PHP Loops -->
+    <div class= "container" style="margin-top:50px" id="php_loops">
+      <h1 class= "xxxlarge text-red"><b>PHP Loops</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Loops are used to execute the same block of code repeatedly, until a certain condition is met. </p>
+      <h2> Types of Loops in PHP </h2>
+      <ul>
+        <li>while</li>
+        <li>do...while</li>
+        <li>for</li>
+        <li>foreach</li>
+      </ul>
+      <h3>while Loop</h3>
+      <p> The while statement loops through a block of statements as long as the condition specified in the while loop evaluates to true. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        while(condition) {
+          // code to be executed
+        }
+      </pre>
+      <h3>do...while Loop</h3>
+      <p> The do...while statement is a variant of while loop; loops through a block of statements as long as the condition specified in the while loop at the end of each loop evaluates to true. </p> 
+      <p> <strong> NB: A do...while loop executes the code once, then evaluates the condition. </strong></p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        do {
+          // code to be executed
+        } while(condition)
+      </pre>
+      <h3>for Loop</h3>
+      <p> The for statement loops through a block of statements for a certain number of times until a condition is met. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        for(initialization; condition; increment) {
+          // code to be executed
+        }
+      </pre>
+      <h3>foreach Loop</h3>
+      <p> The foreach statement is used to loop through arrays. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        foreach($array as $value) {
+          // code to be executed
+        }
+      </pre>
+      <p>Also another syntax used for associative arrays if there is need to access keys and values both.</p>
+      <pre>
+        foreach($array as $key => $value) {
+          // code to be executed
+        }
+      </pre>
+    </div>
+    <!-- PHP Loops ends -->
+
+    <!-- PHP Functions -->
+    <div class= "container" style="margin-top:50px" id="php_functions">
+      <h1 class= "xxxlarge text-red"><b>PHP Functions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> A function is a self-contained block of code that performs a specific task. </p>
+      <p> PHP has a huge collection of in-built functions that can be called directly without declaring it like print_r(), var_dump(), etc. </p>
+      <h2> PHP User-Defined Functions </h2>
+      <p> PHP allows to define our own functions apart from the built-in functions. </p>
+      <h3> Creating and Invoking Functions </h3>
+      <p><strong>Syntax: </strong></p>
+      <pre>
+        // Creating function
+        function functionName() {
+          // code to be executed
+        }
+        // Invoking/calling function
+        functionName();
+      </pre>
+      <h3>Functions with Parameters</h3>
+      <p> We can specify parameters when we define a funciton to accept input values at run time. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        // creating function with parameters
+        function myFunc($para1, $para2 ... , $paraN) {
+          // code to be executed
+        }
+
+        // invoking function
+        myFunc($arg1, $arg2, ... , $argN);
+      </pre>
+      <h3>Returning Values from a Function</h3>
+      <p> A function can return a value back to the script that called the function using the return statement. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        function myFunc($para1, $para2) {
+          // code to be executed
+          return $result; // could be numbers, strings, arrays or objects
+        } 
+      </pre>
+      <h3> Understanding the Variable Scope </h3>
+      <p> We can declare as many variables as we want in a PHP Script. However, the location of the declaration determines the accessibility of the variable known as variable scope. </p>
+      <p> Variables defined inside a function block is not accessible from outside the block. </p>
+      <p><strong>Example:</strong></p>
+      <pre>
+        // Defining function to calculate total
+        function total($num1, $num2) {
+          $result = $num1 + $num2;
+          echo $result;
+        }
+
+        total(10, 20); // Outputs: 30
+        echo $result; // generates undefined variable error
+      </pre>
+      <h3> The global Keyword </h3>
+      <p> Sometimes, there may be need to access the variables from the main block into a function or vice-versa. PHP provides the global keyword in such situations. </p>
+      <p><strong> Example: </strong></p>
+      <pre>
+        // Defining function to calculate total
+        function total($num1, $num2) {
+          global $result;
+          $result = $num1 + $num2;
+          echo $result;
+        }
+
+        total(10, 20); // Outputs: 30
+        echo $result; // Outputs: 30
+      </pre>
+      <h3> Recursive Functions </h3>
+      <p> A recursive function is a function that calls itself again and again until a certain condition is satisfied. </p>
+      <p> Recursive functions are often used to solve complex mathematical calculations like factorial, or to process deeply nested structures like printing all values of a deeply nested array. </p>
+    </div>
+    <!-- PHP Functions ends -->
+
+    <!-- Day32 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day32_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create a new PHP file and: </p>
+      <ul>
+        <li> Check whether a person is eligible to vote </li>
+        <li> Store the marks (out of 100) in a variable and check if a student have passed or failed </li>
+        <li> Check whether a number is positive, negative or zero </li>
+        <li> Check whether a number is divisible by 7 or not </li>
+        <li> Check whether a number is divisible by 7 and 5 or not </li>
+        <li> Display the smallest number in 3 numbers </li>
+        <li> Display the largest number in 3 numbers </li>
+        <li> Declare two variables CP and SP and determine whether profit or loss </li>
+        <li> Create an array of five programming languages and:
+          <ul>
+            <li> Extract the 3rd element </li>
+            <li> Sort the first array in reverse order </li>
+          </ul>
+        </li>
+        <li> Create an array of 7 random numbers:
+          <ul>
+            <li> Sort the array from lowest to highest numbers </li>
+            <li> Sort the array from highest to lowest numbers </li>
+            <li> Calculate the sum of all elements in the array </li>
+          </ul>
+        </li>
+        <li> Create a while loop and display the numbers from 50 to 100 in a new line. </li>
+        <li> Create a do while loop and display all odd numbers from 1 to 20. </li>
+        <li> Create a for loop to display the square of numbers from 5 to 15. </li>
+        <li> Loop through the array of programming languages and display all the elements </li>
+        <li> Create a function, calculateVolume that accepts length, breadth and height of a box as parameters and display the volume. </li>
+      </ul>
+    </div>
+    <!-- Day32 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
