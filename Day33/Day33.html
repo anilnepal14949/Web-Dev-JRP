@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 33</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 33</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#php_math" onclick="closeSidebar()" class="bar-item button hover-white">PHP Math Operations</a>
+      <a href="#php_date_time" onclick="closeSidebar()" class="bar-item button hover-white">PHP Date/Time</a>
+      <a href="#php_include_files" onclick="closeSidebar()" class="bar-item button hover-white">PHP Include Files</a>
+      <a href="#php_files" onclick="closeSidebar()" class="bar-item button hover-white">PHP Files</a>
+      <a href="#php_files_upload" onclick="closeSidebar()" class="bar-item button hover-white">PHP Files Upload</a>
+      <a href="#php_files_download" onclick="closeSidebar()" class="bar-item button hover-white">PHP Files Download</a>
+      <a href="#php_cookies" onclick="closeSidebar()" class="bar-item button hover-white">PHP Cookies</a>
+      <a href="#php_sessions" onclick="closeSidebar()" class="bar-item button hover-white">PHP Sessions</a>
+      <a href="#php_form_handling" onclick="closeSidebar()" class="bar-item button hover-white">PHP Form Handling</a>
+      <a href="#php_form_validation" onclick="closeSidebar()" class="bar-item button hover-white">PHP Form Validation</a>
+      <a href="#day33_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- PHP Math Operations -->
+    <div class= "container" style="margin-top:50px" id="php_math">
+      <h1 class= "xxxlarge text-red"><b>PHP Math Operations</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> PHP has several built-in functions that help you perform any calculations.</p>
+      <h2> List of Functions: </h2>
+      <ul>
+        <li> abs() </li>
+        <li> ceil() </li>
+        <li> floor() </li>
+        <li> round() </li>
+        <li> sqrt() </li>
+        <li> decbin(), bindec() </li> 
+        <li> dechex(), hexdec() </li>
+        <li> is_finite() </li>
+        <li> is_infinite() </li>
+        <li> is_nan() </li>
+        <li> min(), max() </li>
+        <li> pi() </li>
+        <li> pow() </li>
+        <li> rand() </li>
+      </ul>
+    </div>
+    <!-- PHP Math ends -->
+
+    <!-- PHP Date -->
+    <div class= "container" style="margin-top:50px" id="php_date_time">
+      <h1 class= "xxxlarge text-red"><b>PHP Date/Time</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> PHP date() function is used to convert timestamp to a more readable date and time. The data is stored in a format called UNIX Timestamp. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        date(format, timestamp)
+      </pre>
+      <h2> Formatting Date and Time with PHP </h2>
+      <p> The format parameter of the date() function is a string containing multiple characters used to generate a human readable date string. </p>
+      <h3> Date-Related Formatting Characters </h3>
+      <ul>
+        <li>d - Represent day of the month; two digits with leading zeros</li>
+        <li>D - Represent day in the week (three characters)</li>
+        <li>l - Represent full day in the week</li>
+        <li>m - Represent month in numbers with leading zeros</li>
+        <li>j - Represent dat of month without leading zeros</li>
+        <li>S - Represent English Ordinal Suffix (st, nd, rd or th)</li>
+        <li>M - Represent month in text, abbreviated </li>
+        <li>F - Represent full month in text</li>
+        <li>y - Represent year in two digits</li>
+        <li>Y - Represent year in four digits</li>
+      </ul>
+      <h3> Time-Related Formatting Characters </h3>
+      <ul>
+        <li>h - Represent hour in 12-hour format with leading zeros</li>
+        <li>H - Represent hour in 25-hour format with leading zeros</li>
+        <li>i - Represent minutes with leading zeros</li>
+        <li>s - Represent seconds with leading zeros</li>
+        <li>a - Represent lowercase am or pm</li>
+        <li>A - Represent uppercase am or pm</li>
+      </ul>
+      <h3> time() Function </h3>
+      <p> The time() function is used to get the current time as a UNIX timestamp. </p>
+      <p> We can use date() function to get the formatted date and time. </p>
+      <h3> mktime() Function </h3>
+      <p> We can also use mktime() function to create the timestamp based on a specific date and time.</p>
+      <p><strong>Syntax:</strong> mktime(hour, minute, second, month, day, year) </p>
+      <p><strong>Example:</strong>mktime(15, 20, 12, 10, 24, 2022)</p>
+
+      <p><strong>NB:</strong> For complete reference: <a href="https://www.w3schools.com/php/func_date_date_format.asp" target="_blank">https://www.w3schools.com/php/func_date_date_format.asp</a></p>
+    </div>
+    <!-- PHP Date ends -->
+
+    <!-- PHP Include -->
+    <div class= "container" style="margin-top:50px" id="php_include_files">
+      <h1 class= "xxxlarge text-red"><b>PHP Include Files</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>PHP allows to include the code from another PHP file within another PHP file.</p>
+      <p> The include() and require() are used to include the code from another file to one file in PHP. </p>
+      <h2> Difference between include() and require() </h2>
+      <p> If the included file is not found, the include() statement will only generate a warning but allows to execute the script, however the require() statement generates a fatal error and stops the execution. </p>
+      <h2> include_once() and require_once() statements </h2>
+      <p> Sometimes, if the application is very huge, same file might have been included in multiple places and there may arise conflicts. </p>
+      <p> To prevent such situation, PHP provides include_once() and require_once() statements which ignore the include statements if it is already included. </p>
+    </div>
+    <!-- PHP Include ends -->
+
+    <!-- PHP Files -->
+    <div class= "container" style="margin-top:50px" id="php_files">
+      <h1 class= "xxxlarge text-red"><b>PHP Files</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> PHP has support for working with files and directories stored on the web server. </p>
+      <h2> Opening a File </h2>
+      <p> Before working on any file, first the file has to be opened. The PHP fopen() function is used to open a file. </p>
+      <p><strong>Syntax:</strong> fopen(filename, mode) </p>
+      <h3> File Modes: </h3>
+      <ul>
+        <li>r: Open the file for reading only</li>
+        <li>r+: Open the file for reading and writing</li>
+        <li>w: Open the file for writing only and clears the contents of the file.</li>
+        <li>w+: Open the file for reading and writing and clears the contents of the file.</li>
+        <li>a: Opens the file for writing only. Writes the contents to the end of file.</li>
+        <li>a+: Opens the file for reading and writing. Writes the contents to the end of file.</li>
+        <strong>NB: If the file is not found, PHP will try to create it in w, w+, a, a+ modes.</strong>
+      </ul>
+      <h3> file_exists() Function </h3>
+      <p> PHP generates a warning message if we try to open the file that doesn't exist.</p>
+      <p> To avoid these error messages, PHP has file_exists() function to check if the file exists or not.</p>
+      <h2> Closing a File </h2>
+      <p> Once we are done with working with a file, it needs to be closed.</p>
+      <p> The fclose() function is used to close a file.</p>
+      <h2> Reading from Files </h2>
+      <p> The fread() function can be used to read contents from a file. </p>
+      <p><strong>Syntax: </strong> fread(file handle, length in bytes) </p>
+      <h3> filesize() Function </h3>
+      <p> If we need to read entire contents from a file, we can use fread() function in conjunction with filesize() function.</p>
+      <p><strong>Example:</strong> fread($handle, filesize($file)) </p>
+      <h3> readfile() Function</h3>
+      <p> However, we can also use readfile() function to read the entire contents from a file and display it. It is one of the easiest ways to read the contents from a file. </p>
+      <p><strong>Example:</strong> readfile($file) </p>
+      <h3> file_get_contents() Function</h3>
+      <p> However, we can also use file_get_contents() function to read the entire contents from a file and store in a variable as a single string. </p>
+      <p><strong>Example:</strong> file_get_contents($file) </p>
+      <h3> file() Function</h3>
+      <p> However, PHP also provides file() function to read the entire contents from a file and store in a variable as array of lines. </p>
+      <p><strong>Example:</strong> file($file) </p>
+      <h2> Writing to a file </h2>
+      <p> The PHP fwrite() function can be used to write or append contents in a file. </p>
+      <p><strong>Syntax:</strong> fwrite(file handle, string) </p>
+      <h3> file_put_contents() Function </h3>
+      <p> The file_put_contents() can also be used to write or append contents into a file. </p>
+      <p><strong>Syntax:</strong> file_put_contents($file, $data) </p>
+      <p> This function overwrites the contents in the file. To append the contents, we need to pass the special FILE_APPEND flag as third parameter. </p>
+      <p><strong>Syntax:</strong> file_put_contents($file, $data, FILE_APPEND)</p>
+      <h2> Remove Files </h2>
+      <p> PHP provides unlink() function to delete files or directories. </p>
+      <p><strong> Syntax: </strong> unlink($file) </p>
+    </div>
+    <!-- PHP Files ends -->
+
+    <!-- PHP Files Upload -->
+    <div class= "container" style="margin-top:50px" id="php_files_upload">
+      <h1 class= "xxxlarge text-red"><b>PHP Uploading Files</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>We will practice uploading a file using PHP in the exercise below.</p>
+    </div>
+    <!-- PHP Files Upload ends -->
+
+    <!-- PHP Files Download -->
+    <div class= "container" style="margin-top:50px" id="php_files_download">
+      <h1 class= "xxxlarge text-red"><b>PHP Downloading Files</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Normally, there is no need to write any code for downloading files from the server. </p>
+      <p> If the files are stored in a public accessible folder, creating a hyperlink by pointing to that file would automatically download the file. </p>
+      <p><strong>Example:</strong><a href="myfile.pdf"> Download MyFile PDF </a></p>
+    </div>
+    <!-- PHP Files Download ends -->
+
+    <!-- PHP Cookies -->
+    <div class= "container" style="margin-top:50px" id="php_cookies">
+      <h1 class= "xxxlarge text-red"><b>PHP Cookies</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>A cookie is a small text file that lets you store a small amount of data on the user's computer.</p>
+      <h2> Setting a Cookie </h2>
+      <p> The setcookie() function is used to set a cookie in PHP. </p>
+      <p><strong> Syntax: </strong> setcookie(name, value, expire, path, domain, secure) </p>
+      <h3> Parameters </h3>
+      <ul>
+        <li>name: The name of the cookie</li>
+        <li>value: The value of the cookie</li>
+        <li>expires: The expiry date in UNIX timestamp format</li>
+        <li>path: Specify the path on the server for which the cookie will be available.</li>
+        <li>domain: Specify the domain for which the cookie will be available to.</li>
+        <li>secure: Enable this if the cookies are to be sent only for a HTTPS connection.</li>
+      </ul>
+      <h2> Accessing Cookies Values </h2>
+      <p> The PHP $_COOKIE superglobal variable is used to retrieve a cookie value. </p>
+      <p><strong>Example:</strong> print_r($_COOKIE); </p>
+      <h3>The isset() Function</h3>
+      <p> It's a good practice to check whether a cookie is set or not. To do this, we can use isset() function. </p>
+      <p><strong>Example:</strong> isset($_COOKIE["name"]) </p>
+      <h2> Removing Cookies </h2>
+      <p> We can delete a cookie by calling the setcookie() function with the cookie name, an empty value and expiry set in the past. </p>
+      <p><strong>Example:</strong> setcookie("name", "", time()-3600) </p>
+    </div>
+    <!-- PHP Cookies ends -->
+
+    <!-- PHP Sessions -->
+    <div class= "container" style="margin-top:50px" id="php_sessions">
+      <h1 class= "xxxlarge text-red"><b>PHP Sessions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Although, cookies can be used for storing data, it has some security issues. Since cookies are stored on the user's computer, it is possible for an attacker to easily modify a cookie content to insert harmful data in the application that might break the application.</p>
+      <p> This can be solved by using the PHP session. PHP session stores data on the server rather that user's computer. </p>
+      <p> For each session, a unique session ID would be generated which is almost impossible to guess for attackers. </p>
+      <h2> Starting a PHP Session </h2>
+      <p> Before we can store any information in session variables, we must first start a session. To begin a new session, we can call the PHP session_start() function. </p>
+      <strong>NB: The session_start() function must be called at the beginning of the page or before any output is generated in the browser. </strong>
+      <h2> Storing and Accessing Session Data </h2>
+      <p>We can store all session data as key-value pairs in the $_SESSION[] superglobal array.</p>
+      <p><strong>Example:</strong> $_SESSION["name"] = "Your Name"; </p>
+      <p> In order to access the session stored data, we can again use the $_SESSION[] superglobal array and pass the key that needs to be accessed.</p>
+      <p><strong>Example:</strong> echo $_SESSION["name"];</p>
+      <h2> Destroying a Session </h2>
+      <p> We can use unset() function to remove certain session data. </p>
+      <p><strong>Example:</strong> unset($_SESSION["name"]) </p>
+      <p> However, to destroy a session completely, we can call the session_destroy() function. </p>
+    </div>
+    <!-- PHP Sessions ends -->
+
+    <!-- PHP Form Handling -->
+    <div class= "container" style="margin-top:50px" id="php_form_handling">
+      <h1 class= "xxxlarge text-red"><b>PHP Handling Forms</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>We will practice uploading a file using PHP in the exercise below.</p>
+    </div>
+    <!-- PHP Form Handling ends -->
+
+    <!-- PHP Form Validation -->
+    <div class= "container" style="margin-top:50px" id="php_form_validation">
+      <h1 class= "xxxlarge text-red"><b>PHP Form Validation</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>We will practice uploading a file using PHP in the exercise below.</p>
+    </div>
+    <!-- PHP Form Validation ends -->
+
+    <!-- Day33 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day33_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create a new PHP file and: </p>
+      <ul>
+        <li> Create a form to upload a file and store it in a folder. </li>
+        <li> Create a button to download the file on click. </li>
+        <li> Store your name in a cookie and display it. </li>
+        <li> Create a login form and authenticate a user using sessions. </li>
+        <li> Create a simple info form and validate it. </li>
+        <li> Create a website layout by creating separate files for header and footer and content changes in between. Display the copyright year in the footer that changes automatically each year. </li>
+      </ul>
+    </div>
+    <!-- Day32 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
