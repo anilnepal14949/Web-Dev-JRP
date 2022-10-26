@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 34</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 34</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#php_strings" onclick="closeSidebar()" class="bar-item button hover-white">PHP Strings</a>
+      <a href="#php_filters" onclick="closeSidebar()" class="bar-item button hover-white">PHP Filters</a>
+      <a href="#day34_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- PHP Strings -->
+    <div class= "container" style="margin-top:50px" id="php_strings">
+      <h1 class= "xxxlarge text-red"><b>PHP Strings</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> PHP provides many in-built functions to work with strings.</p>
+      <h2> Some of the useful functions: </h2>
+      <ul>
+        <li> echo(), print(), printf() </li>
+        <li> htmlentities() </li>
+        <li> html_entity_decode() </li>
+        <li> htmlspecialchars() </li>
+        <li> htmlspecialchars_decode() </li>
+        <li> addslashes(), stripslashes() </li>
+        <li> lcfirst(), ucfirst(), ucwords() </li>
+        <li> ltrim(), rtrim(), trim() </li>
+        <li> md5(), sha1() </li>
+        <li> str_pad() </li>
+        <li> str_repeat() </li>
+        <li> str_replace() </li>
+        <li> str_shuffle() </li>
+        <li> str_split() </li>
+        <li> str_word_count() </li>
+        <li> strstr(), strchr() </li>
+        <li> strcmp() </li>
+        <li> strlen() </li>
+        <li> strrev() </li>
+        <li> strtolower(), strtoupper() </li>
+        <li> substr() </li>
+        <li> wordwrap() </li>
+        <li> explode() </li>
+        <li> implode() or join() </li>
+      </ul>
+    </div>
+    <!-- PHP Strings ends -->
+
+    <!-- PHP Filters -->
+    <div class= "container" style="margin-top:50px" id="php_filters">
+      <h1 class= "xxxlarge text-red"><b>PHP Filters</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> PHP provides filter_var() function to sanitize and validate data. </p>
+      <p><strong>Syntax:</strong> filter_var(variable, filter, options) </p>
+      <h2> Sanitizing a String </h2>
+      <p> FILTER_SANITIZE_STRING filter is used for sanitizing string. </p>
+      <p><strong>Example:</strong> filter_var($string, FILTER_SANITIZE_STRING) </p>
+      <h2> Validate an Integer </h2>
+      <p> FILTER_VALIDATE_INT filter is used for validating integers. </p>
+      <p><strong>Example:</strong> filter_var($int, FILTER_VALIDATE_INT) </p>
+      <h2> Validate IP Addresses </h2>
+      <h2> Validate Integers Within a Range </h2>
+      <p> We can pass options to filter_var() function to validate for any ranges. </p>
+      <p><strong>Example:</strong> filter_var($int, FILTER_VALIDATE_INT, array("options"=>array("min_range"=>0, "max_range"=>100))) </p>
+      <h2> Validate IP Addresses </h2>
+      <p> FILTER_VALIDATE_IP filter is used for validating IP Addresses. </p>
+      <p><strong>Example:</strong> filter_var($ip, FILTER_VALIDATE_IP) </p>
+      <h2> Sanitizing and Validating Emails </h2>
+      <p> FILTER_SANITIZE_EMAIL and FILTER_VALIDATE_EMAIL filters are used for sanitizing and validating emails respectively. </p>
+      <p><strong>Example:</strong> filter_var($email, FILTER_SANITIZE_EMAIL); filter_var($email, FILTER_VALIDATE_EMAIL) </p>
+      <h2> Sanitizing and Validating URLS </h2>
+      <p> FILTER_SANITIZE_URL and FITLER_VALIDATE_URL filters are used for sanitizing and validating URLs. </p>
+      <p><strong>Example:</strong> filter_var($url, FILTER_SANITIZE_URL); filter_var($url, FILTER_VALIDATE_URL); </p>
+      <p> If there is need to check if the URL has any query string or not, use FILTER_FLAG_QUERY_REQUIRED like below:</p>
+      <p>filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED); </p>
+    </div>
+    <!-- PHP Filters ends -->
+
+    <!-- Day34 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day34_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create a login, register authentication system with: </p>
+      <ul>
+        <li> A register page with photo upload and validation of all fields. After successful registration, send the user to login page. </li>
+        <li> A login page with email and password fields to check for valid details. If the details are valid, send the user to index page else display message. </li>
+        <li> A simple index page with greetings and a logout button. </li>
+        <li> A logout page that clears the session and sends the user to login page. </li>
+      </ul>
+    </div>
+    <!-- Day34 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
