@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 35</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 35</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#php_exceptions" onclick="closeSidebar()" class="bar-item button hover-white">PHP Exceptions</a>
+      <a href="#php_oop" onclick="closeSidebar()" class="bar-item button hover-white">PHP OOP</a>
+      <a href="#php_classes_objects" onclick="closeSidebar()" class="bar-item button hover-white">PHP Classes/Objects</a>
+      <a href="#php_constructor" onclick="closeSidebar()" class="bar-item button hover-white">PHP Constructor</a>
+      <a href="#php_destructor" onclick="closeSidebar()" class="bar-item button hover-white">PHP Destructor</a>
+      <a href="#php_access_modifiers" onclick="closeSidebar()" class="bar-item button hover-white">PHP Access Modifiers</a>
+      <a href="#php_inheritance" onclick="closeSidebar()" class="bar-item button hover-white">PHP Inheritance</a>
+      <a href="#php_constants" onclick="closeSidebar()" class="bar-item button hover-white">PHP Constants</a>
+      <a href="#php_abstraction" onclick="closeSidebar()" class="bar-item button hover-white">PHP Abstraction</a>
+      <a href="#php_interfaces" onclick="closeSidebar()" class="bar-item button hover-white">PHP Interfaces</a>
+      <a href="#php_traits" onclick="closeSidebar()" class="bar-item button hover-white">PHP Traits</a>
+      <!-- <a href="#php_static_methods" onclick="closeSidebar()" class="bar-item button hover-white">PHP Static Methods</a>
+      <a href="#php_static_properties" onclick="closeSidebar()" class="bar-item button hover-white">PHP Static Properties</a>
+      <a href="#php_namespaces" onclick="closeSidebar()" class="bar-item button hover-white">PHP Namespaces</a> -->
+      <a href="#day35_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- PHP Exceptions -->
+    <div class= "container" style="margin-top:50px" id="php_exceptions">
+      <h1 class= "xxxlarge text-red"><b>PHP Exceptions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> An exception is an object that describes an error or unexpected behavior of a PHP script.</p>
+      <h2> Throwing an Exception </h2>
+      <p> We can use throw statement allows a user-defined function or method to throw an exception. </p>
+      <p> After throw statement is executed, no other statements below it will be executed. </p>
+      <p> Also, after an exception is thrown, the exception must be caught using catch block from try catch statement. </p>
+      <h2> The try...catch Statement </h2>
+      <p> The try...catch statement is used to catch exceptions and continue the process. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        try {
+          // code that can throw exceptions
+        } catch(Exception $e) {
+          // code that runs when an exception is caught
+        }
+      </pre>
+      <h2> The try...catch...finally Statement </h2>
+      <p> The try...catch...finally statement is used to catch exceptions. </p>
+      <p> The code in finally block runs regardless of whether an exception was caught or not. </p>
+      <p> The catch block is optional if finally is declared. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        try {
+          // code that can throw exceptions
+        } catch(Exception $e) {
+          // code that runs when an exception is caught
+        }
+      </pre>
+      <h2> The Exception Object </h2>
+      <p> The Exception Object contains information about any error that the function encountered. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        new Exception(messsage, code, previous)
+      </pre>
+      <p> Methods used to get information about exception: </p>
+      <ul>
+        <li> getMessage() </li>
+        <li> getPrevious() </li>
+        <li> getCode() </li>
+        <li> getFile() </li>
+        <li> getLine() </li>
+      </ul>
+    </div>
+    <!-- PHP Exceptions ends -->
+
+    <!-- PHP OOP -->
+    <div class= "container" style="margin-top:50px" id="php_oop">
+      <h1 class= "xxxlarge text-red"><b>PHP OOP</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> OOP stands for Object Oriented Programming. Introduced from PHP5, OOP is faster and easier to execute.</p>
+      <h2> Why OOP? </h2>
+      <ul>
+        <li> Faster and easier to execute </li>
+        <li> Provides a clear structure for the programs </li>
+        <li> Makes the code easier to maintain, modify and debug </li>
+      </ul>
+      <h2> Terms Related to OOP </h2>
+      <ul>
+        <li><strong>Class:</strong> It is the template for objects </li>
+        <li><strong>Object:</strong> An instance of a class </li>
+        <li><strong>Member Variables:</strong> Variables defined inside a class known as properties.</li>
+        <li><strong>Member Functions:</strong>Function defined inside a class known as methods.</li>
+        <li><strong>Inheritance:</strong> An OOP concept that allows to inherit functions and variables in a child class from a parent class.</li>
+        <li><strong>Parent Class:</strong>A class that is inherited by another class.</li>
+        <li><strong>Child Class:</strong>A class that inherits another class.</li>
+        <li><strong>Polymorphism:</strong>An OOP concept that makes a function reusable for different purposes.</li>
+        <li><strong>Overriding:</strong>A type of polymorphism where the definition of functions inherited from parent classes can be modified. </li>
+        <li><strong>Data Abstraction:</strong>Any representation of data where the implementation details are hidden.</li>
+        <li><strong>Encapsulation:</strong>An OOP concept where all the data and functions are encapsulated together to form an object.</li>
+        <li><strong>Constructor:</strong>A special type of function which is called automatically when an instance is created.</li>
+        <li><strong>Destructor:</strong>A special type of function which is called automatically when an object is deleted or goes out of scope.</li>
+      </ul>
+    </div>
+    <!-- PHP OOP ends -->
+
+    <!-- PHP Classes -->
+    <div class= "container" style="margin-top:50px" id="php_classes_objects">
+      <h1 class= "xxxlarge text-red"><b>PHP Classes and Objects</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <h2> Classes </h2>
+      <p> A class is a template for objects, and an object is an instance of class.</p>
+      <p> A class can be defined using the class keyword, followed by the name of class and a pair of curly braces ({}). </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        class ClassName {
+          // code goes here...
+        }
+      </pre>
+      <h2> Objects </h2>
+      <p>Objects are created using new keyword followed by the name of the class.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        new ClassName();
+      </pre>
+      <h2> The $this Keyword </h2>
+      <p>The $this keyword refers to the current object, and is only available inside methods.</p>
+    </div>
+    <!-- PHP Classes ends -->
+
+    <!-- PHP Constuctor -->
+    <div class= "container" style="margin-top:50px" id="php_constructor">
+      <h1 class= "xxxlarge text-red"><b>PHP Constructor</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Constructor functions are special type of functions which are called automatically whenever an object is created. </p>      
+      <p> A special function called __construct() is used to define a constructor in PHP. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        function __construct($par1, $par2) {
+          // code goes here
+        }
+      </pre>
+    </div>
+    <!-- PHP Constructor ends -->
+
+    <!-- PHP Destructor -->
+    <div class= "container" style="margin-top:50px" id="php_destructor">
+      <h1 class= "xxxlarge text-red"><b>PHP Destructor</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>We can define a destructor function using __destruct(). </p>
+      <p> The destruct function is called automatically at the end of the script. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        function __destruct() {
+          // code goes here...
+        }
+      </pre>
+    </div>
+    <!-- PHP Destructor ends -->
+
+    <!-- PHP Access Modifiers -->
+    <div class= "container" style="margin-top:50px" id="php_access_modifiers">
+      <h1 class= "xxxlarge text-red"><b>PHP Access Modifiers</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Properties and methods can have access modifiers which control from where they can be accessed. </p>
+      <p> Three Access Modifiers: public, protected, private </p>
+    </div>
+    <!-- PHP Access Modifiers ends -->
+
+    <!-- PHP Inheritance -->
+    <div class= "container" style="margin-top:50px" id="php_inheritance">
+      <h1 class= "xxxlarge text-red"><b>PHP Inheritance</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Inheritance in OOP means a class can be derived by another class.</p>
+      <p> PHP class definitions can be inherited using extends clause. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        class Child extends Parent {
+          // definition body
+        }
+      </pre>
+      <h2>What happens after Inheritance?</h2>
+      <ul>
+        <li> Child class automatically will have access to public and protected member variables and methods </li>
+        <li> Child class can have their own variables and methods apart from the parent class. </li>
+      </ul>
+      <h2> Function Overriding </h2>
+      <p> The inherited methods can be overridden in child classes using the same name but different definition. </p>
+      <h2> The final Keyword </h2>
+      <p> The final keyword can be used to prevent class inheritance or to prevent method overriding. </p>
+    </div>
+    <!-- PHP Inheritance ends -->
+
+    <!-- PHP Constants -->
+    <div class= "container" style="margin-top:50px" id="php_constants">
+      <h1 class= "xxxlarge text-red"><b>PHP Class Constants</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Class contants can be used to define constant data within a class </p>
+      <p> The const keyword is used to declare a class constant. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        const ClassName {
+          const MESSAGE = "This is a message";
+        }
+      </pre>
+      <p> We can access the constant from outside the class using the classname followed by scope resolution operator (::) followed by the constant name. </p>
+      <p><strong>Example:</strong> echo className::MESSAGE; </p>
+    </div>
+    <!-- PHP Constants ends -->
+
+    <!-- PHP Abstraction -->
+    <div class= "container" style="margin-top:50px" id="php_abstraction">
+      <h1 class= "xxxlarge text-red"><b>PHP Abstraction</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Abstraction is an OOP concept used to create abstract classes and methods.</p>
+      <p>Abstract classes and methods mean the parent class will only have declaration but the child classes need to do the definition.</p>
+      <p>An abstract class is any class that contains at least one abstract method.</p>
+      <p>We can use abstract keyword to define any abstract class or method.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        abstract class ParentClass {
+          abstract public method method1();
+          abstract public function method2($number);
+        }
+      </pre>
+    </div>
+    <!-- PHP Abstraction ends -->
+
+    <!-- PHP Interfaces -->
+    <div class= "container" style="margin-top:50px" id="php_interfaces">
+      <h1 class= "xxxlarge text-red"><b>PHP Interfaces</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Interfaces are used to specify what methods a class should implement.</p>
+      <p>Interfaces are declared using the interface keyword.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        interface InterfaceName {
+          public function method1();
+          public function method2($number);
+        }
+      </pre>
+      <h3>Interfaces vs. Abstract Classes</h3>
+      <p> Interface are similar to abstract classes. However, there are some differences: </p>
+      <ul>
+        <li> Interfaces cannot have properties, while abstract classes can. </li>
+        <li> All interface methods must be public, while abstract class methods can be public or protected </li>
+        <li> All methods in an interface is abstract by default, so the abstract keyword is not necessary. </li>
+        <li> Classes can implement an interface while inheriting from another class at the same time </li>
+      </ul>
+      <h2>Using Interfaces</h2>
+      <p>To implement an interface, a class must use the implements keyword.</p>
+      <p><strong>Example:</strong>class NewClass implements InterfaceName {}</p>
+      <p><strong>NB:</strong> Any class implementing an Interface must implement all of the interface's methods.</p>
+    </div>
+    <!-- PHP Interfaces ends -->
+
+    <!-- PHP Traits -->
+    <div class= "container" style="margin-top:50px" id="php_traits">
+      <h1 class= "xxxlarge text-red"><b>PHP Traits</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Since, PHP only supports single inheritance; a child class can only inherit one single parent, there may be times when we want to use methods from multiple classes. </p>
+      <p>OOP traits solve this problem. OOP Traits are used to declare methods that can be used in multiple classes.</p>
+      <p>Traits can have methods and abstract methods that can be used in multiple classes, and the methods can have any access modifier (public, private or protected).</p>
+      <p>Traits are declared using trait keyword</p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        trait TraitName {
+          // code goes here...
+        }
+      </pre>
+      <p>Traits are used, with use keyword.</p>
+    </div>
+    <!-- PHP Traits ends -->
+
+    <!-- Day35 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day35_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Create a new PHP File and:</p>
+      <ul>
+        <li>Create a function to divide two numbers. Use exception handing to handle the division by zero.</li>
+        <li>Create a simple class and display "Yuppie! my first PHP class".</li>
+        <li>Create a class named Rectangle and: 
+          <ul>
+            <li> Define properties length and height </li>
+            <li> Define a constructor that takes two parameters length and height for the class and set the length and height of a rectangle </li>
+            <li> Define a method named area(), set its access to protected to calculate the area of rectangle and return it.</li>
+            <li>Create an object and call the area() method to display the output. </li>
+          </ul>
+        </li>
+        <li>Create a class named Square that inherits the Rectangle class and: 
+          <ul>
+            <li> Define a constructor that takes the length as parameter to set the length and height of the square </li>
+            <li> Define a new method named parameter(), set its access to public to calculate the parameter of square and return it.</li>
+            <li>Create an object and call the area() and parameter() methods to display the output. </li>
+          </ul>
+        </li>
+        <li> Create an abstract class named Operations and :
+          <ul>
+            <li>Create properties $num1, $num2</li>
+            <li>Create a constructor to set num1 and num2</li>
+            <li>Create abstract methods for addition, subtraction, multiplication and division. </li>
+            <li>Create another class Calculate and implement the abstract classes.</li>
+            <li>Create an object of Calculate outside the class and display the addition, subtraction, multiplication and division of two numbers.</li>
+          </ul> 
+        </li>
+        <li> Perform the task above using Interface. </li>
+        <li> Create two traits Welcome and WelcomeAgain with a method in each trait to display appropriate message and:
+          <ul>
+            <li>Create a new class Greeting and use two traits.</li>
+            <li>Create an object outside the class to display both the messages.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Day35 Exercises end -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
