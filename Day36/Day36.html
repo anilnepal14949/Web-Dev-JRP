@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 36</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 36</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#php_static_methods" onclick="closeSidebar()" class="bar-item button hover-white">PHP Static Methods</a>
+      <a href="#php_static_properties" onclick="closeSidebar()" class="bar-item button hover-white">PHP Static Properties</a>
+      <a href="#php_namespaces" onclick="closeSidebar()" class="bar-item button hover-white">PHP Namespaces</a>
+      <a href="#day36_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- PHP Static Methods -->
+    <div class= "container" style="margin-top:50px" id="php_static_methods">
+      <h1 class= "xxxlarge text-red"><b>PHP Static Methods</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Static methods are the type of methods that can be called without creating an instance or object of the class. </p>
+      <p> The static keyword is used for declaring any method as static. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        class StaticExample {
+          public static function staticMethod() {
+            // code goes here
+          }
+        }
+      </pre>
+      <h3> Accessing static methods </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        StaticExample::staticMethod();
+      </pre>
+      <h3> Accessing static methods from outside the class </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        StaticExample::staticMethod();
+      </pre>
+      <h3> Accessing static methods from another class </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        class NewClass {
+          public function __construct() {
+            StaticExample::staticMethod();
+          }
+        }
+      </pre>
+      <h3> Accessing static methods from child class </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        class ChildClass extends StaticExample {
+          public function __construct() {
+            parent::staticMethod();
+          }
+        }
+      </pre>
+    </div>
+    <!-- PHP Static Methods end -->
+
+    <!-- PHP Static Properties -->
+    <div class= "container" style="margin-top:50px" id="php_static_properties">
+      <h1 class= "xxxlarge text-red"><b>PHP Static Properties</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Static properties are similar to static methods that can be called without creating an instance or object of the class. </p>
+      <p> The static keyword is used for declaring any property as static. </p>
+      <p><strong>Syntax:</strong></p>
+      <pre>
+        class StaticExample {
+          public static $staticProperty = "Hello From Static";
+          public static function staticMethod() {
+            // code goes here
+          }
+        }
+      </pre>
+      <h3> Accessing static property from outside the class </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        StaticExample::$staticProperty;
+      </pre>
+      <h3> Accessing static properties from methods in the same class </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        self::$staticProperty;
+      </pre>
+      <h3> Accessing static properties from child class </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        class ChildClass extends StaticExample {
+          public function __construct() {
+            return parent::$staticProperty;
+          }
+        }
+      </pre>
+    </div>
+    <!-- PHP Static Properties end -->
+
+    <!-- PHP Namespaces -->
+    <div class= "container" style="margin-top:50px" id="php_namespaces">
+      <h1 class= "xxxlarge text-red"><b>PHP Namespaces</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Namespaces are qualifiers used for group classes that work together and allow same name to be used for more than one class. </p>
+      <p> The namespace keyword is used for declaring namespaces. </p>
+      <h3> Declaring Namespace </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        namespace Examples;
+        class First {
+          // code goes here
+        }
+      </pre>
+      <p><strong>NB: Namespace declaration must be the first thing in the PHP file. </strong></p>
+      <p> One namespace is used, the classes and functions belong to that namespace.</p>
+      <p>Accessing classes or methods from same class doesn't change, however accessing classes and methods from outside the class should be done using following: </p>
+      <h3> Accessing classes outside the namespace </h3>
+      <p><strong>Example:</strong></p>
+      <pre>
+        $example = new Examples\First();
+      </pre>
+      <h3> Namespace Alias </h3>
+      <p>We can also provide an alias to namespace or class while using it from other classes or PHP files to make it easier to write.</p>
+      <p><strong>Example:</strong></p>
+      <pre>
+        use Examples as E;
+        $example = new E\First();
+      </pre>
+    </div>
+    <!-- PHP Namespaces end -->
+
+    <!-- Day35 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day36_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Create a new PHP File and:</p>
+      <ul>
+        <li>Create a new class named Vehicle and: 
+          <ul>
+            <li> Define properties model, color and price </li>
+            <li> Define a constructor that takes three parameters model, color and price for the class and set the model, color and price of the vehicle </li>
+            <li> Define a static method named displayInfo(), set its access to public to display the info about a vehicle.</li>
+            <li>Create an object and call the displayInfo() method to display the output. </li>
+          </ul>
+        </li>
+        <li>Create a class named Car that inherits the Vehicle class and: 
+          <ul>
+            <li> Define another static property isElectric and set its value to boolean true by default. </li>
+            <li> Override the constructor of Vehicle class to take fourth parameter isElectric and set it to the static property isElectric.</li>
+            <li> Create a non-static method isElectric() and return if the car is electric or not.</li>
+            <li>Create an object and call the displayInfo() for a car only if the car is electric. </li>
+          </ul>
+        </li>
+        <li> Create a new class named Food in a new PHP file:
+          <ul>
+            <li>Set the namespace as Edible</li>
+            <li>Create a new property favourite.</li>
+            <li>Create a constructor to set your favourite food</li>
+            <li>Create a new method displayFood() and display the food you have set in the constructor. </li>
+            <li>Create an object of Food outside the class and call the displayFood() method.</li>
+            <li>Create another class in a new PHP file and name as JunkFood </li>
+            <li>Include the file with Food class</li>
+            <li>Use the Food class by using namespace.</li>
+            <li>Set the alias of Edible namespace as E.</li>
+            <li>Create an object using namespace and display the favourite food</li>
+          </ul> 
+        </li>
+      </ul>
+    </div>
+    <!-- Day36 Exercises end -->
+    <!-- https://startbootstrap.com/theme/sb-admin-2 -->
+    <!-- https://bootstrapmade.com/demo/NiceAdmin/ -->
+    <!-- https://bootstrapmade.com/demo/Moderna/ -->
+    <!-- https://technext.github.io/gardener/index.html -->
+
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
