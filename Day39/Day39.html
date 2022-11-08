@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 39</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 39</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#mysqli_intro" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Introduction</a>
+      <a href="#mysqli_connection" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Connection</a>
+      <a href="#mysqli_databases" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Databases</a>
+      <a href="#mysqli_tables" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Tables</a>
+      <a href="#mysqli_insert" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Insert</a>
+      <a href="#mysqli_select" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Select</a>
+      <a href="#mysqli_where" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Where Clause</a>
+      <a href="#mysqli_like" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Like Clause</a>
+      <a href="#mysqli_sorting" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Sorting Results</a>
+      <a href="#mysqli_limit" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Limiting Results</a>
+      <a href="#mysqli_update" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Update</a>
+      <a href="#mysqli_delete" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Delete</a>
+      <a href="#day38_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- MySQLi Intro -->
+    <div class= "container" style="margin-top:50px" id="mysqli_intro">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Introduction</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> MySQLi is an extension to MySQL; also known as MySQL improved extension. </p>
+      <h2> Features of MySQLi </h2>
+      <ul>
+        <li> Supports prepared statements </li>
+        <li> Supports multiple statements </li>
+        <li> Supports transactions </li>
+        <li> Provides enhanced debugging capabilities </li>
+      </ul>
+      <p> MySQLi supports both object oriented and procedural approach to handle database operations. </p>
+    </div>
+    <!-- MySQLi Intro end -->
+
+    <!-- MySQLi Connection -->
+    <div class= "container" style="margin-top:50px" id="mysqli_connection">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Connection</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    <div class= "row-padding">
+      <p> Before performing any database operations, we need to connect to the database first. </p>
+
+      <h3> Opening Connection to Database (Object Oriented Approach) </h3>
+      <pre>
+        $conn = new mysqli("localhost", "username", "password");
+        if($conn->connect_errno) {
+          die("Connection failed:".$conn->connect_errno);
+        } 
+        echo "Connected Successfully";
+      </pre>
+      <h3> Opening Connection to Database (Procedural Approach) </h3>
+      <pre>
+        $conn = mysqli_connect("localhost", "username", "password");
+        if(!$conn) {
+          die("Connection failed:".mysqli_connect_error());
+        } 
+        echo "Connected Successfully";
+      </pre>
+      <h3> Closing Connection (Object Oriented Approach) </h3>
+      <pre>
+        $conn->close();
+      </pre>
+      <h3> Closing Connection (Procedural Approach) </h3>
+      <pre>
+        mysqli_close($conn);
+      </pre>
+    </div>
+    <!-- MySQLi Connection end -->
+
+    <!-- MySQLi Databases -->
+    <div class= "container" style="margin-top:50px" id="mysqli_databases">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Databases</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> After the connection is established with mysql. We need to create a database. </p>
+      <h2> Create a Database </h2>
+      <pre>
+        $conn = new mysqli("localhost", "root", "");
+        if($conn->connect_errno) {
+          printf("Connect failed: %s", $conn->connect_errno);
+          exit();
+        }
+        echo "Connected Successfully";
+
+        if($conn->query("CREATE DATABASE practice")) {
+          echo "Database practice created successfully";
+        }
+        if($conn->errno) {
+          echo "Could not create database: ".$conn->errno;
+        }
+        $conn->close();
+      </pre>
+      <h2> Dropping a Database </h2>
+      <pre>
+        // connect database first then following steps
+        if($conn->query("DROP DATABASE practice")) {
+          echo "Database practice dropped successfully";
+        }
+        if($conn->errno) {
+          echo "Could not drop database: ".$conn->errno;
+        }
+        $conn->close();
+      </pre>
+      <p> After we have a database, we can use the database name in the mysqli constructor to select the database </p>
+      <pre>
+        $conn = new mysqli("localhost", "root", "", "practice");
+      </pre>
+    </div>
+    <!-- MySQLi Databases end -->
+
+    <!-- MySQLi Tables -->
+    <div class= "container" style="margin-top:50px" id="mysqli_tables">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Tables</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Once the database is created and selected, we should create tables which act as the storage for our data. </p>
+      <h2> Creating Tables </h2>
+      <pre>
+        // connect and select database first then following steps
+        $sql = "CREATE TABLE sample_tbl (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(50) NOT NULL, email VARCHAR(50), PRIMARY KEY (id));";
+        $conn->query($sql);
+      </pre>
+      <h2> Dropping Tables </h2>
+      <pre>
+        // connect and select database first then following steps
+        $sql = "DROP TABLE sample_tbl";
+        $conn->query($sql);
+      </pre>
+      <h2> Truncating Tables </h2>
+      <pre>
+        // connect and select database first then following steps
+        $sql = "TRUNCATE TABLE sample_tbl";
+        $conn->query($sql);
+      </pre>
+    </div>
+    <!-- MySQLi Tables end -->
+
+    <!-- MySQLi Insert -->
+    <div class= "container" style="margin-top:50px" id="mysqli_insert">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Insert</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> After a table is created, we can start inserting data into it. </p>
+      <h2> Inserting Data into a table </h2>
+      <pre>
+        $sql = "INSERT INTO sample_tbl (name, email) VALUES ('XYZ', 'pqr@gmail.com')";
+        $conn->query($sql);
+      </pre>
+      <strong> NB: We can use addslashes() to add slashes before quotes while inserting data to the database. </strong>
+    </div>
+    <!-- MySQLi Insert end -->
+
+    <!-- MySQLi Select -->
+    <div class= "container" style="margin-top:50px" id="mysqli_select">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Select</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> After some data are inserted into table, we can fetch and display those data. </p>
+      <h2> Fetching Data from a table </h2>
+      <pre>
+        $sql = "SELECT * FROM sample_tbl";
+        $samples = $conn->query($sql);
+      </pre>
+      <p> The result returned will be an associative array. We need to loop through the results to display each result </p>
+      <pre>
+        if($samples->num_rows > 0) {
+          while($row = $samples->fetch_assoc()) {
+            echo $row["name"]." (".$row["email"].")";
+          }
+        } else {
+          echo "No records found!";
+        }
+        // frees up memory associated with the resultset
+        $conn->free_result($samples);
+      </pre>
+    </div>
+    <!-- MySQLi Select end -->
+
+     <!-- MySQLi Where -->
+    <div class= "container" style="margin-top:50px" id="mysqli_where">
+      <h1 class= "xxxlarge text-red"><b>MySQLi WHERE Clause</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The WHERE clause is used as if...else statement for applying conditions while fetching data from a table. </p>
+      <pre>
+        $sql = "SELECT * FROM samples_tbl WHERE id > 2";
+        $conn->query($sql);
+      </pre>
+      <strong>NB: We can use more than one condition using AND, OR operators</strong>
+    </div>
+    <!-- MySQLi Where end -->
+
+    <!-- MySQLi LIKE -->
+    <div class= "container" style="margin-top:50px" id="mysqli_like">
+      <h1 class= "xxxlarge text-red"><b>MySQLi LIKE Clause</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The LIKE clause is used if we want to fetch records that matches specific set of characters. </p>
+      <p> The code below selects only those records whose email has gmail text in it. </p>
+      <pre>
+        $sql = "SELECT * FROM samples_tbl WHERE email LIKE '%gmail%'";
+        $conn->query($sql);
+      </pre>
+    </div>
+    <!-- MySQLi LIKE end -->
+
+    <!-- MySQLi Sorting -->
+    <div class= "container" style="margin-top:50px" id="mysqli_sorting">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Sorting Results</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> We can use ORDER BY clause to sort the results on any field. </p>
+      <pre>
+        $sql = "SELECT * FROM samples_tbl WHERE id > 2 ORDER BY email ASC";
+        $conn->query($sql);
+      </pre>
+    </div>
+    <!-- MySQLi Sorting end -->
+
+    <!-- MySQLi Limit -->
+    <div class= "container" style="margin-top:50px" id="mysqli_limit">
+      <h1 class= "xxxlarge text-red"><b>MySQLi LIMIT Clause</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The LIMIT clause is used to limit the number of records fetched from a table. </p>
+      <pre>
+        $sql = "SELECT * FROM samples_tbl WHERE id > 2 LIMIT 3";
+        $conn->query($sql);
+      </pre>
+      <p> We can also pass offset along with the number of records. By default the offset is 0 if no offset is passed like in above example.</p>
+      <pre>
+        $sql = "SELECT * FROM samples_tbl WHERE id > 2 LIMIT 2, 3";
+        $conn->query($sql);
+      </pre>
+      <p> In the example above, 3 records starting from 2nd offset will be fetched. </p>
+    </div>
+    <!-- MySQLi Limit end -->
+
+    <!-- MySQLi Update -->
+    <div class= "container" style="margin-top:50px" id="mysqli_update">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Update</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Only inserting the data is not enough for data interaction, we should also be able to edit and update data in the tables. </p>
+      <pre>
+        $sql = "UPDATE samples_tbl SET name='PQR' WHERE id=4";
+        $conn->query($sql);
+      </pre>
+      <p> The above example updates the name to PQR for id 4. </p>
+    </div>
+    <!-- MySQLi Update end -->
+
+    <!-- MySQLi Delete -->
+    <div class= "container" style="margin-top:50px" id="mysqli_delete">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Delete</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Sometimes, there will be requirement to delete the data from the table as well. </p>
+      <pre>
+        $sql = "DELETE FROM samples_tbl WHERE id=4";
+        $conn->query($sql);
+      </pre>
+      <p> The above example deletes the record with id 4. </p>
+    </div>
+    <!-- MySQLi Delete end -->
+
+    <!-- Day38 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day38_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> Create a new PHP file, connect with mysqli, create database and select it.</p>
+      <ul>
+        <li> Create a new table named users with fields id, first_name, last_name, email, mobile, password, and created_at </li>
+        <li> Create a form to insert data into the users table </li>
+        <li> Create a HTML table below the form to display the list of users in descending order by id field along with edit and delete links for each data. </li>
+        <li> Create a search field above the table to search the users by email and mobile. </li>
+        <li> Create another select box on the right of search box to limit the number of records. </li>
+        <li> Implement the update and delete functionalities. </li>
+      </ul>
+    </div>
+    <!-- Day38 Exercises end -->
+    
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
