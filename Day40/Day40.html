@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web Development JRP | Day 40</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar/menu -->
+  <nav class= "sidebar red collapse top large padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeSidebar()" class= "button hide-large display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="container">
+      <h3 class="padding-64"><b>Web Dev JRP<br>Day 40</b></h3>
+    </div>
+    <div class="bar-block page-links">
+      <a href="#mysqli_in_between" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi In Between</a>
+      <a href="#mysqli_aggregate_functions" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Aggregate Functions</a>
+      <a href="#mysqli_group_by" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Group By</a>
+      <a href="#mysqli_having" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi HAVING</a>
+      <a href="#mysqli_joins" onclick="closeSidebar()" class="bar-item button hover-white">MySQLi Joins</a>
+      <a href="#day39_exercises" onclick="closeSidebar()" class="bar-item button hover-white">Exercises</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large red xlarge padding">
+    <a href="javascript:void(0)" class= "button red margin-right" onclick="openSidebar()">☰</a>
+    <span>Web Dev JRP</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class= "main" style="margin-left:340px;margin-right:40px">
+    <!-- MySQLi In Between -->
+    <div class= "container" style="margin-top:50px" id="mysqli_in_between">
+      <h1 class= "xxxlarge text-red"><b>MySQLi In & Between</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The IN operator is used to specify multiple values in a WHERE clause and acts as a shorthand for multiple OR conditions. </p>
+      <pre>
+        SELECT * FROM users WHERE id IN (10, 15, 20);
+      </pre>
+      <p> Also, IN can be used to specify results of another SELECT query. </p>
+      <pre>
+        SELECT * FROM users WHERE postcode IN (SELECT postcode FROM countries);
+      </pre>
+      <h2> The BETWEEN Operator</h2>
+      <p> The BETWEEN operator is used to select values in a given range. </p>
+      <pre>
+        SELECT * FROM users WHERE age BETWEEN 25 AND 30;
+      </pre>
+      <p> To select other than the result set, we can use following: </p>
+      <pre>
+        SELECT * FROM users WHERE age NOT BETWEEN 25 AND 30;
+      </pre>
+    </div>
+    <!-- MySQLi In Between end -->
+
+    <!-- MySQLi Aggregate Functions -->
+    <div class= "container" style="margin-top:50px" id="mysqli_aggregate_functions">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Aggregate Functions</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    <div class= "row-padding">
+      <p> MySQL provides aggregate functions to get the aggregate of the set of results. </p>
+      <h3> min() </h3>
+      <p> The min() function is used to return the smallest value of the selected column. </p>
+      <pre>
+        SELECT MIN(age) FROM users;
+      </pre>
+      <p> We can also use aliases for field names like: </p>
+      <pre>
+        SELECT min(age) as minimum_age FROM users;
+      </pre>
+      <h3> max() </h3>
+      <p> The max() function is used to return the largest value of the selected column. </p>
+      <pre>
+        SELECT MAX(age) FROM users;
+      </pre>
+      <h3> count() </h3>
+      <p> The count() function is used to count the number of rows returned in the resultset. </p>
+      <pre>
+        SELECT COUNT(*) FROM users;
+        SELECT COUNT(*) FROM users WHERE age > 20;
+      </pre>
+      <h3> avg() </h3>
+      <p> The avg() function is used to calculate and return the average value of a numeric column. </p>
+      <pre>
+        SELECT AVG(age) FROM users;
+        SELECT AVG(age) as average_age FROM users;
+      </pre>
+      <h3> sum() </h3>
+      <p> The sum() function is used to calculate and return the sum of a numeric column. </p>
+      <pre>
+        SELECT SUM(price) FROM orders;
+        SELECT SUM(price) AS total_price FROM orders;
+      </pre>
+    </div>
+    <!-- MySQLi Aggregate Functions end -->
+
+    <!-- MySQLi GROUP BY -->
+    <div class= "container" style="margin-top:50px" id="mysqli_group_by">
+      <h1 class= "xxxlarge text-red"><b>MySQLi GROUP BY</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The GROUP BY statement groups rows that have the same values into summary rows. </p>
+      <pre>
+        SELECT * FROM orders GROUP BY postcode;
+      </pre>
+    </div>
+    <!-- MySQLi GROUP BY end -->
+
+    <!-- MySQLi HAVING -->
+    <div class= "container" style="margin-top:50px" id="mysqli_having">
+      <h1 class= "xxxlarge text-red"><b>MySQLi HAVING</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> The WHERE clause cannot be used with aggregate functions so HAVING clause was added to SQL. </p>
+      <pre>
+        SELECT * FROM ORDERS GROUP BY postcode HAVING min(price) > 20;
+      </pre>
+    </div>
+    <!-- MySQLi Tables end -->
+
+    <!-- MySQLi Joins -->
+    <div class= "container" style="margin-top:50px" id="mysqli_joins">
+      <h1 class= "xxxlarge text-red"><b>MySQLi Joins</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p> A JOIN clause can be used to combine rows from two or more tables based on a related column/field between them. </p>
+      <p><img src="joins.png"></p>
+    </div>
+    <!-- MySQLi Joins end -->
+
+    <!-- Day39 Exercises -->
+    <div class= "container" style="margin-top:50px" id="day39_exercises">
+      <h1 class= "xxxlarge text-red"><b>Exercises</b></h1>
+      <hr style="width:50px;border:5px solid red" class= "round">
+    </div>
+    
+    <div class= "row-padding">
+      <p>Create a database and: </p>
+      <ul>
+        <li> Another table named customer with fields: id, first_name, last_name, email, mobile, postcode </li>
+        <li> A new table named order with fields: id, order_id, customer_id, price, status, order_date </li>
+        <li> Insert 5 records in each table </li>
+        <li> Select all records from order table between 25th Oct to 10th Nov </li>
+        <li> Count all customers with postcode 2145 </li>
+        <li> Find the minimum, maximum and average price for all orders. </li>
+        <li> Use aliases wherever possible </li>
+        <li> Group all customers by postcode </li>
+        <li> Display only those orders whose minimum price is 50 </li>
+        <li> Join both the tables to display the list of customers who have ordered something. </li>
+      </ul>
+    </div>
+    <!-- Day39 Exercises end -->
+    
+    <!-- Footer -->
+    <footer style="text-align: center; color: #F44336; text-decoration: underline; padding: 30px 0;">
+      <strong> Prepared by Anil Nepal for Web Development Job Ready Program Training Sessions </strong>
+    </footer>
+    <!-- Footer ends -->
+  <!-- page content ends -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+  // Script to open and close sidebar
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
