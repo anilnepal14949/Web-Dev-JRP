@@ -158,14 +158,14 @@ class Admin {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'justfortesting14949@gmail.com';
-            $mail->Password   = 'JustF0rT3sting';
+            $mail->Username   = 'your@gmail.com';
+            $mail->Password   = 'yourpassword';
             $mail->SMTPSecure = 'tls';
             $mail->Port       = 587;
 
             //Recipients
-            $mail->setFrom('justfortesting14949@gmail.com', 'Email Testing');
-            $mail->addAddress("justfortesting14949@gmail.com");
+            $mail->setFrom('your@gmail.com', 'Email Testing');
+            $mail->addAddress("your@gmail.com");
 
             //Content
             $mail->isHTML(true);
