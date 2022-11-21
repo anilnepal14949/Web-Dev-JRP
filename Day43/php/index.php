@@ -1,5 +1,5 @@
 <?php
-	include 'admin/admin.php';
+	include_once 'admin/admin.php';
 	$admin = new Admin;
 ?>
 <!DOCTYPE html>
@@ -17,38 +17,34 @@
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
-	    <?php
-	    	$menus = $admin->getAllOrderedRecords("menu", "menu_order", "ASC");
-	    ?>
 	    <div class="collapse navbar-collapse" id="navbarToggler">
 	      <ul class="navbar-nav text-uppercase fw-bold ms-auto mb-2 mb-lg-0">
-	      	<?php foreach($menus as $menu): ?>
+	      	<?php
+	      		$menus = $admin->getAllOrderedRecords("menu", "menu_order", "ASC");
+	      		if(!empty($menus)):
+	      			foreach($menus as $menu):
+	      	?>
 	      		<li class="nav-item">
-		          <a class="nav-link" <?php if($menu["menu_link"] == "#home") { echo 'aria-current="page"'; } ?> href="<?=$menu['menu_link']?>"><?=$menu['menu_title']?></a>
+		          <a class="nav-link" <?php if($menu["menu_link"] == "home") { echo 'aria-current="page"'; } ?> href="#<?=$menu['menu_link']?>"><?=$menu["menu_title"]?></a>
 		        </li>
-	      	<?php endforeach; ?>
-	        <!-- <li class="nav-item">
-	          <a class="nav-link" aria-current="page" href="#home">Home</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#portfolio">Portfolio</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#about">About</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#contact">Contact</a>
-	        </li> -->
+	      	<?php
+	      			endforeach;
+	      		endif;
+	      	?>
 	      </ul>
 	    </div>
 	  </div>
 	</nav>
+	<?php
+		$banner = $admin->getSingleRecord("banner");
+		$banner = $banner[0];
+	?>
 	<div data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-smooth-scroll="true" tabindex="0">
 		<section id="home" class="hero-section d-flex flex-column align-items-center justify-content-center">
-			<img src="images/avatar.svg" alt="Avatar">
-			<h1 class="fw-bolder text-uppercase mt-4"> Start Bootstrap </h1>
+			<img src="images/banner/<?=$banner['banner_image']?>" alt="Avatar">
+			<h1 class="fw-bolder text-uppercase mt-4"><?=$banner['banner_title']?></h1>
 			<span class="star-icon d-flex align-items-center justify-content-center"><i class="bi bi-star-fill"></i></span>
-			<p class="fw-bold fs-4 mt-4"> Graphic Artist - Web Designer - Illustrator </p>
+			<p class="fw-bold fs-4 mt-4"><?= $banner["banner_desc"] ?></p>
 		</section>
 		<section class="container portfolio mt-5" id="portfolio">
 			<h1 class="fw-bolder text-center text-dark">
@@ -103,21 +99,21 @@
 					CONTACT
 				</h1>
 				<div class="text-center star-icon"><i class="bi bi-star-fill"></i></div>
-				<form class="form mt-4" action="admin/action.php?action=contact" method="post">
+				<form class="form mt-4">
 				  	<div class="mb-3 form-floating">
-				    	<input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full Name">
+				    	<input type="text" class="form-control" id="full_name" placeholder="Full Name">
 				    	<label for="full_name">Full Name</label>
 				  	</div>
 				  	<div class="mb-3 form-floating">
-				    	<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+				    	<input type="email" class="form-control" id="email" placeholder="Email">
 				    	<label for="email">Email</label>
 				  	</div>
 				  	<div class="mb-3 form-floating">
-				    	<input type="tel" class="form-control" name="phone_number" id="phone_number" placeholder="Phone Number">
+				    	<input type="tel" class="form-control" id="phone_number" placeholder="Phone Number">
 				    	<label for="phone_number">Phone Number</label>
 				  	</div>
 				  	<div class="mb-3 form-floating">
-				    	<textarea class="form-control" id="message" name="message" style="height: 100px;" placeholder="Message"></textarea>
+				    	<textarea class="form-control" id="message" style="height: 100px;" placeholder="Message"></textarea>
 				    	<label for="message">Message</label>
 				  	</div>
 				  	<button type="submit" class="btn btn-danger fw-bold py-3 px-4 disabled">Send Message</button>

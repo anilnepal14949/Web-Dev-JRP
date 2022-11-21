@@ -1,12 +1,14 @@
 <?php
-  include 'admin.php';
-  $admin = new Admin;
+  include_once 'includes/head.inc';
+  include_once 'includes/header.inc';
+  include_once 'includes/sidebar.inc';
 
   $banners = $admin->getAllRecords("banner");
-  $response = isset($_GET["response"])?$_GET['response']:'';
-  $type = isset($_GET["type"])?$_GET['type']:'';
 
   $alertClasses = $alertMessage = "";
+  $response = isset($_GET["response"])?$_GET["response"]:"";
+  $type = isset($_GET["type"])?$_GET["type"]:"";
+
   if($response == "success") {
     $alertClasses = "alert-success bg-success";
     if($type == "add") {
@@ -31,76 +33,74 @@
     }
   }
 
-  $action = isset($_GET["action"])?$_GET["action"]:'';
-  $id = isset($_GET["id"])?$_GET["id"]:'';
+  $action = isset($_GET["action"])?$_GET["action"]:"";
+  $id = isset($_GET["id"])?$_GET["id"]:"";
 
-  $banner_title = $banner_desc = "";
-  $form_action = "action.php?action=add_banner";
-
+  $form_action = "actions.php?action=add_banner";
+  $banner_title = $banner_desc = $banner_image = "";
   if($action == "edit") {
     $banner = $admin->getRecordByID("banner", $id);
+    $banner = $banner[0];
     $banner_title = $banner["banner_title"];
     $banner_desc = $banner["banner_desc"];
+    $banner_image = $banner["banner_image"];
 
-    $form_action = "action.php?action=update_banner&id=".$id;
+    $form_action = "actions.php?action=update_banner&id=".$id;
   }
 ?>
-<main id="main" class="main">
+  <main id="main" class="main">
 
-  <div class="pagetitle">
-    <h1>Home Banner Page</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/home">Home</a></li>
-        <li class="breadcrumb-item active">Banner</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
+    <div class="pagetitle">
+      <h1>Banner</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Banner</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
 
-  <section class="section dashboard">
-    <div class="row">
-
-      <!-- Left side columns -->
-      <div class="col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><?= ($action == "edit")?'Edit':'Add' ?> Banner</h5>
-            <?php if($response != ''): ?>
-            <div class="alert <?= $alertClasses ?> text-light border-0 alert-dismissible fade show" role="alert">
-                <?= $alertMessage ?>
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><?= ($action == "edit")?'Edit':'Add' ?> Banner</h5>
+              <?php if($response != ''): ?>
+              <div class="alert <?=$alertClasses?> text-light border-0 alert-dismissible fade show" role="alert">
+                <?=$alertMessage?>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <?php endif; ?>
-            <form class="row g-3" action="<?=$form_action?>" method="post" enctype="multipart/form-data">
-              <div class="col-12">
-                <label for="banner_title" class="form-label">Banner Title</label>
-                <input type="text" class="form-control" id="banner_title" name="banner_title" placeholder="Enter Banner Title" value="<?=$banner_title?>" required>
               </div>
-              <div class="col-12">
-                <label for="banner_desc" class="form-label">Banner Description</label>
-                <input type="text" class="form-control" id="banner_desc" name="banner_desc" placeholder="Enter Banner Description" value="<?=$banner_desc?>" required>
-              </div>
-              <div class="col-12">
-                <label for="banner_image" class="form-label">Banner Image</label>
-                <input type="file" class="form-control" id="banner_image" name="banner_image" required>
+              <?php endif; ?>
+              <form class="row g-3" method="post" action="<?=$form_action?>" enctype="multipart/form-data">
+                <div class="col-12">
+                  <label for="banner_title" class="form-label">Banner Title</label>
+                  <input type="text" class="form-control" name="banner_title" id="banner_title" placeholder="Enter Banner Title" value="<?=$banner_title?>">
+                </div>
+                <div class="col-12">
+                  <label for="banner_link" class="form-label">Banner Description</label>
+                  <input type="text" class="form-control" name="banner_desc" id="banner_desc" placeholder="Enter Banner Description" value="<?=$banner_desc?>">
+                </div>
+                <div class="col-12">
+                  <label for="banner_image" class="form-label">Banner Image</label>
+                  <input type="file" class="form-control" name="banner_image" id="banner_image">
+                </div>
                 <?php if($action == "edit") { ?>
-                  <label for="banner_image" class="form-label">Current Image</label>
-                  <img src="../../images/<?=$banner['banner_image']?>" width="100">
+                  <div class="col-12">
+                    <img src="../../images/banner/<?=$banner['banner_image']?>" width="100">
+                  </div>
                 <?php } ?>
-              </div>
-              <div>
-                <button type="submit" class="btn btn-primary"><?= ($action == "edit")?'Update':'Add' ?> Banner</button>
-                <button type="reset" class="btn btn-secondary">Reset</button>
-              </div>
-            </form>
+                <div>
+                  <button type="submit" class="btn btn-primary"><?= ($action == "edit")?'Update':'Add' ?> Banner</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div><!-- End Left side columns -->
 
-      <!-- Right side columns -->
-      <div class="col-lg-8">
-        <!-- Banner List -->
-        <div class="col-12">
+        <div class="col-lg-8">
           <div class="card overflow-auto">
             <div class="card-body">
               <h5 class="card-title">All Banner Items </h5>
@@ -108,39 +108,41 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Banner Name</th>
-                    <th scope="col">Banner Description</th>
-                    <th scope="col">Image</th>
+                    <th scope="col">Banner Title</th>
+                    <th scope="col">Banner Desc</th>
+                    <th scope="col">Banner Image</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php if(empty($banners)): ?>
-                    <tr>
-                      <th class="text-center" colspan="5">No banner found. Please add banner first!</th>
-                    </tr>
-                  <?php else: 
-                    foreach($banners as $banner):
+                  <?php
+                    if(empty($banners)):
                   ?>
                     <tr>
-                      <td><?=$banner["id"]?></td>
-                      <td><?=$banner["banner_title"]?></td>
-                      <td><?=$banner["banner_desc"]?></td>
-                      <td><img src="../../images/<?=$banner['banner_image']?>" width="100"></td>
-                      <td><a href="action.php?action=edit_item&page=banner&id=<?=$banner['id']?>" class="btn btn-info"><i class="bi bi-pencil"></i></a><a href="action.php?action=delete_item&table=banner&field=id&id=<?=$banner['id']?>" onclick="del(this)" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
-                    </tr> 
-                  <?php 
-                    endforeach;
-                  endif; ?>
+                      <th colspan="6" class="text-center"> No banner found. Please add some banner items first! </th>
+                    </tr>
+                  <?php
+                    else:
+                    foreach($banners as $banner):
+                  ?> 
+                      <tr>
+                        <td><?=$banner["id"]?></td>
+                        <td><?=$banner["banner_title"]?></td>
+                        <td><?=$banner["banner_desc"]?></td>
+                        <td><?=$banner["banner_image"]?></td>
+                        <td><a href="actions.php?action=edit_item&page=banner&id=<?=$banner['id']?>" class="btn btn-info"><i class="bi bi-pencil"></i></a><a href="actions.php?action=delete_banner&table=banner&field=id&id=<?=$banner['id']?>" onclick="del(this)" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
+                      </tr>
+                  <?php
+                      endforeach;
+                    endif;
+                  ?>
                 </tbody>
               </table>
-
             </div>
+        </div>
+      </div>
+    </section>
 
-          </div>
-        </div><!-- End Recent Sales -->
-      </div><!-- End Right side columns -->
-    </div>
-  </section>
+  </main><!-- End #main -->
 
-</main><!-- End #main -->
+  <?php include_once 'includes/footer.inc'; ?>
